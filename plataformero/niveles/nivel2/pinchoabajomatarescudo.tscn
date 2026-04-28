@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://hi3eb4hgntcl"]
+
+[ext_resource type="Script" uid="uid://bxr1rvuk3ucww" path="res://niveles/nivel1/pinchoabajoescudo.gd" id="1_3emul"]
+[ext_resource type="Texture2D" uid="uid://cjsxof0r37lmu" path="res://texturas/amano/neon/evilpincho.png" id="2_bhh32"]
+[ext_resource type="Script" uid="uid://ca7g63blj2dni" path="res://componentes/hurtbox_component.gd" id="3_kehyf"]
+[ext_resource type="Script" uid="uid://brfxo154fxd48" path="res://componentes/hitbox_component.gd" id="4_iqvgm"]
+[ext_resource type="PackedScene" uid="uid://c1m76l68heyjk" path="res://niveles/nivel2/escudo.tscn" id="5_3emul"]
+[ext_resource type="AudioStream" uid="uid://bb2fjyihbswol" path="res://sonidos/muerte.wav" id="6_bhh32"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f4fct"]
+size = Vector2(8, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1bl3h"]
+size = Vector2(34, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qxhvo"]
+size = Vector2(10, 17)
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=905524736]
+scale = Vector2(-1, -1)
+collision_mask = 5
+script = ExtResource("1_3emul")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1410898484]
+position = Vector2(-8.940697e-08, -4.5)
+rotation = -3.1415925
+shape = SubResource("RectangleShape2D_f4fct")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=771866251]
+scale = Vector2(-1, -1)
+texture = ExtResource("2_bhh32")
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=275118197]
+scale = Vector2(-1, -1)
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("3_kehyf")
+metadata/_custom_type_script = "uid://ca7g63blj2dni"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=508822704]
+scale = Vector2(-1, -1)
+shape = SubResource("RectangleShape2D_1bl3h")
+
+[node name="HitboxComponent" type="Area2D" parent="." unique_id=269784579]
+scale = Vector2(-1, -1)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("4_iqvgm")
+metadata/_custom_type_script = "uid://brfxo154fxd48"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" unique_id=103878723]
+position = Vector2(0, 4.5)
+scale = Vector2(-1, -1)
+shape = SubResource("RectangleShape2D_qxhvo")
+
+[node name="EscudoTimer" type="Timer" parent="." unique_id=1587158299]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[node name="pivoteescudo" type="Node2D" parent="." unique_id=300350946]
+
+[node name="HitboxComponent" parent="pivoteescudo" unique_id=1475586372 instance=ExtResource("5_3emul")]
+position = Vector2(18, 0)
+scale = Vector2(-1, -1)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1821424345]
+stream = ExtResource("6_bhh32")
+volume_db = -8.0

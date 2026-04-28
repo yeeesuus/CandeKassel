@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://bnjnomghw4qa6"]
+
+[ext_resource type="Texture2D" uid="uid://c0npp5dxfgnti" path="res://texturas/amano/pincho.png" id="1_q5eex"]
+[ext_resource type="Script" uid="uid://brfxo154fxd48" path="res://componentes/hitbox_component.gd" id="3_v37b2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6t0dn"]
+size = Vector2(8.000001, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qxhvo"]
+size = Vector2(10, 17)
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=905524736]
+rotation = -1.5707964
+scale = Vector2(-1, -1)
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1410898484]
+position = Vector2(2.2847789e-07, 5)
+rotation = -3.1415925
+shape = SubResource("RectangleShape2D_6t0dn")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=771866251]
+texture = ExtResource("1_q5eex")
+
+[node name="HitboxComponent" type="Area2D" parent="." unique_id=269784579]
+rotation = -1.5707964
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("3_v37b2")
+metadata/_custom_type_script = "uid://brfxo154fxd48"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" unique_id=103878723]
+position = Vector2(-5, -4.3711378e-07)
+rotation = -1.5707964
+shape = SubResource("RectangleShape2D_qxhvo")

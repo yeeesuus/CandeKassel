@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://bjvmfffg0i7i7"]
+
+[ext_resource type="Script" uid="uid://cn20i0cp2x5kv" path="res://ui/pausemenu.gd" id="1_khnwn"]
+[ext_resource type="Theme" uid="uid://df6enb866setr" path="res://recursos/theme.tres" id="1_uxloo"]
+
+[node name="PauseMenu" type="Control" unique_id=1316099220]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_khnwn")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=315501350]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -66.5
+offset_top = -64.0
+offset_right = 66.5
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=460750408]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("1_uxloo")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=2043124019]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=538728751]
+layout_mode = 2
+text = "Pause"
+horizontal_alignment = 1
+
+[node name="resumir" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1287143682]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Resume"
+
+[node name="reintentar" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1550231318]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Retry"
+
+[node name="menu" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=332915566]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Main Menu"
+
+[node name="salida" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=172831015]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Exit Game"

@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://d0c6qdmlnjo8x"]
+
+[ext_resource type="Script" uid="uid://i5four63g6wg" path="res://ui/credits.gd" id="1_ed0b0"]
+[ext_resource type="Script" uid="uid://crhsva2hj5d41" path="res://ui/rich_text_label.gd" id="2_orljq"]
+[ext_resource type="AudioStream" uid="uid://1qe4fgrvbcfx" path="res://sonidos/creditos.mp3" id="3_74u3g"]
+
+[node name="Credits" type="Control" unique_id=1391127108]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ed0b0")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1740660077]
+layout_mode = 0
+offset_right = 1082.0
+offset_bottom = 1081.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer" unique_id=1704267923]
+layout_mode = 2
+bbcode_enabled = true
+text = "
+[wave][rainbow][font_size=150]Credits[/font_size][/rainbow]
+[font_size=25]Level Sprites - souvlakii[/font_size]
+[font_size=25]Sound Effects - souvlakii (made with bfxr.com)[/font_size]
+[font_size=25]Main menu song (neoTokyo) - nekoto [/font_size]
+[font_size=25]Level 1 song (In Pursuit) - Anonyment [/font_size]
+[font_size=25]Level 2 song (Rain Words) - shimtone[/font_size]
+[font_size=25]Credits song (Growing in the sky) - shimtone[/font_size]
+[font_size=25]vinivicious font - vinizinho[/font_size]
+[font_size=25]Star Pixel Art - Narik[/font_size]
+[font_size=25]Main Character (Dude Monster)- Craftpix.net (Free Game Assets)[/font_size]
+[font_size=40]Press ESC to return to the main menu[/font_size]
+"
+scroll_active = false
+horizontal_alignment = 1
+script = ExtResource("2_orljq")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1068677635]
+stream = ExtResource("3_74u3g")
+volume_db = -8.0
+autoplay = true

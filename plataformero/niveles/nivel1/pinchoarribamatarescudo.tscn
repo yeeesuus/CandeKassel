@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://cy44xsjg52xb"]
+
+[ext_resource type="Script" uid="uid://bxr1rvuk3ucww" path="res://niveles/nivel1/pinchoabajoescudo.gd" id="1_x07tg"]
+[ext_resource type="Texture2D" uid="uid://bl3ju3pa515k" path="res://texturas/amano/evilpincho.png" id="2_phthu"]
+[ext_resource type="Script" uid="uid://ca7g63blj2dni" path="res://componentes/hurtbox_component.gd" id="3_88rkd"]
+[ext_resource type="Script" uid="uid://brfxo154fxd48" path="res://componentes/hitbox_component.gd" id="4_trog0"]
+[ext_resource type="PackedScene" uid="uid://8pnptf7wh7pg" path="res://niveles/nivel1/escudo2.tscn" id="5_yb6ob"]
+[ext_resource type="AudioStream" uid="uid://bb2fjyihbswol" path="res://sonidos/muerte.wav" id="6_wblhf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qxhvo"]
+size = Vector2(10, 17)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1bl3h"]
+size = Vector2(34, 32)
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=905524736]
+scale = Vector2(-1, -1)
+collision_mask = 5
+script = ExtResource("1_x07tg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1410898484]
+position = Vector2(0, 4.5)
+rotation = 3.1415927
+shape = SubResource("RectangleShape2D_qxhvo")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=771866251]
+texture = ExtResource("2_phthu")
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=275118197]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("3_88rkd")
+metadata/_custom_type_script = "uid://ca7g63blj2dni"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=508822704]
+shape = SubResource("RectangleShape2D_1bl3h")
+
+[node name="HitboxComponent" type="Area2D" parent="." unique_id=269784579]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("4_trog0")
+metadata/_custom_type_script = "uid://brfxo154fxd48"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" unique_id=103878723]
+position = Vector2(0, 4.5)
+rotation = 3.1415927
+shape = SubResource("RectangleShape2D_qxhvo")
+
+[node name="pivoteescudo" type="Node2D" parent="." unique_id=1503206169]
+
+[node name="HitboxComponent2" parent="pivoteescudo" unique_id=1475586372 instance=ExtResource("5_yb6ob")]
+position = Vector2(-18, 0)
+
+[node name="EscudoTimer" type="Timer" parent="." unique_id=1536703094]
+wait_time = 2.0
+
+[node name="DeathSound" type="AudioStreamPlayer" parent="." unique_id=965816927]
+stream = ExtResource("6_wblhf")
+volume_db = 2.0

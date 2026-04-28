@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://c0isvfxsuhaqo"]
+
+[ext_resource type="Texture2D" uid="uid://bl3ju3pa515k" path="res://texturas/amano/evilpincho.png" id="1_ggh55"]
+[ext_resource type="Script" uid="uid://cy101go0o0fjr" path="res://niveles/nivel1/pinchoabajo.gd" id="1_i37t6"]
+[ext_resource type="Script" uid="uid://ca7g63blj2dni" path="res://componentes/hurtbox_component.gd" id="2_grpia"]
+[ext_resource type="Script" uid="uid://brfxo154fxd48" path="res://componentes/hitbox_component.gd" id="3_grpia"]
+[ext_resource type="AudioStream" uid="uid://bb2fjyihbswol" path="res://sonidos/muerte.wav" id="5_vmell"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qxhvo"]
+size = Vector2(10, 17)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1bl3h"]
+size = Vector2(34, 32)
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=905524736]
+scale = Vector2(-1, -1)
+collision_mask = 5
+script = ExtResource("1_i37t6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1410898484]
+position = Vector2(0, 4.5)
+rotation = 3.1415927
+shape = SubResource("RectangleShape2D_qxhvo")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=771866251]
+texture = ExtResource("1_ggh55")
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=275118197]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("2_grpia")
+metadata/_custom_type_script = "uid://ca7g63blj2dni"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=508822704]
+shape = SubResource("RectangleShape2D_1bl3h")
+
+[node name="HitboxComponent" type="Area2D" parent="." unique_id=269784579]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("3_grpia")
+metadata/_custom_type_script = "uid://brfxo154fxd48"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" unique_id=103878723]
+position = Vector2(0, 4.5)
+rotation = 3.1415927
+shape = SubResource("RectangleShape2D_qxhvo")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=969369993]
+stream = ExtResource("5_vmell")
+volume_db = -8.0

@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dy3hsw13vuwou"]
+
+[ext_resource type="PackedScene" uid="uid://lmmxfan8k7fw" path="res://recursos/jugadorreal.tscn" id="1_hiwwr"]
+[ext_resource type="Texture2D" uid="uid://clcfx7xk4olge" path="res://ab67616d0000b27353da07db25e2543cce38abfe.jpg" id="2_bjf03"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iwk8m"]
+size = Vector2(27.25, 25.75)
+
+[node name="jugador" type="Node2D" unique_id=1279068852]
+
+[node name="CharacterBody2D" parent="." unique_id=1092402852 instance=ExtResource("1_hiwwr")]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1464037638]
+shape = SubResource("RectangleShape2D_iwk8m")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D/CollisionShape2D2" unique_id=310168474]
+position = Vector2(6.2584877e-07, -1.7881393e-06)
+scale = Vector2(0.04375, 0.040625006)
+texture = ExtResource("2_bjf03")
+
+[node name="JumpTimer2" type="Timer" parent="CharacterBody2D" unique_id=731334397]
+wait_time = 0.2

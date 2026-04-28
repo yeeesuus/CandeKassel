@@ -1,0 +1,11 @@
+[gd_resource type="Theme" format=3 uid="uid://df6enb866setr"]
+
+[ext_resource type="FontFile" uid="uid://rpcovpcqa5tn" path="res://fuentes/vinivicious.ttf" id="1_panj1"]
+
+[resource]
+default_font = ExtResource("1_panj1")
+default_font_size = 64
+MarginContainer/constants/margin_bottom = 32
+MarginContainer/constants/margin_left = 32
+MarginContainer/constants/margin_right = 32
+MarginContainer/constants/margin_top = 32
