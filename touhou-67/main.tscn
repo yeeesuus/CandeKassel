@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://dlpk4rgc1i315"]
+
+[ext_resource type="Script" uid="uid://xhavgfn6iugt" path="res://main.gd" id="1_h2yge"]
+[ext_resource type="Texture2D" uid="uid://dnr486swnea45" path="res://icon.svg" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://c2bv36gadmlcy" path="res://character_p.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://b4jlodt2gtl6u" path="res://enemy.tscn" id="4_1bvp3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0xm2m"]
+size = Vector2(1152, 68)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ig7tw"]
+size = Vector2(365, 48)
+
+[node name="Main" type="Node2D" unique_id=1032485586]
+script = ExtResource("1_h2yge")
+
+[node name="Suelo" type="StaticBody2D" parent="." unique_id=1939624289]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Suelo" unique_id=359618768]
+position = Vector2(576, 614)
+shape = SubResource("RectangleShape2D_0xm2m")
+
+[node name="Sprite2D" type="Sprite2D" parent="Suelo" unique_id=851190915]
+self_modulate = Color(0.30747974, 0.6957489, 0, 1)
+position = Vector2(576.125, 614)
+scale = Vector2(8.998047, 0.53125024)
+texture = ExtResource("1_ig7tw")
+
+[node name="Plataforma" type="StaticBody2D" parent="." unique_id=824845559]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataforma" unique_id=355960585]
+position = Vector2(185.50002, 456)
+shape = SubResource("RectangleShape2D_ig7tw")
+
+[node name="Sprite2D" type="Sprite2D" parent="Plataforma" unique_id=1459580333]
+position = Vector2(185.00002, 456.5)
+scale = Vector2(2.8593752, 0.3828124)
+texture = ExtResource("1_ig7tw")
+
+[node name="Plataforma2" type="StaticBody2D" parent="." unique_id=1938652051]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Plataforma2" unique_id=1120266197]
+position = Vector2(968.5, 454.99997)
+shape = SubResource("RectangleShape2D_ig7tw")
+
+[node name="Sprite2D" type="Sprite2D" parent="Plataforma2" unique_id=118533616]
+position = Vector2(968, 455.5)
+scale = Vector2(2.8593752, 0.3828124)
+texture = ExtResource("1_ig7tw")
+
+[node name="CharacterP" parent="." unique_id=872404977 instance=ExtResource("2_0xm2m")]
+position = Vector2(540, 544)
+
+[node name="Enemy" parent="." unique_id=1958573147 instance=ExtResource("4_1bvp3")]
+position = Vector2(282, 187)

@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://27601lenkuyg"]
+
+[ext_resource type="Script" uid="uid://d3ktnpxrduiqq" path="res://player/bullet.gd" id="1_j40gx"]
+[ext_resource type="Texture2D" uid="uid://dnr486swnea45" path="res://icon.svg" id="2_boyjm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_boyjm"]
+size = Vector2(16, 8)
+
+[node name="Bullet" type="Area2D" unique_id=1056091748]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_j40gx")
+metadata/_custom_type_script = "uid://cy4qa6vxdjoer"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1582282710]
+rotation = -1.5707964
+shape = SubResource("RectangleShape2D_boyjm")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1264003268]
+modulate = Color(0.24705882, 0, 1, 1)
+position = Vector2(0, -1.9073486e-06)
+scale = Vector2(0.048, 0.107)
+texture = ExtResource("2_boyjm")
