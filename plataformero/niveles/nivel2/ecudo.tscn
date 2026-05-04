@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://t7b51442jjax"]
+
+[ext_resource type="Script" uid="uid://cjlkljtkwuanp" path="res://niveles/nivel2/ecudo.gd" id="1_8ijdr"]
+[ext_resource type="Texture2D" uid="uid://cige0vlfyphfv" path="res://texturas/amano/neon/escudoneon.png" id="1_t4myi"]
+[ext_resource type="AudioStream" uid="uid://hbj8von2akmy" path="res://sonidos/escudo.wav" id="3_8ijdr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xeybq"]
+size = Vector2(3, 26)
+
+[node name="HitboxComponent" type="Area2D" unique_id=1701118343]
+collision_layer = 8
+collision_mask = 8
+script = ExtResource("1_8ijdr")
+metadata/_custom_type_script = "uid://brfxo154fxd48"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=738290185]
+texture = ExtResource("1_t4myi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=685279488]
+position = Vector2(-0.5, 0)
+shape = SubResource("RectangleShape2D_xeybq")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=658963580]
+stream = ExtResource("3_8ijdr")

@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://68prgehpl67c"]
+
+[ext_resource type="Texture2D" uid="uid://c0npp5dxfgnti" path="res://texturas/amano/pincho.png" id="1_720oy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_720oy"]
+size = Vector2(20, 44)
+
+[node name="Node2D" type="Node2D" unique_id=1629497618]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=277806138]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1159771242]
+position = Vector2(0, 12)
+shape = SubResource("RectangleShape2D_720oy")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=1119348284]
+scale = Vector2(3, 3)
+texture = ExtResource("1_720oy")

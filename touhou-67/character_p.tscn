@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://c2bv36gadmlcy"]
+
+[ext_resource type="Texture2D" uid="uid://dnr486swnea45" path="res://icon.svg" id="1_ngkm0"]
+[ext_resource type="Script" uid="uid://c108abtb25166" path="res://character_p.gd" id="1_r0jjn"]
+[ext_resource type="PackedScene" uid="uid://27601lenkuyg" path="res://player/bullet.tscn" id="2_vcogd"]
+[ext_resource type="Script" uid="uid://cy4qa6vxdjoer" path="res://components/hitbox_component.gd" id="3_ehbgi"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_r0jjn"]
+radius = 14.0
+height = 66.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vcogd"]
+
+[node name="CharacterP" type="CharacterBody2D" unique_id=872404977]
+script = ExtResource("1_r0jjn")
+bullet_scene = ExtResource("2_vcogd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=305076754]
+shape = SubResource("CapsuleShape2D_r0jjn")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=684381779]
+position = Vector2(5.9604645e-08, 0.50000095)
+scale = Vector2(0.20312499, 0.5078125)
+texture = ExtResource("1_ngkm0")
+
+[node name="HitboxComponent" type="Area2D" parent="." unique_id=96461985]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("3_ehbgi")
+metadata/_custom_type_script = "uid://cy4qa6vxdjoer"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" unique_id=2109326557]
+position = Vector2(0, -37)
+shape = SubResource("RectangleShape2D_vcogd")
+
+[node name="BulletSpawnMarker" type="Marker2D" parent="." unique_id=1979138067]
+position = Vector2(0, -37)
+rotation = 4.712389
+gizmo_extents = 15.0

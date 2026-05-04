@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://7rwd6cbaa1du"]
+
+[ext_resource type="Script" uid="uid://ckggsh8eg0tbo" path="res://ui/mainmenu.gd" id="1_0y3v4"]
+[ext_resource type="Theme" uid="uid://df6enb866setr" path="res://recursos/theme.tres" id="1_016uc"]
+[ext_resource type="AudioStream" uid="uid://c3qxwb8npi4xs" path="res://sonidos/menuloop.mp3" id="3_330nd"]
+
+[node name="MainMenu" type="Control" unique_id=483671317]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0y3v4")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=471972126]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -66.5
+offset_top = -64.0
+offset_right = 66.5
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1343608428]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("1_016uc")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=553335723]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1074189294]
+layout_mode = 2
+text = "I Wanna Beat the Maze"
+horizontal_alignment = 1
+
+[node name="inicio" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1114482342]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Start Game"
+
+[node name="creditos" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1320269183]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Credits"
+
+[node name="salir" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1859814295]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Exit Game"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1021664873]
+stream = ExtResource("3_330nd")
+volume_db = -8.0
+autoplay = true
+parameters/looping = false
