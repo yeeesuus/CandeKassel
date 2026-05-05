@@ -1,6 +1,8 @@
 class_name HurtboxComponent
 extends Area2D
 
+signal take_power_up
+
 func _ready() -> void:
 	area_entered.connect(_on_area_entered)
 	

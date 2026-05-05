@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dnr486swnea45" path="res://icon.svg" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://c2bv36gadmlcy" path="res://character_p.tscn" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://b4jlodt2gtl6u" path="res://enemy.tscn" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://b6i0bi8pp8smr" path="res://power-ups/power_up.tscn" id="5_lquwl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xm2m"]
 size = Vector2(1152, 68)
@@ -53,3 +54,7 @@ position = Vector2(540, 544)
 
 [node name="Enemy" parent="." unique_id=1958573147 instance=ExtResource("4_1bvp3")]
 position = Vector2(282, 187)
+
+[node name="PowerUp" parent="." unique_id=581944556 instance=ExtResource("5_lquwl")]
+position = Vector2(905, 347)
+scale = Vector2(0.5, 0.5)
