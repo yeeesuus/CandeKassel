@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://xhavgfn6iugt" path="res://main.gd" id="1_h2yge"]
 [ext_resource type="Texture2D" uid="uid://dnr486swnea45" path="res://icon.svg" id="1_ig7tw"]
 [ext_resource type="PackedScene" uid="uid://c2bv36gadmlcy" path="res://character_p.tscn" id="2_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://1wk3gi3uptx2" path="res://heh!.jpg" id="3_7mycd"]
 [ext_resource type="PackedScene" uid="uid://b4jlodt2gtl6u" path="res://enemy.tscn" id="4_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://b6i0bi8pp8smr" path="res://power-ups/power_up.tscn" id="5_lquwl"]
 
@@ -34,9 +35,9 @@ position = Vector2(185.50002, 456)
 shape = SubResource("RectangleShape2D_ig7tw")
 
 [node name="Sprite2D" type="Sprite2D" parent="Plataforma" unique_id=1459580333]
-position = Vector2(185.00002, 456.5)
-scale = Vector2(2.8593752, 0.3828124)
-texture = ExtResource("1_ig7tw")
+position = Vector2(186.00002, 456)
+scale = Vector2(0.5083333, 0.06944446)
+texture = ExtResource("3_7mycd")
 
 [node name="Plataforma2" type="StaticBody2D" parent="." unique_id=1938652051]
 

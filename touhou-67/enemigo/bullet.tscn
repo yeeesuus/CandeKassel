@@ -21,3 +21,8 @@ modulate = Color(0.24705882, 0, 1, 1)
 position = Vector2(0, -1.9073486e-06)
 scale = Vector2(0.048, 0.107)
 texture = ExtResource("2_w6srf")
+
+[node name="Timer" type="Timer" parent="." unique_id=1568235839]
+wait_time = 3.0
+one_shot = true
+autostart = true
