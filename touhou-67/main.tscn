@@ -52,4 +52,4 @@ texture = ExtResource("1_ig7tw")
 position = Vector2(540, 544)
 
 [node name="Enemy" parent="." unique_id=1958573147 instance=ExtResource("4_1bvp3")]
-position = Vector2(282, 187)
+position = Vector2(560, 93)

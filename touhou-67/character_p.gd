@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 @export var speed = 500
-@export var acceleration = 600
+@export var acceleration = 4000
 @export var jump_speed = 550
 @export var bullet_scene: PackedScene
 
