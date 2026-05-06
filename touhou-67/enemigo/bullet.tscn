@@ -17,7 +17,7 @@ rotation = -1.5707964
 shape = SubResource("RectangleShape2D_boyjm")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1264003268]
-modulate = Color(0.24705882, 0, 1, 1)
+modulate = Color(18.892157, 18.892157, 18.892157, 1)
 position = Vector2(0, -1.9073486e-06)
 scale = Vector2(0.048, 0.107)
 texture = ExtResource("2_w6srf")
