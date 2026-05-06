@@ -1,4 +1,5 @@
 extends CharacterBody2D
+# Variables
 @export var bullet_scene: PackedScene
 @onready var bullet_spawn_marker1: Marker2D = $BulletMarker
 @onready var bullet_spawn_marker2: Marker2D = $BulletMarker2
@@ -11,11 +12,13 @@ func _ready() -> void:
 	timer.start()
 	
 func _on_timer_timeout() -> void:
+	# Acción disparar
 	fire()
 	
 func take_damage(value: int) -> void:
 	Debug.log("%s received %d damage" % [name, value])
-	
+
+# Función de disparo del enemigo
 func fire() -> void:
 	if not bullet_scene:
 		Debug.log("no hay bala")

@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+# Variables
 @export var speed = 500
 @export var acceleration = 4000
 @export var jump_speed = 400
@@ -8,7 +8,7 @@ extends CharacterBody2D
 @onready var jump_timer: Timer = $JumpTimer
 
 @onready var bullet_spawn_marker: Marker2D = $BulletSpawnMarker
-@onready var pibote: Node2D = $pibote
+@onready var Pivote: Node2D = $Pivote
 
 var is_taking_power_up: bool = false
 var _was_on_floor: bool = false
@@ -47,11 +47,12 @@ func _physics_process(delta: float) -> void:
 		fire()
 		
 	if move_input:
-		pibote.scale.x = sign(move_input)
+		Pivote.scale.x = sign(move_input)
 	
 func  take_damage(value: int) -> void:
 	Debug.log("%s received %d damage" % [name, value])
 
+# Función de disparo
 func fire() -> void:
 	if not bullet_scene:
 		Debug.log("no hay bala")
@@ -59,6 +60,7 @@ func fire() -> void:
 	get_parent().add_child(bullet_inst)
 	bullet_inst.global_position = bullet_spawn_marker.global_position
 
+# Función para obtener el power up
 func collect_power_up() -> void:
 	is_taking_power_up = true
 	Debug.log("COLLECT_POWER_UP")

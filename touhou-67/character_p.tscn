@@ -23,20 +23,20 @@ one_shot = true
 wait_time = 0.1
 one_shot = true
 
-[node name="pibote" type="Node2D" parent="." unique_id=815531097]
+[node name="Pivote" type="Node2D" parent="." unique_id=815531097]
 
-[node name="Sprite2D" type="Sprite2D" parent="pibote" unique_id=684381779]
+[node name="Sprite2D" type="Sprite2D" parent="Pivote" unique_id=684381779]
 position = Vector2(0, -21.5)
 scale = Vector2(1.25, 1.609375)
 texture = ExtResource("3_vcogd")
 
-[node name="HitboxComponent" type="Area2D" parent="pibote" unique_id=96461985]
+[node name="HitboxComponent" type="Area2D" parent="Pivote" unique_id=96461985]
 collision_layer = 12
 collision_mask = 12
 script = ExtResource("3_ehbgi")
 metadata/_custom_type_script = "uid://cy4qa6vxdjoer"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="pibote/HitboxComponent" unique_id=2109326557]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pivote/HitboxComponent" unique_id=2109326557]
 position = Vector2(0, -37)
 shape = SubResource("RectangleShape2D_vcogd")
 
