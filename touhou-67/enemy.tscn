@@ -31,23 +31,9 @@ metadata/_custom_type_script = "uid://4mt4o1bvirc"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent" unique_id=1501316927]
 shape = SubResource("RectangleShape2D_qi2p4")
 
-[node name="BulletMarker" type="Marker2D" parent="." unique_id=478609003]
-position = Vector2(97, 25)
-
-[node name="BulletMarker2" type="Marker2D" parent="." unique_id=224005774]
-position = Vector2(69, 73)
-
-[node name="BulletMarker3" type="Marker2D" parent="." unique_id=275376585]
-position = Vector2(1, 90)
-
-[node name="BulletMarker4" type="Marker2D" parent="." unique_id=1808666632]
-position = Vector2(-66, 76)
-
-[node name="BulletMarker5" type="Marker2D" parent="." unique_id=1942284031]
-position = Vector2(-88, 24)
-
 [node name="Timer" type="Timer" parent="." unique_id=2034064797]
-wait_time = 0.3
-autostart = true
+wait_time = 0.15
+
+[node name="Rotador" type="Node2D" parent="." unique_id=838080319]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
