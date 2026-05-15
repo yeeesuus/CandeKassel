@@ -24,8 +24,8 @@ func _ready() -> void:
 	timer.start()
 	
 func _process(delta: float) -> void:
-	var nueva_rot = rotador.rotation_degrees + rapidez_giro*delta
-	rotador.rotation_degrees += fmod(nueva_rot, 360)
+	#var nueva_rot = rotador.rotation_degrees + rapidez_giro*delta
+	rotador.rotate(rapidez_giro*delta)
 	
 func _on_timer_timeout() -> void:
 	for s in rotador.get_children():
