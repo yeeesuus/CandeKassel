@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://b6i0bi8pp8smr"]
+
+[ext_resource type="Script" uid="uid://d04qevdfy1byc" path="res://power-ups/power_up.gd" id="1_lqchq"]
+[ext_resource type="Script" uid="uid://4mt4o1bvirc" path="res://components/hurtbox_component.gd" id="1_va610"]
+[ext_resource type="Texture2D" uid="uid://dnr486swnea45" path="res://icon.svg" id="2_lqchq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8hxo5"]
+radius = 58.077534
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rlwfp"]
+radius = 67.02985
+
+[node name="PowerUp" type="Area2D" unique_id=581944556]
+script = ExtResource("1_lqchq")
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=1356642840]
+modulate = Color(1, 1, 0, 1)
+texture = ExtResource("2_lqchq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=502628969]
+shape = SubResource("CircleShape2D_8hxo5")
+
+[node name="HurtboxComponent" type="Area2D" parent="." unique_id=836892001]
+collision_layer = 8
+collision_mask = 8
+script = ExtResource("1_va610")
+metadata/_custom_type_script = "uid://4mt4o1bvirc"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent" unique_id=218374113]
+shape = SubResource("CircleShape2D_rlwfp")

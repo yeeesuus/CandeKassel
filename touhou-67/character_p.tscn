@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://c2bv36gadmlcy"]
+
+[ext_resource type="Script" uid="uid://c108abtb25166" path="res://character_p.gd" id="1_r0jjn"]
+[ext_resource type="PackedScene" uid="uid://27601lenkuyg" path="res://player/bullet.tscn" id="2_vcogd"]
+[ext_resource type="Script" uid="uid://cy4qa6vxdjoer" path="res://components/hitbox_component.gd" id="3_ehbgi"]
+[ext_resource type="Texture2D" uid="uid://we4i4ue68yi4" path="res://player/texturas/Kosuzu Sprite Pack/individual images/idle/idle1.png" id="3_vcogd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vcogd"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_r0jjn"]
+radius = 14.0
+height = 66.0
+
+[node name="CharacterP" type="CharacterBody2D" unique_id=872404977]
+script = ExtResource("1_r0jjn")
+bullet_scene = ExtResource("2_vcogd")
+
+[node name="JumpTimer" type="Timer" parent="." unique_id=1137015172]
+wait_time = 0.2
+one_shot = true
+
+[node name="CoyoteTimer" type="Timer" parent="." unique_id=1054915778]
+wait_time = 0.1
+one_shot = true
+
+[node name="Pivote" type="Node2D" parent="." unique_id=815531097]
+
+[node name="Sprite2D" type="Sprite2D" parent="Pivote" unique_id=684381779]
+position = Vector2(0, -21.5)
+scale = Vector2(1.25, 1.609375)
+texture = ExtResource("3_vcogd")
+
+[node name="HitboxComponent" type="Area2D" parent="Pivote" unique_id=96461985]
+collision_layer = 12
+collision_mask = 12
+script = ExtResource("3_ehbgi")
+metadata/_custom_type_script = "uid://cy4qa6vxdjoer"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pivote/HitboxComponent" unique_id=2109326557]
+position = Vector2(0, -37)
+shape = SubResource("RectangleShape2D_vcogd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=305076754]
+shape = SubResource("CapsuleShape2D_r0jjn")
+
+[node name="BulletSpawnMarker" type="Marker2D" parent="." unique_id=1979138067]
+position = Vector2(0, -37)
+rotation = -1.5707964
+gizmo_extents = 15.0

@@ -1,0 +1,397 @@
+[gd_scene format=3 uid="uid://vrfl7y6nl4m0"]
+
+[ext_resource type="Script" uid="uid://cdxjtwf60glry" path="res://jugador.gd" id="1_omvyu"]
+[ext_resource type="Texture2D" uid="uid://b54uhyrdiyp7e" path="res://texturas/personaje/Dude_Monster_Idle_4.png" id="2_hhulh"]
+[ext_resource type="PackedScene" uid="uid://ck35cv0cis0ew" path="res://personajes/bala.tscn" id="2_jw7bd"]
+[ext_resource type="Script" uid="uid://ca7g63blj2dni" path="res://componentes/hurtbox_component.gd" id="3_0725i"]
+[ext_resource type="Texture2D" uid="uid://dqsbx1wnri4n5" path="res://texturas/personaje/Dude_Monster_Jump_8.png" id="4_hhulh"]
+[ext_resource type="Texture2D" uid="uid://chlciyrovp07x" path="res://texturas/personaje/Dude_Monster_Death_8.png" id="4_vpmpy"]
+[ext_resource type="AudioStream" uid="uid://dvmhpg2cbtj1i" path="res://sonidos/salto.wav" id="5_5o2nj"]
+[ext_resource type="Texture2D" uid="uid://dfslvtttbq8nc" path="res://texturas/personaje/Dude_Monster_Run_6.png" id="5_0725i"]
+[ext_resource type="Texture2D" uid="uid://bamfjjaa7adnk" path="res://texturas/personaje/Dude_Monster_Throw_4.png" id="6_jw7bd"]
+[ext_resource type="AudioStream" uid="uid://rihhltpj3hts" path="res://sonidos/disparo.wav" id="10_5o2nj"]
+[ext_resource type="AudioStream" uid="uid://bb2fjyihbswol" path="res://sonidos/muerte.wav" id="11_erp46"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jw7bd"]
+radius = 7.0
+height = 26.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hhulh"]
+radius = 6.0
+height = 24.0
+
+[sub_resource type="Animation" id="Animation_hhulh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("pivot/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_hhulh")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("pivot/Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("pivot/Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_5o2nj"]
+resource_name = "death"
+length = 0.8
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("pivot/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_vpmpy")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("pivot/Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("pivot/Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_vpmpy"]
+resource_name = "idle"
+length = 0.8
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("pivot/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_hhulh")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("pivot/Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("pivot/Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_0725i"]
+resource_name = "jump"
+length = 0.6
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("pivot/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_hhulh")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("pivot/Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [8]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("pivot/Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [1, 3, 4, 5, 7]
+}
+
+[sub_resource type="Animation" id="Animation_jw7bd"]
+resource_name = "run"
+length = 0.6
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("pivot/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_0725i")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("pivot/Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("pivot/Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+
+[sub_resource type="Animation" id="Animation_cw61x"]
+resource_name = "shooting"
+length = 0.2
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("pivot/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("6_jw7bd")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("pivot/Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("pivot/Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 2]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5o2nj"]
+_data = {
+&"RESET": SubResource("Animation_hhulh"),
+&"death": SubResource("Animation_5o2nj"),
+&"idle": SubResource("Animation_vpmpy"),
+&"jump": SubResource("Animation_0725i"),
+&"run": SubResource("Animation_jw7bd"),
+&"shooting": SubResource("Animation_cw61x")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_cw61x"]
+animation = &"death"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hhulh"]
+animation = &"idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_vpmpy"]
+animation = &"jump"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_0725i"]
+animation = &"run"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_jw7bd"]
+animation = &"shooting"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_cw61x"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5o2nj"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_erp46"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_a0of8"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_6x2i5"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_nu2v8"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_roguh"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_hhulh"]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_c8tyn"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_y8iju"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_a7i5o"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_vag20"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_l6vxs"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_bpb17"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_jw7bd"]
+switch_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_73hui"]
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_c8tyn"]
+states/Start/position = Vector2(176, 99.55556)
+states/death/node = SubResource("AnimationNodeAnimation_cw61x")
+states/death/position = Vector2(679.3333, 212.79623)
+states/idle/node = SubResource("AnimationNodeAnimation_hhulh")
+states/idle/position = Vector2(334.44446, 100.296295)
+states/jump/node = SubResource("AnimationNodeAnimation_vpmpy")
+states/jump/position = Vector2(597.3333, 22.290499)
+states/run/node = SubResource("AnimationNodeAnimation_0725i")
+states/run/position = Vector2(610, 148.75656)
+states/shooting/node = SubResource("AnimationNodeAnimation_jw7bd")
+states/shooting/position = Vector2(798.6667, 63.623833)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_cw61x"), "idle", "run", SubResource("AnimationNodeStateMachineTransition_5o2nj"), "run", "idle", SubResource("AnimationNodeStateMachineTransition_erp46"), "idle", "jump", SubResource("AnimationNodeStateMachineTransition_a0of8"), "jump", "shooting", SubResource("AnimationNodeStateMachineTransition_6x2i5"), "jump", "idle", SubResource("AnimationNodeStateMachineTransition_nu2v8"), "run", "jump", SubResource("AnimationNodeStateMachineTransition_roguh"), "jump", "run", SubResource("AnimationNodeStateMachineTransition_hhulh"), "idle", "death", SubResource("AnimationNodeStateMachineTransition_c8tyn"), "run", "death", SubResource("AnimationNodeStateMachineTransition_y8iju"), "jump", "death", SubResource("AnimationNodeStateMachineTransition_a7i5o"), "shooting", "death", SubResource("AnimationNodeStateMachineTransition_vag20"), "shooting", "jump", SubResource("AnimationNodeStateMachineTransition_l6vxs"), "shooting", "run", SubResource("AnimationNodeStateMachineTransition_bpb17"), "shooting", "idle", SubResource("AnimationNodeStateMachineTransition_jw7bd"), "death", "End", SubResource("AnimationNodeStateMachineTransition_73hui")]
+graph_offset = Vector2(0, 9.071849)
+
+[node name="jugadol" type="CharacterBody2D" unique_id=347664026]
+script = ExtResource("1_omvyu")
+jump_speed = -350
+bullet_scene = ExtResource("2_jw7bd")
+
+[node name="pivot" type="Node2D" parent="." unique_id=1634268733]
+
+[node name="Sprite2D" type="Sprite2D" parent="pivot" unique_id=1149845122]
+position = Vector2(2.842171e-14, -2)
+scale = Vector2(0.93750006, 0.93750036)
+texture = ExtResource("2_hhulh")
+hframes = 4
+
+[node name="Hurtbox" type="Area2D" parent="pivot" unique_id=34202421]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("3_0725i")
+metadata/_custom_type_script = "uid://ca7g63blj2dni"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pivot/Hurtbox" unique_id=70857459]
+shape = SubResource("CapsuleShape2D_jw7bd")
+
+[node name="spawn" type="Marker2D" parent="pivot" unique_id=1113681407]
+position = Vector2(6, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=188234122]
+shape = SubResource("CapsuleShape2D_hhulh")
+
+[node name="JumpTimer" type="Timer" parent="." unique_id=321586243]
+wait_time = 0.2
+one_shot = true
+
+[node name="CoyoteTimer" type="Timer" parent="." unique_id=1082935455]
+wait_time = 0.1
+one_shot = true
+
+[node name="JumpSound" type="AudioStreamPlayer" parent="." unique_id=99920587]
+stream = ExtResource("5_5o2nj")
+volume_db = 2.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1101158822]
+libraries/ = SubResource("AnimationLibrary_5o2nj")
+
+[node name="AnimationTree" type="AnimationTree" parent="." unique_id=1593582954]
+tree_root = SubResource("AnimationNodeStateMachine_c8tyn")
+anim_player = NodePath("../AnimationPlayer")
+
+[node name="ShootSound" type="AudioStreamPlayer" parent="." unique_id=1879849563]
+stream = ExtResource("10_5o2nj")
+volume_db = 2.0
+
+[node name="DeathSound" type="AudioStreamPlayer" parent="." unique_id=277908991]
+stream = ExtResource("11_erp46")
+volume_db = 2.0

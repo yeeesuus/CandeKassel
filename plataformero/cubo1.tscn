@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bdlba5js0vtrf"]
+
+[ext_resource type="Texture2D" uid="uid://yl5j35xs5eh5" path="res://texturas/amano/cuadrao2.png" id="1_2utku"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_quouh"]
+size = Vector2(96, 96)
+
+[node name="Node2D" type="Node2D" unique_id=551173986]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1316895647]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=116626928]
+shape = SubResource("RectangleShape2D_quouh")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=1519958355]
+scale = Vector2(3.0078125, 3.0078125)
+texture = ExtResource("1_2utku")

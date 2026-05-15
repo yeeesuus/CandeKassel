@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://lmmxfan8k7fw"]
+
+[ext_resource type="Script" uid="uid://crygs75qfins4" path="res://jugador2.gd" id="1_h5uuv"]
+[ext_resource type="Texture2D" uid="uid://clcfx7xk4olge" path="res://ab67616d0000b27353da07db25e2543cce38abfe.jpg" id="2_6tmqq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m7k4s"]
+size = Vector2(27.25, 25.75)
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=1092402852]
+script = ExtResource("1_h5uuv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1189423530]
+shape = SubResource("RectangleShape2D_m7k4s")
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D" unique_id=715542073]
+position = Vector2(6.2584877e-07, -1.7881393e-06)
+scale = Vector2(0.04375, 0.040625006)
+texture = ExtResource("2_6tmqq")
+
+[node name="JumpTimer" type="Timer" parent="." unique_id=872191638]
+wait_time = 0.2
