@@ -6,9 +6,14 @@ extends CharacterBody2D
 @export var bullet_scene: PackedScene
 @onready var coyote_timer: Timer = $CoyoteTimer
 @onready var jump_timer: Timer = $JumpTimer
-
 @onready var bullet_spawn_marker: Marker2D = $BulletSpawnMarker
 @onready var Pivote: Node2D = $Pivote
+
+
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var animation_tree: AnimationTree = $AnimationTree
+@onready var playback: AnimationNodeStateMachinePlayback = animation_tree["parameters/playback"]
+
 
 var is_taking_power_up: bool = false
 var _was_on_floor: bool = false
@@ -43,11 +48,18 @@ func _physics_process(delta: float) -> void:
 	_was_on_floor = is_on_floor()
 	move_and_slide()
 	
+	if Input.is_action_pressed("move_left") or velocity.x < 0:
+		playback.travel("run_left")
+	elif Input.is_action_pressed("move_right") or velocity.x > 0:
+		playback.travel("run_right")
+	else:
+		playback.travel("idle")
+	
 	if Input.is_action_just_pressed("fire"):
 		fire()
 		
-	if move_input:
-		Pivote.scale.x = sign(move_input)
+	#if move_input:
+	#	Pivote.scale.x = sign(move_input)
 	
 func  take_damage(value: int) -> void:
 	Debug.log("%s received %d damage" % [name, value])
