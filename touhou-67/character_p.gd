@@ -18,6 +18,7 @@ extends CharacterBody2D
 var is_taking_power_up: bool = false
 var _was_on_floor: bool = false
 var vida: int = 1
+var is_dead: bool = false
 
 func _ready() -> void:
 	pass
@@ -61,8 +62,13 @@ func _physics_process(delta: float) -> void:
 	#if move_input:
 	#	Pivote.scale.x = sign(move_input)
 	
-func  take_damage(value: int) -> void:
+func take_damage(value: int) -> void:
+	vida -= value
 	Debug.log("%s received %d damage" % [name, value])
+	if vida <= 0:
+		is_dead = true
+		Debug.log("CHANCHIWAWI MURIÓ")
+		queue_free()
 
 # Función de disparo
 func fire() -> void:
