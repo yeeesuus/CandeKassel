@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://ceyhg1wdq5jex"]
+
+[ext_resource type="Script" uid="uid://d1w7rit274ivv" path="res://autoloads/coin_label_manager.gd" id="1_cgnsh"]
+
+[node name="CoinLabelManager" type="Node" unique_id=1402772095]
+script = ExtResource("1_cgnsh")

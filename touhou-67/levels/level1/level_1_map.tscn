@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://biu035l87pajt" path="res://levels/utils/plataforma_muerte.tscn" id="2_qj1qe"]
 [ext_resource type="PackedScene" uid="uid://b4jlodt2gtl6u" path="res://enemy.tscn" id="7_fmx5g"]
 [ext_resource type="PackedScene" uid="uid://b6i0bi8pp8smr" path="res://power-ups/power_up.tscn" id="7_vuuxy"]
+[ext_resource type="PackedScene" uid="uid://3khvvq7wamj2" path="res://ui/pause_menu.tscn" id="8_nbhkk"]
+[ext_resource type="PackedScene" uid="uid://b6ajv5xb6qxgr" path="res://ui/retry_screen.tscn" id="9_rdcnd"]
 
 [node name="Level1Map" type="Node2D" unique_id=1219961326]
 script = ExtResource("1_25u25")
@@ -34,3 +36,15 @@ scale = Vector2(0.5, 0.5)
 
 [node name="Enemy" parent="." unique_id=1958573147 instance=ExtResource("7_fmx5g")]
 position = Vector2(726, 32)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1567467655]
+
+[node name="PauseMenu" parent="CanvasLayer" unique_id=1171212640 instance=ExtResource("8_nbhkk")]
+offset_left = -3.0
+offset_top = -4.0
+offset_right = -3.0
+offset_bottom = -4.0
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=1007213821]
+
+[node name="RetryScreen" parent="CanvasLayer2" unique_id=2075040055 instance=ExtResource("9_rdcnd")]

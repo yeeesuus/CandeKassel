@@ -13,12 +13,14 @@ extends CharacterBody2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var playback: AnimationNodeStateMachinePlayback = animation_tree["parameters/playback"]
+@onready var retry_screen: Control = $"../CanvasLayer2/RetryScreen"
 
 
 var is_taking_power_up: bool = false
 var _was_on_floor: bool = false
 var vida: int = 1
 var is_dead: bool = false
+signal murio
 
 func _ready() -> void:
 	pass
@@ -58,6 +60,9 @@ func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("fire"):
 		fire()
+	
+	if is_dead:
+		murio.emit()
 		
 	#if move_input:
 	#	Pivote.scale.x = sign(move_input)

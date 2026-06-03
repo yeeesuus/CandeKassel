@@ -18,9 +18,15 @@ config/icon="res://icon.svg"
 [autoload]
 
 Debug="*uid://c6li31j2hk17f"
+LevelManager="*uid://cso4a0fdme3ci"
+CoinLabelManager="*uid://d1w7rit274ivv"
 
 [display]
 
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
 window/canvas_textures/default_texture_filter=1
 
 [input]

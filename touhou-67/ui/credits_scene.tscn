@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://lola2fl1u5je"]
+
+[ext_resource type="Script" uid="uid://ce06lrvdg8jii" path="res://ui/credits_scene.gd" id="1_kk1wf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_kk1wf"]
+font_size = 150
+
+[sub_resource type="LabelSettings" id="LabelSettings_tkxa4"]
+font_size = 50
+
+[node name="CreditsScene" type="Control" unique_id=1708881747]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kk1wf")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=374608465]
+layout_mode = 0
+offset_right = 1915.0
+offset_bottom = 1078.0
+
+[node name="Label" type="Label" parent="PanelContainer" unique_id=740490042]
+layout_mode = 2
+text = "gracias por jugar
+ hecho por candekassel"
+label_settings = SubResource("LabelSettings_kk1wf")
+
+[node name="Label2" type="Label" parent="PanelContainer" unique_id=1454967803]
+layout_mode = 2
+text = "salir con esc"
+label_settings = SubResource("LabelSettings_tkxa4")
