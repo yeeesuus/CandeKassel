@@ -54,6 +54,12 @@ func _physics_process(delta: float) -> void:
 	_was_on_floor = is_on_floor()
 	move_and_slide()
 	
+	if Input.is_action_pressed("shift"):
+		speed=250
+		
+	if Input.is_action_just_released("shift"):
+		speed=500
+		
 	if Input.is_action_pressed("move_left") or velocity.x < 0:
 		playback.travel("run_left")
 	elif Input.is_action_pressed("move_right") or velocity.x > 0:

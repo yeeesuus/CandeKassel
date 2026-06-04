@@ -40,6 +40,7 @@ scale = Vector2(0.5, 0.5)
 position = Vector2(726, 32)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1567467655]
+visible = false
 
 [node name="PauseMenu" parent="CanvasLayer" unique_id=1171212640 instance=ExtResource("8_nbhkk")]
 offset_left = -3.0
@@ -48,8 +49,12 @@ offset_right = -3.0
 offset_bottom = -4.0
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=1007213821]
+visible = false
 
 [node name="RetryScreen" parent="CanvasLayer2" unique_id=2075040055 instance=ExtResource("9_rdcnd")]
 
 [node name="PowerUp2" parent="." unique_id=148860561 instance=ExtResource("10_oxrjw")]
 position = Vector2(400, 269)
+
+[node name="PowerUp3" parent="." unique_id=885901119 instance=ExtResource("10_oxrjw")]
+position = Vector2(953, 370)

@@ -31,6 +31,7 @@ func _on_reintentar_pressed() -> void:
 
 func _on_menu_pressed() -> void:
 	get_tree().paused = false
+	
 	LevelManager.main_menu()
 
 func _on_resumir_pressed() -> void:

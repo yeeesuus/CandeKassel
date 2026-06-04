@@ -281,3 +281,6 @@ anim_player = NodePath("../AnimationPlayer")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=409953643]
 libraries/ = SubResource("AnimationLibrary_yfrqp")
+
+[node name="spawner" type="Node2D" parent="." unique_id=1307644385]
+position = Vector2(0, -37)
