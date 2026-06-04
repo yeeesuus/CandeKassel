@@ -9,12 +9,11 @@ extends CharacterBody2D
 @onready var bullet_spawn_marker: Marker2D = $BulletSpawnMarker
 @onready var Pivote: Node2D = $Pivote
 
-
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var playback: AnimationNodeStateMachinePlayback = animation_tree["parameters/playback"]
 @onready var retry_screen: Control = $"../CanvasLayer2/RetryScreen"
-
+@onready var spawner: Node2D = $spawner
 
 var is_taking_power_up: bool = false
 var _was_on_floor: bool = false
@@ -26,7 +25,10 @@ signal murio
 var spawn_points: int = 1
 
 func _ready() -> void:
-	pass
+	var spawn_point = Node2D.new()
+	var pos = spawner.position
+	spawn_point.position = pos
+	spawner.add_child(spawn_point)
 	
 func _physics_process(delta: float) -> void:
 	if is_taking_power_up:
@@ -88,10 +90,11 @@ func take_damage(value: int) -> void:
 func fire() -> void:
 	if not bullet_scene:
 		Debug.log("no hay bala")
-	var bullet_inst = bullet_scene.instantiate()
-	get_parent().add_child(bullet_inst)
-	bullet_inst.global_position = bullet_spawn_marker.global_position
-
+		
+	for s in spawner.get_children():
+		var bullet_inst = bullet_scene.instantiate()
+		get_parent().add_child(bullet_inst)
+		bullet_inst.global_position = bullet_spawn_marker.global_position
 
 # Función para obtener el power up
 func collect_power_up() -> void:
