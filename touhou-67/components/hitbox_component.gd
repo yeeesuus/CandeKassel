@@ -11,9 +11,8 @@ func _ready() -> void:
 func _on_area_entered(area: Area2D) -> void:
 	if area is HurtboxComponent and area.owner.name.match("PowerUp*"):
 		if owner.has_method("collect_power_up"):
-			print(owner)
 			Debug.log("MM COLLECT_POWER_UP")
 			owner.collect_power_up()
-			if area.owner.has_method("take_power_up"):
-				Debug.log("MM TAKE_POWER_UP")
-				area.owner.take_power_up()
+		if area.owner.has_method("take_power_up"):
+			Debug.log("MM TAKE_POWER_UP")
+			area.owner.take_power_up(owner)

@@ -22,6 +22,9 @@ var vida: int = 1
 var is_dead: bool = false
 signal murio
 
+#variables para power ups
+var spawn_points: int = 1
+
 func _ready() -> void:
 	pass
 	
@@ -82,6 +85,7 @@ func fire() -> void:
 	var bullet_inst = bullet_scene.instantiate()
 	get_parent().add_child(bullet_inst)
 	bullet_inst.global_position = bullet_spawn_marker.global_position
+
 
 # Función para obtener el power up
 func collect_power_up() -> void:
