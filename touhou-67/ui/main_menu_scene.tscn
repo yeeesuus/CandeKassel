@@ -16,8 +16,8 @@ script = ExtResource("1_dogbb")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1176649168]
 layout_mode = 0
-offset_right = 1915.0
-offset_bottom = 1078.0
+offset_right = 1280.0
+offset_bottom = 719.0
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1172496988]
 layout_mode = 2

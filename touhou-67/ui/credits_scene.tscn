@@ -19,16 +19,20 @@ script = ExtResource("1_kk1wf")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=374608465]
 layout_mode = 0
-offset_right = 1915.0
-offset_bottom = 1078.0
+offset_right = 1279.0
+offset_bottom = 723.0
 
 [node name="Label" type="Label" parent="PanelContainer" unique_id=740490042]
 layout_mode = 2
 text = "gracias por jugar
- hecho por candekassel"
+hecho por 
+candekassel"
 label_settings = SubResource("LabelSettings_kk1wf")
 
 [node name="Label2" type="Label" parent="PanelContainer" unique_id=1454967803]
 layout_mode = 2
-text = "salir con esc"
+text = "
+
+
+salir con esc"
 label_settings = SubResource("LabelSettings_tkxa4")
