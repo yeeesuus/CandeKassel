@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b6i0bi8pp8smr" path="res://power-ups/power_up.tscn" id="7_vuuxy"]
 [ext_resource type="PackedScene" uid="uid://3khvvq7wamj2" path="res://ui/pause_menu.tscn" id="8_nbhkk"]
 [ext_resource type="PackedScene" uid="uid://b6ajv5xb6qxgr" path="res://ui/retry_screen.tscn" id="9_rdcnd"]
+[ext_resource type="PackedScene" uid="uid://de3c4aru25x3d" path="res://power-ups/power_up_more_jump.tscn" id="10_oxrjw"]
 
 [node name="Level1Map" type="Node2D" unique_id=1219961326]
 script = ExtResource("1_25u25")
@@ -51,3 +52,6 @@ offset_bottom = -4.0
 visible = false
 
 [node name="RetryScreen" parent="CanvasLayer2" unique_id=2075040055 instance=ExtResource("9_rdcnd")]
+
+[node name="PowerUp2" parent="." unique_id=148860561 instance=ExtResource("10_oxrjw")]
+position = Vector2(400, 269)
