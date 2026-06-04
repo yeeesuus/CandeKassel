@@ -16,3 +16,8 @@ func _on_area_entered(area: Area2D) -> void:
 		if area.owner.has_method("take_power_up"):
 			Debug.log("MM TAKE_POWER_UP")
 			area.owner.take_power_up(owner)
+	
+	if area is HitboxComponent:
+		Debug.log("damage received")
+		if owner.has_method("take_damage"):
+			owner.take_damage(area.damage)

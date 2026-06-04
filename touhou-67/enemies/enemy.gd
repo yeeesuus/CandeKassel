@@ -11,6 +11,7 @@ extends CharacterBody2D
 @onready var timer: Timer = $Timer
 @onready var rotador: Node2D = $Rotador
 @onready var hitbox: HurtboxComponent = $HurtboxComponent
+@onready var timerbala: Timer = $timerbala
 
 
 var rapidez_giro: int = 100
@@ -53,6 +54,8 @@ func _on_timer_timeout() -> void:
 		get_tree().root.add_child(bullet_inst)
 		bullet_inst.position = s.global_position
 		bullet_inst.rotation = s.global_rotation
+		timerbala.start()
+		await timerbala.timeout
 	
 func take_damage(value: int) -> void:
 	Debug.log("%s received %d damage" % [name, value])
