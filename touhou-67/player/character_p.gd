@@ -93,8 +93,9 @@ func fire() -> void:
 		
 	for s in spawner.get_children():
 		var bullet_inst = bullet_scene.instantiate()
+		bullet_inst.add_to_group("balas")
 		get_parent().add_child(bullet_inst)
-		bullet_inst.global_position = bullet_spawn_marker.global_position
+		bullet_inst.global_position = s.global_position
 
 # Función para obtener el power up
 func collect_power_up() -> void:
