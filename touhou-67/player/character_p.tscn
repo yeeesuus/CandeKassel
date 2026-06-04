@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c2bv36gadmlcy"]
 
-[ext_resource type="Script" uid="uid://c108abtb25166" path="res://character_p.gd" id="1_r0jjn"]
+[ext_resource type="Script" uid="uid://c108abtb25166" path="res://player/character_p.gd" id="1_r0jjn"]
 [ext_resource type="PackedScene" uid="uid://27601lenkuyg" path="res://player/bullet.tscn" id="2_vcogd"]
 [ext_resource type="Script" uid="uid://cy4qa6vxdjoer" path="res://components/hitbox_component.gd" id="3_ehbgi"]
 [ext_resource type="Texture2D" uid="uid://bwtojfcimau5e" path="res://player/texturas/Chanchiwawi/CHANCHIWAWI_IDLE.png" id="3_vcogd"]

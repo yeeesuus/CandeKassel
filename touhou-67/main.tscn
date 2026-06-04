@@ -1,9 +1,9 @@
 [gd_scene format=4 uid="uid://dlpk4rgc1i315"]
 
 [ext_resource type="Script" uid="uid://xhavgfn6iugt" path="res://main.gd" id="1_h2yge"]
-[ext_resource type="PackedScene" uid="uid://c2bv36gadmlcy" path="res://character_p.tscn" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://c2bv36gadmlcy" path="res://player/character_p.tscn" id="2_0xm2m"]
 [ext_resource type="Texture2D" uid="uid://op30d5nxf8gc" path="res://texture/pexels-d-ng-nhan-324384-29914660.jpg" id="2_7mycd"]
-[ext_resource type="PackedScene" uid="uid://b4jlodt2gtl6u" path="res://enemy.tscn" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://b4jlodt2gtl6u" path="res://enemies/enemy.tscn" id="4_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://b6i0bi8pp8smr" path="res://power-ups/power_up.tscn" id="5_lquwl"]
 [ext_resource type="TileSet" uid="uid://cj7fp7vhpjw00" path="res://resources/tile_set.tres" id="7_272bh"]
 

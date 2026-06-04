@@ -1,6 +1,7 @@
 extends CharacterBody2D
 # Variables
 @export var bullet_scene: PackedScene
+@export var vel := Vector2(200, -45) #velocidad
 @onready var bullet_spawn_marker1: Marker2D = $BulletMarker
 @onready var bullet_spawn_marker2: Marker2D = $BulletMarker2
 @onready var bullet_spawn_marker3: Marker2D = $BulletMarker3
@@ -8,6 +9,7 @@ extends CharacterBody2D
 @onready var bullet_spawn_marker5: Marker2D = $BulletMarker5
 @onready var timer: Timer = $Timer
 @onready var rotador: Node2D = $Rotador
+
 
 var rapidez_giro: int = 100
 var spawn_points: int = 6
@@ -23,9 +25,24 @@ func _ready() -> void:
 		rotador.add_child(spawn_point)
 	timer.start()
 	
+	
 func _process(delta: float) -> void:
 	#var nueva_rot = rotador.rotation_degrees + rapidez_giro*delta
 	rotador.rotate(rapidez_giro*delta)
+	#movimiento del enemigo
+	position += vel * delta
+	
+	#tamaño de la pantalla
+	var screen_size = get_viewport_rect().size
+	
+	#rebote horizontal
+	if position.x <= 0:
+		position.x = 0
+		vel.x *= -1
+		
+	elif position.x >= screen_size.x:
+		position.x = screen_size.x
+		vel.x *= -1
 	
 func _on_timer_timeout() -> void:
 	for s in rotador.get_children():

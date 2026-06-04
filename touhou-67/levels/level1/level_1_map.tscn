@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://psx1ckp6np61" path="res://levels/level1/level_1_map.gd" id="1_25u25"]
 [ext_resource type="TileSet" uid="uid://cj7fp7vhpjw00" path="res://resources/tile_set.tres" id="1_ajlm8"]
-[ext_resource type="PackedScene" uid="uid://c2bv36gadmlcy" path="res://character_p.tscn" id="2_2012p"]
+[ext_resource type="PackedScene" uid="uid://c2bv36gadmlcy" path="res://player/character_p.tscn" id="2_2012p"]
 [ext_resource type="Script" uid="uid://bk8dk8uxdqp8e" path="res://levels/level1/camera_2d.gd" id="2_ovio3"]
 [ext_resource type="PackedScene" uid="uid://biu035l87pajt" path="res://levels/utils/plataforma_muerte.tscn" id="2_qj1qe"]
-[ext_resource type="PackedScene" uid="uid://b4jlodt2gtl6u" path="res://enemy.tscn" id="7_fmx5g"]
+[ext_resource type="PackedScene" uid="uid://b4jlodt2gtl6u" path="res://enemies/enemy.tscn" id="7_fmx5g"]
 [ext_resource type="PackedScene" uid="uid://b6i0bi8pp8smr" path="res://power-ups/power_up.tscn" id="7_vuuxy"]
 [ext_resource type="PackedScene" uid="uid://3khvvq7wamj2" path="res://ui/pause_menu.tscn" id="8_nbhkk"]
 [ext_resource type="PackedScene" uid="uid://b6ajv5xb6qxgr" path="res://ui/retry_screen.tscn" id="9_rdcnd"]
