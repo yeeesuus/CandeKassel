@@ -23,12 +23,29 @@ signal murio
 
 #variables para power ups
 var spawn_points: int = 1
+var power_up_doble: bool = false
+var doble_listo: bool = false
 
 func _ready() -> void:
 	var spawn_point = Node2D.new()
 	var pos = spawner.position
 	spawn_point.position = pos
 	spawner.add_child(spawn_point)
+	
+func _process(delta: float) -> void:
+	if power_up_doble and not doble_listo:
+		for s in spawner.get_children():
+			s.queue_free()
+		var spawn_point1 = Node2D.new()
+		var spawn_point2 = Node2D.new()
+		var pos = spawner.position
+		spawn_point1.position = pos
+		spawn_point2.position = pos
+		spawn_point1.position.x -= 10
+		spawn_point2.position.x += 10
+		spawner.add_child(spawn_point1)
+		spawner.add_child(spawn_point2)
+		doble_listo = true
 	
 func _physics_process(delta: float) -> void:
 	if is_taking_power_up:
