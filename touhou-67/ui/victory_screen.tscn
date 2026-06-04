@@ -10,3 +10,24 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_oh8u7")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=2038767848]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 719.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer" unique_id=1716465314]
+layout_mode = 2
+bbcode_enabled = true
+text = "
+
+
+
+
+
+
+
+
+                                     [wave][rainbow][font_size=150]ganaste!!!!!!!!!![/font_size][/rainbow]
+                                                                    [font_size=40]apreta escape para volver al menú[/font_size]
+"

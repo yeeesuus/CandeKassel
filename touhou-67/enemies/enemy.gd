@@ -17,6 +17,7 @@ extends CharacterBody2D
 var rapidez_giro: int = 100
 var spawn_points: int = 6
 var radio: int = 100
+var muerto: bool = false
 
 func _ready() -> void:
 	var paso = 2*PI/spawn_points
@@ -62,5 +63,6 @@ func take_damage(value: int) -> void:
 	Debug.log("%s received %d damage" % [name, value])
 	vida -= value
 	if vida <= 0:
+		muerto = true
 		Debug.log("%s murisio" % name)
 		queue_free()

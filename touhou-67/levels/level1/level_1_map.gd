@@ -5,6 +5,7 @@ extends Node2D
 @onready var retry_screen: Control = $CanvasLayer2/RetryScreen
 @onready var enemy: CharacterBody2D = $Enemy
 var cam_velocity: float = 100
+@onready var victory_screen: Control = $CanvasLayer3/VictoryScreen
 
 
 # Función para reiniciar nivel (Tecla "R")
