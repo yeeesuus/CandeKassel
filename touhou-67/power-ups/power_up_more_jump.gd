@@ -9,4 +9,4 @@ func take_power_up(player: CharacterBody2D) -> void:
 	queue_free()
 
 func aplicar_efecto(player: CharacterBody2D) -> void:
-	character_p.power_up_doble = true
+	character_p.jump_speed = 500

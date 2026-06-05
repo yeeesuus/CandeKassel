@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://c3nps3ddtg4m3"]
+
+[ext_resource type="Script" uid="uid://b543vh12rmocu" path="res://enemies/enemy_boss.gd" id="1_8fsp4"]
+[ext_resource type="PackedScene" uid="uid://b1a4bcu71hxh2" path="res://enemy_components/bullet_boss.tscn" id="2_c6415"]
+[ext_resource type="Texture2D" uid="uid://dnr486swnea45" path="res://icon.svg" id="3_7bdce"]
+[ext_resource type="Script" uid="uid://4mt4o1bvirc" path="res://components/hurtbox_component.gd" id="4_2l0jq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4gyqm"]
+size = Vector2(128, 126)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qi2p4"]
+size = Vector2(128, 126)
+
+[node name="Enemy" type="CharacterBody2D" unique_id=1958573147]
+script = ExtResource("1_8fsp4")
+bullet_scene = ExtResource("2_c6415")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=57248009]
+shape = SubResource("RectangleShape2D_4gyqm")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=718450631]
+modulate = Color(1, 0, 0, 1)
+texture = ExtResource("3_7bdce")
+
+[node name="HurtboxComponent" type="Area2D" parent="." unique_id=86050587]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("4_2l0jq")
+metadata/_custom_type_script = "uid://4mt4o1bvirc"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent" unique_id=1501316927]
+shape = SubResource("RectangleShape2D_qi2p4")
+
+[node name="Timer" type="Timer" parent="." unique_id=2034064797]
+wait_time = 0.15
+
+[node name="Rotador" type="Node2D" parent="." unique_id=838080319]
+
+[node name="timerbala" type="Timer" parent="." unique_id=1196404004]
+wait_time = 0.3
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

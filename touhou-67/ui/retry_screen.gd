@@ -4,7 +4,7 @@ extends Control
 @onready var try_again: Button = %retry
 @onready var main_menu: Button = %main
 @onready var character_p: CharacterBody2D = $"../../CharacterP"
-signal hola
+signal reseteo
 
 func _ready() -> void:
 	process_mode = Node.PROCESS_MODE_ALWAYS
@@ -26,6 +26,6 @@ func _on_try_again_pressed() -> void:
 
 func _on_main_menu_pressed() -> void:
 	get_tree().paused = false
-	hola.emit()
+	reseteo.emit()
 	LevelManager.main_menu()
 	

@@ -3,17 +3,19 @@
 [ext_resource type="Script" uid="uid://psx1ckp6np61" path="res://levels/level1/level_1_map.gd" id="1_25u25"]
 [ext_resource type="TileSet" uid="uid://cj7fp7vhpjw00" path="res://resources/tile_set.tres" id="1_ajlm8"]
 [ext_resource type="PackedScene" uid="uid://c2bv36gadmlcy" path="res://player/character_p.tscn" id="2_2012p"]
+[ext_resource type="PackedScene" uid="uid://c3nps3ddtg4m3" path="res://enemies/enemy_boss.tscn" id="2_h1736"]
 [ext_resource type="Script" uid="uid://bk8dk8uxdqp8e" path="res://levels/level1/camera_2d.gd" id="2_ovio3"]
 [ext_resource type="PackedScene" uid="uid://biu035l87pajt" path="res://levels/utils/plataforma_muerte.tscn" id="2_qj1qe"]
-[ext_resource type="PackedScene" uid="uid://b4jlodt2gtl6u" path="res://enemies/enemy.tscn" id="7_fmx5g"]
 [ext_resource type="PackedScene" uid="uid://b6i0bi8pp8smr" path="res://power-ups/power_up.tscn" id="7_vuuxy"]
 [ext_resource type="PackedScene" uid="uid://3khvvq7wamj2" path="res://ui/pause_menu.tscn" id="8_nbhkk"]
 [ext_resource type="PackedScene" uid="uid://b6ajv5xb6qxgr" path="res://ui/retry_screen.tscn" id="9_rdcnd"]
-[ext_resource type="PackedScene" uid="uid://de3c4aru25x3d" path="res://power-ups/power_up_more_jump.tscn" id="10_oxrjw"]
+[ext_resource type="PackedScene" uid="uid://de3c4aru25x3d" path="res://power-ups/power_up_double_gun.tscn" id="10_oxrjw"]
 [ext_resource type="PackedScene" uid="uid://wd03kwj8ktow" path="res://ui/victory_screen.tscn" id="11_bokiu"]
+[ext_resource type="PackedScene" uid="uid://bnawb5uvmjg1b" path="res://power-ups/power_up_more_jump.tscn" id="12_h1736"]
 
 [node name="Level1Map" type="Node2D" unique_id=1219961326]
 script = ExtResource("1_25u25")
+enemy_scene = ExtResource("2_h1736")
 
 [node name="Plataforma_Muerte" parent="." unique_id=1365187063 instance=ExtResource("2_qj1qe")]
 position = Vector2(-236.00002, -264)
@@ -37,9 +39,6 @@ position = Vector2(449, 516)
 position = Vector2(434, 33)
 scale = Vector2(0.5, 0.5)
 
-[node name="Enemy" parent="." unique_id=1958573147 instance=ExtResource("7_fmx5g")]
-position = Vector2(726, 32)
-
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1567467655]
 
 [node name="PauseMenu" parent="CanvasLayer" unique_id=1171212640 instance=ExtResource("8_nbhkk")]
@@ -53,10 +52,8 @@ offset_bottom = -4.0
 [node name="RetryScreen" parent="CanvasLayer2" unique_id=2075040055 instance=ExtResource("9_rdcnd")]
 
 [node name="PowerUp2" parent="." unique_id=148860561 instance=ExtResource("10_oxrjw")]
-position = Vector2(400, 269)
-
-[node name="PowerUp3" parent="." unique_id=885901119 instance=ExtResource("10_oxrjw")]
-position = Vector2(953, 370)
+position = Vector2(401, 302)
+scale = Vector2(0.5, 0.5)
 
 [node name="CanvasLayer3" type="CanvasLayer" parent="." unique_id=1321634577]
 
@@ -65,3 +62,7 @@ offset_left = 1.0
 offset_top = 1.0
 offset_right = 1.0
 offset_bottom = 1.0
+
+[node name="PowerUp3" parent="." unique_id=1232128518 instance=ExtResource("12_h1736")]
+position = Vector2(901, 401)
+scale = Vector2(0.5, 0.5)

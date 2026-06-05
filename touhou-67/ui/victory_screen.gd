@@ -6,6 +6,7 @@ extends Control
 var aparecer = false
 
 func _ready() -> void:
+	process_mode = Node.PROCESS_MODE_ALWAYS
 	hide()
 	CoinLabelManager.player_won.connect(_on_player_won)
 	#start_again.pressed.connect(_on_start_again_pressed)
@@ -14,11 +15,12 @@ func _ready() -> void:
 
 func _on_player_won() -> void:
 	await get_tree().create_timer(0.25).timeout
-	get_tree().paused = true
 	show()
+	get_tree().paused = true
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("menu"):
+		get_tree().paused = false
 		LevelManager.main_menu()
 	
 func _on_start_again_pressed() -> void:
