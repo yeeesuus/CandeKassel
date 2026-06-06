@@ -12,4 +12,4 @@ func _physics_process(delta: float) -> void:
 	delta_acc += delta*5
 	var direction = +global_transform.y
 	global_position += direction * speed * delta
-	global_position+=direction.rotated(PI/2)*cos(delta_acc)*10
+	global_position+=direction*cos(delta_acc)*10

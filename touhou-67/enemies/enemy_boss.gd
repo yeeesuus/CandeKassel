@@ -12,12 +12,13 @@ extends CharacterBody2D
 @onready var rotador: Node2D = $Rotador
 @onready var hitbox: HurtboxComponent = $HurtboxComponent
 @onready var timerbala: Timer = $timerbala
+@onready var barravida: ProgressBar = $Vida
 
 var fase_actual: int = 1
 
-var rapidez_giro: int = 100
-var spawn_points: int = 6
-var radio: int = 100
+var rapidez_giro: int = 200
+var spawn_points: int = 7
+var radio: int = 90
 var muerto: bool = false
 
 signal murio_jefe
@@ -36,6 +37,7 @@ func _ready() -> void:
 	
 	
 func _process(delta: float) -> void:
+	barravida.value=vida
 	#var nueva_rot = rotador.rotation_degrees + rapidez_giro*delta
 	rotador.rotate(rapidez_giro*delta)
 	#movimiento del enemigo
@@ -64,12 +66,12 @@ func _on_timer_timeout() -> void:
 		await timerbala.timeout
 	
 func take_damage(value: int) -> void:
-	Debug.log("%s received %d damage" % [name, value])
+	#Debug.log("%s received %d damage" % [name, value])
 	vida -= value
-	Debug.log("%s restante" % [vida])
+	#Debug.log("%s vida enemigo:" % [vida])
 	if vida <= 0:
 		muerto = true
-		Debug.log("%s murisio" % name)
+		#Debug.log("%s murisio" % name)
 		murio_jefe.emit()
 		queue_free()
 	elif vida <= 30 and fase_actual < 3:
@@ -79,11 +81,11 @@ func take_damage(value: int) -> void:
 
 func cambiar_fase(nueva_fase: int) -> void:
 	fase_actual = nueva_fase
-	Debug.log("JEFE CAMBIÓ A FASE %d!" % fase_actual)
+	Debug.log("fase actual: %d!" % fase_actual)
 	
 	if fase_actual == 1:
 		rapidez_giro = 100
-		timer.wait_time = 2.0
+		timer.wait_time = 1.8
 	elif fase_actual == 2:
 		rapidez_giro = 250
 		timer.wait_time = 1.2

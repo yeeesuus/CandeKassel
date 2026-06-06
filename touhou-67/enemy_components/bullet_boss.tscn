@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://b1a4bcu71hxh2"]
 
 [ext_resource type="Script" uid="uid://n2suoosoy75k" path="res://enemy_components/bullet_boss.gd" id="1_ppaif"]
-[ext_resource type="Texture2D" uid="uid://dnr486swnea45" path="res://icon.svg" id="2_b0012"]
+[ext_resource type="Texture2D" uid="uid://f7g4p8jk32jp" path="res://player/texturas/cosas/balachistosa.png" id="2_ppaif"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_boyjm"]
-size = Vector2(16, 8)
+size = Vector2(14, 14)
 
 [node name="Bullet" type="Area2D" unique_id=1056091748]
 collision_layer = 10
@@ -18,11 +18,14 @@ shape = SubResource("RectangleShape2D_boyjm")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1264003268]
 modulate = Color(18.892157, 18.892157, 18.892157, 1)
-position = Vector2(0, -1.9073486e-06)
-scale = Vector2(0.048, 0.107)
-texture = ExtResource("2_b0012")
+scale = Vector2(0.5, 0.5071307)
 
 [node name="Timer" type="Timer" parent="." unique_id=1568235839]
 wait_time = 3.0
 one_shot = true
 autostart = true
+
+[node name="Balachistosa" type="Sprite2D" parent="." unique_id=795182861]
+position = Vector2(2.3841858e-07, -2.3841858e-07)
+scale = Vector2(0.875, 0.875)
+texture = ExtResource("2_ppaif")

@@ -36,7 +36,4 @@ wait_time = 0.15
 
 [node name="Rotador" type="Node2D" parent="." unique_id=838080319]
 
-[node name="timerbala" type="Timer" parent="." unique_id=1196404004]
-wait_time = 0.3
-
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
