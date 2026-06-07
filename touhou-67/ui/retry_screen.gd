@@ -15,7 +15,7 @@ func _ready() -> void:
 	character_p.murio.connect(_on_player_lost)
 
 func _on_player_lost() -> void:
-	await get_tree().create_timer(1.5).timeout
+	#await get_tree().create_timer(1.5).timeout
 	show()
 	get_tree().paused = true
 
@@ -28,4 +28,3 @@ func _on_main_menu_pressed() -> void:
 	get_tree().paused = false
 	reseteo.emit()
 	LevelManager.main_menu()
-	

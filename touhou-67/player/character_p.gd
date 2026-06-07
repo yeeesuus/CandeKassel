@@ -122,6 +122,6 @@ func collect_power_up() -> void:
 	#playback.travel("take_coin") #COMIENZA LA ANIMACIÓN
 	#take_coin_stream_player.play() #PARA EL SONIDO
 	#CoinLabelManager.add_coin() #ESTE ES PARA PONER UN CONTADOR DE MONEDAS
-	await get_tree().create_timer(0.2).timeout #TIMER PARA Q NO SE BUGGEE LA ANIMACIÓN
+	#await get_tree().create_timer(0.2).timeout #TIMER PARA Q NO SE BUGGEE LA ANIMACIÓN
 	is_taking_power_up = false
 	

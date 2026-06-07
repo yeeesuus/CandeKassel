@@ -6,6 +6,7 @@ extends Node2D
 @onready var enemy: CharacterBody2D = $Enemy
 var cam_velocity: float = 100
 @onready var victory_screen: Control = $CanvasLayer3/VictoryScreen
+@onready var pause_screen: Control = $CanvasLayer3/PauseMenu
 @export var enemy_scene: PackedScene
 
 
@@ -13,7 +14,7 @@ var cam_velocity: float = 100
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("retry"):
 		get_tree().reload_current_scene()
-		
+
 func limpiar_balas() -> void:
 	for bala in get_tree().get_nodes_in_group("balas"):
 		bala.queue_free()

@@ -49,8 +49,8 @@ func _process(delta: float) -> void:
 	var mitad_sprite = sprite.texture.get_width()*sprite.scale.x/2
 	
 	#rebote horizontal
-	if position.x <= 0:
-		position.x = 0
+	if position.x <= mitad_sprite:
+		position.x = mitad_sprite
 		vel.x *= -1
 		
 	elif position.x > screen_size.x - mitad_sprite:
