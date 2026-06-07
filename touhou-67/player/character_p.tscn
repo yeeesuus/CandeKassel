@@ -227,6 +227,7 @@ _data = {
 }
 
 [node name="CharacterP" type="CharacterBody2D" unique_id=872404977]
+safe_margin = 1.0
 script = ExtResource("1_r0jjn")
 bullet_scene = ExtResource("2_vcogd")
 
