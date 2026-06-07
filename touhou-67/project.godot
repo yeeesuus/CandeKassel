@@ -25,6 +25,7 @@ CoinLabelManager="*uid://d1w7rit274ivv"
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
+window/size/mode=3
 window/stretch/mode="viewport"
 window/canvas_textures/default_texture_filter=1
 

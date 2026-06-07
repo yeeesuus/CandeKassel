@@ -22,6 +22,8 @@ func _on_player_lost() -> void:
 func _on_try_again_pressed() -> void:
 	get_tree().paused = false
 	CoinLabelManager.coins = 0
+	for bala in get_tree().get_nodes_in_group("balas"):
+		bala.queue_free()
 	get_tree().reload_current_scene()
 
 func _on_main_menu_pressed() -> void:

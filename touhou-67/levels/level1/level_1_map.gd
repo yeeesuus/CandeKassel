@@ -13,6 +13,8 @@ var cam_velocity: float = 100
 # Función para reiniciar nivel (Tecla "R")
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("retry"):
+		for bala in get_tree().get_nodes_in_group("balas"):
+			bala.queue_free()
 		get_tree().reload_current_scene()
 
 func limpiar_balas() -> void:
@@ -38,10 +40,10 @@ func _on_timer_off() -> void:
 		nuevo_jefe.murio_jefe.connect(_on_murio_jefe)
 		nuevo_jefe.global_position = Vector2(726.0, 32.0)
 		add_child(nuevo_jefe)
-		Debug.log("spawneó jefe")
+		#Debug.log("spawneó jefe")
 		
 func _on_murio_jefe() -> void:
-	Debug.log("ganate")
+	#Debug.log("ganate")
 	victory_screen.show()
 	get_tree().paused = true
 	
