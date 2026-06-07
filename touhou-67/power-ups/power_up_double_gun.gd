@@ -2,7 +2,7 @@ extends Area2D
 @onready var character_p: CharacterBody2D = $"../CharacterP"
 
 func take_power_up(player: CharacterBody2D) -> void:
-	Debug.log("TAKE_POWER_UP")
+	#Debug.log("TAKE_POWER_UP")
 	
 	aplicar_efecto(player)
 	

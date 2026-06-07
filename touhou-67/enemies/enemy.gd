@@ -57,9 +57,9 @@ func _on_timer_timeout() -> void:
 		bullet_inst.rotation = s.global_rotation
 	
 func take_damage(value: int) -> void:
-	Debug.log("%s received %d damage" % [name, value])
+	#Debug.log("%s received %d damage" % [name, value])
 	vida -= value
 	if vida <= 0:
 		muerto = true
-		Debug.log("%s murisio" % name)
+		#Debug.log("%s murisio" % name)
 		queue_free()

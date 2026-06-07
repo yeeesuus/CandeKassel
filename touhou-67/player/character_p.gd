@@ -97,10 +97,10 @@ func _physics_process(delta: float) -> void:
 	
 func take_damage(value: int) -> void:
 	vida -= value
-	Debug.log("%s received %d damage" % [name, value])
+	#Debug.log("%s received %d damage" % [name, value])
 	if vida <= 0:
 		is_dead = true
-		Debug.log("CHANCHIWAWI MURIÓ")
+		#Debug.log("CHANCHIWAWI MURIÓ")
 		queue_free()
 
 # Función de disparo
@@ -117,7 +117,7 @@ func fire() -> void:
 # Función para obtener el power up
 func collect_power_up() -> void:
 	is_taking_power_up = true
-	Debug.log("COLLECT_POWER_UP")
+	#Debug.log("COLLECT_POWER_UP")
 	#COSITAS DE LAS ANIMACIONES
 	#playback.travel("take_coin") #COMIENZA LA ANIMACIÓN
 	#take_coin_stream_player.play() #PARA EL SONIDO

@@ -83,7 +83,7 @@ func take_damage(value: int) -> void:
 
 func cambiar_fase(nueva_fase: int) -> void:
 	fase_actual = nueva_fase
-	Debug.log("fase actual: %d!" % fase_actual)
+	#Debug.log("fase actual: %d!" % fase_actual)
 	
 	if fase_actual == 1:
 		rapidez_giro = 100
