@@ -13,6 +13,7 @@ extends CharacterBody2D
 @onready var hitbox: HurtboxComponent = $HurtboxComponent
 @onready var timerbala: Timer = $timerbala
 @onready var barravida: ProgressBar = $Vida
+@onready var sprite: Sprite2D = $Sprite2D
 
 var fase_actual: int = 1
 
@@ -45,14 +46,15 @@ func _process(delta: float) -> void:
 	
 	#tamaño de la pantalla
 	var screen_size = get_viewport_rect().size
+	var mitad_sprite = sprite.texture.get_width()*sprite.scale.x/2
 	
 	#rebote horizontal
 	if position.x <= 0:
 		position.x = 0
 		vel.x *= -1
 		
-	elif position.x >= screen_size.x:
-		position.x = screen_size.x
+	elif position.x > screen_size.x - mitad_sprite:
+		position.x = screen_size.x - mitad_sprite
 		vel.x *= -1
 	
 func _on_timer_timeout() -> void:
