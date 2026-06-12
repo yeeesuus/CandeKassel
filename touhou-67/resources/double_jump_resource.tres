@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DoubleJump" format=3 uid="uid://da28mabq0ox7b"]
+
+[ext_resource type="Script" uid="uid://dbfhm8fmu6bhr" path="res://resources/power_up_doublejump.gd" id="1_3bfwo"]
+[ext_resource type="Texture2D" uid="uid://b3xlncnf8h70m" path="res://power-ups/textura/resorte.png" id="2_f444o"]
+
+[resource]
+script = ExtResource("1_3bfwo")
+textura = ExtResource("2_f444o")
+metadata/_custom_type_script = "uid://dbfhm8fmu6bhr"

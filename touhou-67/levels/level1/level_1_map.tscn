@@ -9,9 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://xdionqklsbmw" path="res://pexels-yusuf-kaya-288172498-17379530.jpg" id="3_h1736"]
 [ext_resource type="PackedScene" uid="uid://3khvvq7wamj2" path="res://ui/pause_menu.tscn" id="8_nbhkk"]
 [ext_resource type="PackedScene" uid="uid://b6ajv5xb6qxgr" path="res://ui/retry_screen.tscn" id="9_rdcnd"]
-[ext_resource type="PackedScene" uid="uid://de3c4aru25x3d" path="res://power-ups/power_up_double_gun.tscn" id="10_oxrjw"]
 [ext_resource type="PackedScene" uid="uid://wd03kwj8ktow" path="res://ui/victory_screen.tscn" id="11_bokiu"]
-[ext_resource type="PackedScene" uid="uid://bnawb5uvmjg1b" path="res://power-ups/power_up_more_jump.tscn" id="12_h1736"]
+[ext_resource type="PackedScene" uid="uid://bnawb5uvmjg1b" path="res://power-ups/random_power_up.tscn" id="12_h1736"]
 
 [node name="Level1Map" type="Node2D" unique_id=1219961326]
 script = ExtResource("1_25u25")
@@ -55,10 +54,6 @@ offset_bottom = -4.0
 [node name="RetryScreen" parent="CanvasLayer2" unique_id=2075040055 instance=ExtResource("9_rdcnd")]
 visible = false
 
-[node name="PowerUp2" parent="." unique_id=148860561 instance=ExtResource("10_oxrjw")]
-position = Vector2(943, 94)
-scale = Vector2(0.5, 0.5)
-
 [node name="CanvasLayer3" type="CanvasLayer" parent="." unique_id=1321634577]
 
 [node name="VictoryScreen" parent="CanvasLayer3" unique_id=298006554 instance=ExtResource("11_bokiu")]
@@ -68,6 +63,9 @@ offset_top = 1.0
 offset_right = 1.0
 offset_bottom = 1.0
 
-[node name="PowerUp3" parent="." unique_id=1232128518 instance=ExtResource("12_h1736")]
+[node name="PowerUp_Random" parent="." unique_id=1232128518 instance=ExtResource("12_h1736")]
 position = Vector2(328, -365)
 scale = Vector2(0.5, 0.5)
+
+[node name="PowerUp" parent="." unique_id=581944556 instance=ExtResource("12_h1736")]
+position = Vector2(809, 377)

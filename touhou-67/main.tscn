@@ -3,8 +3,7 @@
 [ext_resource type="Script" uid="uid://xhavgfn6iugt" path="res://main.gd" id="1_h2yge"]
 [ext_resource type="PackedScene" uid="uid://c2bv36gadmlcy" path="res://player/character_p.tscn" id="2_0xm2m"]
 [ext_resource type="Texture2D" uid="uid://op30d5nxf8gc" path="res://texture/pexels-d-ng-nhan-324384-29914660.jpg" id="2_7mycd"]
-[ext_resource type="PackedScene" uid="uid://de3c4aru25x3d" path="res://power-ups/power_up_double_gun.tscn" id="5_272bh"]
-[ext_resource type="PackedScene" uid="uid://bnawb5uvmjg1b" path="res://power-ups/power_up_more_jump.tscn" id="6_5vw27"]
+[ext_resource type="PackedScene" uid="uid://bnawb5uvmjg1b" path="res://power-ups/random_power_up.tscn" id="6_5vw27"]
 [ext_resource type="TileSet" uid="uid://cj7fp7vhpjw00" path="res://resources/tile_set.tres" id="7_272bh"]
 
 [node name="Main" type="Node2D" unique_id=1032485586]
@@ -27,6 +26,5 @@ tile_set = ExtResource("7_272bh")
 position = Vector2(1119, 395)
 scale = Vector2(0.555, 0.555)
 
-[node name="PowerUp2" parent="." unique_id=116725617 instance=ExtResource("5_272bh")]
-position = Vector2(830, 211)
-scale = Vector2(0.57, 0.57)
+[node name="PowerUp3" parent="." unique_id=1665585905 instance=ExtResource("6_5vw27")]
+position = Vector2(420, 505)

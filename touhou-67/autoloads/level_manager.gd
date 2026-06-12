@@ -4,6 +4,8 @@ extends Node
 @export var credits_scene: PackedScene
 @export var levels: Array[PackedScene]
 
+@export var power_ups: Array[BasePowerUp]
+
 var current_level = 0
 
 func start() -> void:
@@ -22,3 +24,6 @@ func main_menu() -> void:
 
 func credits() -> void:
 	get_tree().change_scene_to_packed(credits_scene)
+
+func random_power_up() -> BasePowerUp:
+	return power_ups.pick_random()

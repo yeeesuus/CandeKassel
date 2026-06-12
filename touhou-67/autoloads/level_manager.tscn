@@ -4,9 +4,13 @@
 [ext_resource type="PackedScene" uid="uid://bsaf4kutql1pr" path="res://levels/level1/level_1_map.tscn" id="2_jmqug"]
 [ext_resource type="PackedScene" uid="uid://b8i5im8miyj2s" path="res://ui/main_menu_scene.tscn" id="2_stu7j"]
 [ext_resource type="PackedScene" uid="uid://lola2fl1u5je" path="res://ui/credits_scene.tscn" id="3_gn3j0"]
+[ext_resource type="Script" uid="uid://qme7ii3trg2y" path="res://resources/base_power_up.gd" id="5_nkaav"]
+[ext_resource type="Resource" uid="uid://da28mabq0ox7b" path="res://resources/double_jump_resource.tres" id="6_53vxa"]
+[ext_resource type="Resource" uid="uid://bgwo31eyu371u" path="res://resources/double_shot_resource.tres" id="7_vg1pt"]
 
 [node name="LevelManager" type="Node" unique_id=1396632907]
 script = ExtResource("1_pgu7l")
 main_menu_scene = ExtResource("2_stu7j")
 credits_scene = ExtResource("3_gn3j0")
 levels = Array[PackedScene]([ExtResource("2_jmqug")])
+power_ups = Array[ExtResource("5_nkaav")]([ExtResource("6_53vxa"), ExtResource("7_vg1pt")])
