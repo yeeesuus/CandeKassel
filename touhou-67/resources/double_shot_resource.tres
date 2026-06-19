@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="DoubleShot" format=3 uid="uid://bgwo31eyu371u"]
 
 [ext_resource type="Script" uid="uid://c7oegt8tvbi3i" path="res://resources/power_up_doubleshot.gd" id="1_rxtvk"]
-[ext_resource type="Texture2D" uid="uid://dnr486swnea45" path="res://icon.svg" id="2_1yhux"]
+[ext_resource type="Texture2D" uid="uid://bjbth6ws8wamq" path="res://power-ups/textura/bulletx2.png" id="2_1yhux"]
 
 [resource]
 script = ExtResource("1_rxtvk")
