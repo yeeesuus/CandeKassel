@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://b6ajv5xb6qxgr"]
+
+[ext_resource type="Script" uid="uid://g7jyvw4lwayu" path="res://ui/retry_screen.gd" id="1_wkn1t"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wkn1t"]
+font_size = 80
+
+[sub_resource type="ImageTexture" id="ImageTexture_w1cor"]
+
+[node name="RetryScreen" type="Control" unique_id=2075040055]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wkn1t")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1540427864]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=275346612]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=252996680]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=143897475]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer" unique_id=939804646]
+layout_mode = 2
+text = "hola perdite"
+label_settings = SubResource("LabelSettings_wkn1t")
+
+[node name="retry" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1496318496]
+unique_name_in_owner = true
+layout_mode = 2
+text = "reintentar"
+icon = SubResource("ImageTexture_w1cor")
+
+[node name="main" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=35493116]
+unique_name_in_owner = true
+layout_mode = 2
+text = "menú principal"

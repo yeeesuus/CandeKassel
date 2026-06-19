@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://b8i5im8miyj2s"]
+
+[ext_resource type="Script" uid="uid://k6qhuer05m6c" path="res://ui/main_menu_scene.gd" id="1_dogbb"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_dogbb"]
+font_size = 100
+
+[node name="MainMenuScene" type="Control" unique_id=1745032317]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_dogbb")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1176649168]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 719.0
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer" unique_id=1172496988]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=1299867469]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=809534980]
+layout_mode = 2
+text = "chanchiwawi aventuras"
+label_settings = SubResource("LabelSettings_dogbb")
+
+[node name="inicio" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=761006612]
+unique_name_in_owner = true
+layout_mode = 2
+text = "inicio"
+
+[node name="creditos" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=787503500]
+unique_name_in_owner = true
+layout_mode = 2
+text = "creditos"
+
+[node name="salir" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1360882608]
+unique_name_in_owner = true
+layout_mode = 2
+text = "salir"

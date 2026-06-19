@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://biu035l87pajt"]
+
+[ext_resource type="Script" uid="uid://87eghig0ke1b" path="res://levels/level1/plataforma_muerte.gd" id="1_1b1ve"]
+[ext_resource type="Script" uid="uid://cy4qa6vxdjoer" path="res://components/hitbox_component.gd" id="2_ckocd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1doxb"]
+size = Vector2(1187, 53)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vuuxy"]
+size = Vector2(1185, 39)
+
+[node name="Plataforma_Muerte" type="AnimatableBody2D" unique_id=1365187063]
+script = ExtResource("1_1b1ve")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1716188707]
+position = Vector2(569, 704)
+shape = SubResource("RectangleShape2D_1doxb")
+
+[node name="HitboxComponent" type="Area2D" parent="." unique_id=550106781]
+script = ExtResource("2_ckocd")
+metadata/_custom_type_script = "uid://cy4qa6vxdjoer"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent" unique_id=375484628]
+position = Vector2(569.5, 677.5)
+shape = SubResource("RectangleShape2D_vuuxy")
+debug_color = Color(0.122090034, 0.52160954, 7.70092e-07, 0.41960785)
