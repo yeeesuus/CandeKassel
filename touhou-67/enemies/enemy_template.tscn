@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://27x3kmjiryma" path="res://enemies/enemy.gd" id="1_s7351"]
 [ext_resource type="PackedScene" uid="uid://b2x7tx8asagdy" path="res://enemy_components/bullet.tscn" id="2_d3trf"]
-[ext_resource type="Texture2D" uid="uid://dnr486swnea45" path="res://icon.svg" id="3_rvojh"]
+[ext_resource type="Texture2D" uid="uid://cycmfg8k3l4sd" path="res://enemies/texture/mosca.png" id="3_s7351"]
 [ext_resource type="Script" uid="uid://4mt4o1bvirc" path="res://components/hurtbox_component.gd" id="4_8oteu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4gyqm"]
@@ -19,8 +19,9 @@ bullet_scene = ExtResource("2_d3trf")
 shape = SubResource("RectangleShape2D_4gyqm")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=718450631]
-modulate = Color(1, 0, 0, 1)
-texture = ExtResource("3_rvojh")
+position = Vector2(4.5895576e-06, 9.536743e-07)
+scale = Vector2(0.40634918, 0.504)
+texture = ExtResource("3_s7351")
 
 [node name="HurtboxComponent" type="Area2D" parent="." unique_id=86050587]
 collision_layer = 4
