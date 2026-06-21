@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://brubmp5r4osss" path="res://levels/level2/level_2_map.gd" id="1_hroym"]
 [ext_resource type="Texture2D" uid="uid://tbo3yeo238sh" path="res://Fondo lvl 2.jpg" id="2_lkpb4"]
+[ext_resource type="PackedScene" uid="uid://bqb1gd2jj5bbd" path="res://enemies/enemy_template.tscn" id="2_r5jsw"]
 [ext_resource type="PackedScene" uid="uid://biu035l87pajt" path="res://levels/utils/plataforma_muerte.tscn" id="3_r5jsw"]
 [ext_resource type="Script" uid="uid://ci4a14qfwqeot" path="res://levels/level2/camera_2d_level2.gd" id="4_hroym"]
 [ext_resource type="Script" uid="uid://myynq22ehifw" path="res://levels/level2/plataforma_muerte_level2.gd" id="4_lkpb4"]
@@ -13,6 +14,7 @@
 
 [node name="Level2Map" type="Node2D" unique_id=1219961326]
 script = ExtResource("1_hroym")
+enemy_scene = ExtResource("2_r5jsw")
 
 [node name="PexelsYusufKaya28817249817379530" type="Sprite2D" parent="." unique_id=1779335548]
 modulate = Color(1, 1, 1, 0.41960785)

@@ -1,7 +1,7 @@
 extends CharacterBody2D
 # Variables
 @export var bullet_scene: PackedScene
-@export var vel := Vector2(200, -45) #velocidad
+@export var vel := Vector2(200, -90) #velocidad
 @onready var bullet_spawn_marker1: Marker2D = $BulletMarker
 @onready var bullet_spawn_marker2: Marker2D = $BulletMarker2
 @onready var bullet_spawn_marker3: Marker2D = $BulletMarker3
@@ -10,10 +10,9 @@ extends CharacterBody2D
 @onready var timer: Timer = $Timer
 @onready var rotador: Node2D = $Rotador
 
-
-var rapidez_giro: int = 100
-var spawn_points: int = 6
-var radio: int = 100
+var rapidez_giro: int = 0
+var spawn_points: int = 1
+var radio: int = 0
 
 func _ready() -> void:
 	var paso = 2*PI/spawn_points
@@ -24,8 +23,7 @@ func _ready() -> void:
 		spawn_point.rotation = pos.angle()
 		rotador.add_child(spawn_point)
 	timer.start()
-	
-	
+
 func _process(delta: float) -> void:
 	#var nueva_rot = rotador.rotation_degrees + rapidez_giro*delta
 	rotador.rotate(rapidez_giro*delta)
@@ -39,7 +37,6 @@ func _process(delta: float) -> void:
 	if position.x <= 0:
 		position.x = 0
 		vel.x *= -1
-		
 	elif position.x >= screen_size.x:
 		position.x = screen_size.x
 		vel.x *= -1

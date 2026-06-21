@@ -35,17 +35,17 @@ func _ready() -> void:
 	
 func _on_timer_off() -> void:
 	if enemy_scene:
-		var nuevo_jefe = enemy_scene.instantiate()
-		nuevo_jefe.name = "Boss"
-		nuevo_jefe.murio_jefe.connect(_on_murio_jefe)
-		nuevo_jefe.global_position = Vector2(726.0, 32.0)
-		add_child(nuevo_jefe)
+		var nuevo_enemigo = enemy_scene.instantiate()
+		nuevo_enemigo.name = "NPC"
+		# nuevo_jefe.murio_jefe.connect(_on_murio_jefe)
+		nuevo_enemigo.global_position = Vector2(0, 0)
+		add_child(nuevo_enemigo)
 		#Debug.log("spawneó jefe")
 		
-func _on_murio_jefe() -> void:
-	#Debug.log("ganate")
-	victory_screen.show()
-	get_tree().paused = true
+#func _on_murio_jefe() -> void:
+#	#Debug.log("ganate")
+#	victory_screen.show()
+#	get_tree().paused = true
 	
 func _physics_process(delta: float) -> void:
 	pass
