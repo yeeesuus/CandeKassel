@@ -23,7 +23,7 @@ scale = Vector2(0.39019695, 0.512129)
 texture = ExtResource("2_lkpb4")
 
 [node name="Plataforma_Muerte" parent="." unique_id=1365187063 instance=ExtResource("3_r5jsw")]
-position = Vector2(-236.00002, -264)
+position = Vector2(-236.00002, -194)
 scale = Vector2(1.5, 1.5)
 script = ExtResource("4_lkpb4")
 mov = 90

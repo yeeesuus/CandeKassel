@@ -2,6 +2,7 @@ extends CharacterBody2D
 # Variables
 @export var bullet_scene: PackedScene
 @export var vel := Vector2(200, -90) #velocidad
+@export var vida := 5 # Vida del enemigo
 @onready var bullet_spawn_marker1: Marker2D = $BulletMarker
 @onready var bullet_spawn_marker2: Marker2D = $BulletMarker2
 @onready var bullet_spawn_marker3: Marker2D = $BulletMarker3
@@ -10,6 +11,7 @@ extends CharacterBody2D
 @onready var timer: Timer = $Timer
 @onready var rotador: Node2D = $Rotador
 
+var muerto: bool =  false
 var rapidez_giro: int = 0
 var spawn_points: int = 1
 var radio: int = 0
@@ -50,4 +52,9 @@ func _on_timer_timeout() -> void:
 	
 func take_damage(value: int) -> void:
 	#Debug.log("%s received %d damage" % [name, value])
-	pass
+	vida -= value
+	#Debug.log("%s vida enemigo:" % [vida])
+	if vida <= 0:
+		muerto = true
+		#Debug.log("%s murisio" % name)
+		queue_free()
