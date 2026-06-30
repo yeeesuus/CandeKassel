@@ -34,16 +34,16 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer" unique_id=939804646]
 layout_mode = 2
-text = "hola perdite"
+text = "Perdiste :("
 label_settings = SubResource("LabelSettings_wkn1t")
 
 [node name="retry" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1496318496]
 unique_name_in_owner = true
 layout_mode = 2
-text = "reintentar"
+text = "Reintentar"
 icon = SubResource("ImageTexture_w1cor")
 
 [node name="main" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=35493116]
 unique_name_in_owner = true
 layout_mode = 2
-text = "menú principal"
+text = "Menú principal"

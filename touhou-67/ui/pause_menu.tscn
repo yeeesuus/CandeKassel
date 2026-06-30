@@ -29,25 +29,25 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=299288833]
 layout_mode = 2
-text = "pausa"
+text = "Pausa"
 label_settings = SubResource("LabelSettings_50142")
 
 [node name="resumir" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1700106228]
 unique_name_in_owner = true
 layout_mode = 2
-text = "volver"
+text = "Reanudar"
 
 [node name="reintentar" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=413998240]
 unique_name_in_owner = true
 layout_mode = 2
-text = "reintentar"
+text = "Reintentar"
 
 [node name="menu" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1667156783]
 unique_name_in_owner = true
 layout_mode = 2
-text = "volver al menú"
+text = "Volver al menú"
 
 [node name="salida" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=395993873]
 unique_name_in_owner = true
 layout_mode = 2
-text = "sácame del juego omg"
+text = "Sácame del juego"

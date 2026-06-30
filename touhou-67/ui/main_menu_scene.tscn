@@ -29,20 +29,20 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=809534980]
 layout_mode = 2
-text = "chanchiwawi aventuras"
+text = "Chanchiwawi Adventures"
 label_settings = SubResource("LabelSettings_dogbb")
 
 [node name="inicio" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=761006612]
 unique_name_in_owner = true
 layout_mode = 2
-text = "inicio"
+text = "Iniciar"
 
 [node name="creditos" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=787503500]
 unique_name_in_owner = true
 layout_mode = 2
-text = "creditos"
+text = "Créditos"
 
 [node name="salir" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1360882608]
 unique_name_in_owner = true
 layout_mode = 2
-text = "salir"
+text = "Salir"

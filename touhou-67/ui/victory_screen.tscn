@@ -34,9 +34,9 @@ layout_mode = 2
 [node name="menu" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1690449002]
 unique_name_in_owner = true
 layout_mode = 2
-text = "volver al menú"
+text = "Volver al menú"
 
 [node name="salida" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=61941107]
 unique_name_in_owner = true
 layout_mode = 2
-text = "sácame del juego omg"
+text = "Sácame del juego"
