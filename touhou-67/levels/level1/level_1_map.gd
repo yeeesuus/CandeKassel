@@ -44,6 +44,7 @@ func _on_timer_off() -> void:
 		
 func _on_murio_jefe() -> void:
 	#Debug.log("ganate")
+	#LevelManager.next_level(), para cuando esté listo
 	victory_screen.show()
 	get_tree().paused = true
 	
