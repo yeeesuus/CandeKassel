@@ -1,22 +1,8 @@
 [gd_scene format=3 uid="uid://dqf5ncmlct83j"]
 
-[ext_resource type="Texture2D" uid="uid://dnr486swnea45" path="res://icon.svg" id="2_sbt15"]
+[ext_resource type="Texture2D" uid="uid://bjbth6ws8wamq" path="res://power-ups/textura/bulletx2.png" id="1_bapc5"]
+[ext_resource type="Script" uid="uid://cjfkab0d4is7r" path="res://power-ups/power_up_salto_tutorial.gd" id="1_ejpaa"]
 [ext_resource type="Script" uid="uid://4mt4o1bvirc" path="res://components/hurtbox_component.gd" id="3_5u6i6"]
-
-[sub_resource type="GDScript" id="GDScript_bapc5"]
-script/source = "extends Area2D
-@onready var character_p: CharacterBody2D = $\"../CharacterP\"
-
-func take_power_up(player: CharacterBody2D) -> void:
-	#Debug.log(\"TAKE_POWER_UP\")
-	
-	aplicar_efecto(player)
-	
-	queue_free()
-
-func aplicar_efecto(player: CharacterBody2D) -> void:
-	character_p.power_up_doble = true
-"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8hxo5"]
 radius = 58.077534
@@ -24,15 +10,12 @@ radius = 58.077534
 [sub_resource type="CircleShape2D" id="CircleShape2D_rlwfp"]
 radius = 67.02985
 
-[sub_resource type="SystemFont" id="SystemFont_ejpaa"]
-subpixel_positioning = 0
-
 [node name="PowerUp" type="Area2D" unique_id=581944556]
-script = SubResource("GDScript_bapc5")
+script = ExtResource("1_ejpaa")
 
 [node name="Icon" type="Sprite2D" parent="." unique_id=1356642840]
-modulate = Color(0, 0, 0, 1)
-texture = ExtResource("2_sbt15")
+scale = Vector2(4.046875, 4.046875)
+texture = ExtResource("1_bapc5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=502628969]
 shape = SubResource("CircleShape2D_8hxo5")
@@ -45,12 +28,3 @@ metadata/_custom_type_script = "uid://4mt4o1bvirc"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent" unique_id=218374113]
 shape = SubResource("CircleShape2D_rlwfp")
-
-[node name="Label" type="Label" parent="." unique_id=1846953748]
-offset_left = -28.0
-offset_top = -38.0
-offset_right = 28.0
-offset_bottom = 31.0
-theme_override_fonts/font = SubResource("SystemFont_ejpaa")
-theme_override_font_sizes/font_size = 50
-text = "x2"
