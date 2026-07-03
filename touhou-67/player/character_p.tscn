@@ -7,6 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://dc51swk0nisrv" path="res://player/texturas/Chanchiwawi/CHANCHIWAWI_RUN_pt2_mira_izq_Sheet.png" id="5_kke84"]
 [ext_resource type="Script" uid="uid://4mt4o1bvirc" path="res://components/hurtbox_component.gd" id="5_q62lp"]
 [ext_resource type="Texture2D" uid="uid://do8l56x1locy1" path="res://player/texturas/Chanchiwawi/CHANCHIWAWI_RUN_pt2_Sheet.png" id="5_tvyll"]
+[ext_resource type="Texture2D" uid="uid://hwh7dsa25xul" path="res://player/texturas/Chanchiwawi/FocusMode/CHANCHIWAWI_IDLE_focus_mode.png" id="6_7ldtc"]
+[ext_resource type="Texture2D" uid="uid://cq6ek5p16obvs" path="res://player/texturas/Chanchiwawi/FocusMode/CHANCHIWAWI_RUN_pt2_mira_izq_Sheet_focus_mode.png" id="8_d4suc"]
+[ext_resource type="Texture2D" uid="uid://dfjxm5ea8x522" path="res://player/texturas/Chanchiwawi/FocusMode/CHANCHIWAWI_RUN_pt2_focus_mode_Sheet.png" id="10_y6j7b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vcogd"]
 size = Vector2(18, 52)
@@ -21,11 +24,20 @@ height = 60.0
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_kke84"]
 animation = &"idle"
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7ldtc"]
+animation = &"idle_focus"
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_q62lp"]
 animation = &"run_left"
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_d4suc"]
+animation = &"run_left_focus"
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_yfrqp"]
 animation = &"run_right"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_y6j7b"]
+animation = &"run_right_focus"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_q62lp"]
 advance_mode = 2
@@ -42,16 +54,72 @@ advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_v03de"]
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_uwlc1"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_1wn1k"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_0e3kq"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_tuxjr"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_t104f"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_0npks"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_iy56u"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_mbx70"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_qxtu3"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_0kcma"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_wkvpc"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_hao55"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_7aiq8"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_0avpr"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8xvev"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_jseef"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_g16qg"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ug155"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_t463l"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_6ijbf"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_6dmnp"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5terx"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_a2fgp"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_utvkx"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_63tkq"]
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_tvyll"]
 states/Start/position = Vector2(184, 99.2)
 states/idle/node = SubResource("AnimationNodeAnimation_kke84")
 states/idle/position = Vector2(361.2, 100)
+states/idle_focus/node = SubResource("AnimationNodeAnimation_7ldtc")
+states/idle_focus/position = Vector2(281.19998, 314.53482)
 states/run_left/node = SubResource("AnimationNodeAnimation_q62lp")
 states/run_left/position = Vector2(614, 28.799997)
+states/run_left_focus/node = SubResource("AnimationNodeAnimation_d4suc")
+states/run_left_focus/position = Vector2(487.59998, 252.93484)
 states/run_right/node = SubResource("AnimationNodeAnimation_yfrqp")
 states/run_right/position = Vector2(614.64, 172)
-transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_q62lp"), "idle", "run_left", SubResource("AnimationNodeStateMachineTransition_yfrqp"), "run_left", "idle", SubResource("AnimationNodeStateMachineTransition_o32wc"), "idle", "run_right", SubResource("AnimationNodeStateMachineTransition_t63vv"), "run_right", "idle", SubResource("AnimationNodeStateMachineTransition_wpnbj"), "run_left", "run_right", SubResource("AnimationNodeStateMachineTransition_xcnru"), "run_right", "run_left", SubResource("AnimationNodeStateMachineTransition_v03de")]
-graph_offset = Vector2(0, -23.438124)
+states/run_right_focus/node = SubResource("AnimationNodeAnimation_y6j7b")
+states/run_right_focus/position = Vector2(487.91998, 385.73483)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_q62lp"), "idle", "run_left", SubResource("AnimationNodeStateMachineTransition_yfrqp"), "run_left", "idle", SubResource("AnimationNodeStateMachineTransition_o32wc"), "idle", "run_right", SubResource("AnimationNodeStateMachineTransition_t63vv"), "run_right", "idle", SubResource("AnimationNodeStateMachineTransition_wpnbj"), "run_left", "run_right", SubResource("AnimationNodeStateMachineTransition_xcnru"), "run_right", "run_left", SubResource("AnimationNodeStateMachineTransition_v03de"), "idle_focus", "run_left_focus", SubResource("AnimationNodeStateMachineTransition_uwlc1"), "run_left_focus", "idle_focus", SubResource("AnimationNodeStateMachineTransition_1wn1k"), "run_left_focus", "run_right_focus", SubResource("AnimationNodeStateMachineTransition_0e3kq"), "run_right_focus", "run_left_focus", SubResource("AnimationNodeStateMachineTransition_tuxjr"), "run_right_focus", "idle_focus", SubResource("AnimationNodeStateMachineTransition_t104f"), "idle_focus", "run_right_focus", SubResource("AnimationNodeStateMachineTransition_0npks"), "idle", "idle_focus", SubResource("AnimationNodeStateMachineTransition_iy56u"), "idle_focus", "idle", SubResource("AnimationNodeStateMachineTransition_mbx70"), "idle", "run_left_focus", SubResource("AnimationNodeStateMachineTransition_qxtu3"), "run_left_focus", "idle", SubResource("AnimationNodeStateMachineTransition_0kcma"), "idle", "run_right_focus", SubResource("AnimationNodeStateMachineTransition_wkvpc"), "run_right_focus", "idle", SubResource("AnimationNodeStateMachineTransition_hao55"), "run_left_focus", "run_right", SubResource("AnimationNodeStateMachineTransition_7aiq8"), "run_right", "run_left_focus", SubResource("AnimationNodeStateMachineTransition_0avpr"), "run_right", "run_right_focus", SubResource("AnimationNodeStateMachineTransition_8xvev"), "run_right_focus", "run_right", SubResource("AnimationNodeStateMachineTransition_jseef"), "run_right", "idle_focus", SubResource("AnimationNodeStateMachineTransition_g16qg"), "idle_focus", "run_right", SubResource("AnimationNodeStateMachineTransition_ug155"), "run_left", "idle_focus", SubResource("AnimationNodeStateMachineTransition_t463l"), "idle_focus", "run_left", SubResource("AnimationNodeStateMachineTransition_6ijbf"), "run_left", "run_left_focus", SubResource("AnimationNodeStateMachineTransition_6dmnp"), "run_left_focus", "run_left", SubResource("AnimationNodeStateMachineTransition_5terx"), "run_left", "run_right_focus", SubResource("AnimationNodeStateMachineTransition_a2fgp"), "run_right_focus", "run_left", SubResource("AnimationNodeStateMachineTransition_utvkx"), "Start", "idle_focus", SubResource("AnimationNodeStateMachineTransition_63tkq")]
+graph_offset = Vector2(0, -4.7189)
 
 [sub_resource type="Animation" id="Animation_tvyll"]
 length = 0.001
@@ -134,6 +202,48 @@ tracks/2/keys = {
 "values": [0]
 }
 
+[sub_resource type="Animation" id="Animation_uwlc1"]
+resource_name = "idle_focus"
+length = 0.1
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pivote/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("6_7ldtc")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Pivote/Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Pivote/Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
 [sub_resource type="Animation" id="Animation_q62lp"]
 resource_name = "run_left"
 length = 0.8
@@ -174,6 +284,48 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [4]
+}
+
+[sub_resource type="Animation" id="Animation_1wn1k"]
+resource_name = "run_left_focus"
+length = 1.6
+loop_mode = 1
+step = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pivote/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("8_d4suc")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Pivote/Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Pivote/Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
 }
 
 [sub_resource type="Animation" id="Animation_kke84"]
@@ -218,12 +370,57 @@ tracks/2/keys = {
 "values": [0, 1, 2, 3]
 }
 
+[sub_resource type="Animation" id="Animation_0e3kq"]
+resource_name = "run_right_focus"
+length = 1.5999999999999999
+loop_mode = 1
+step = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pivote/Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("10_y6j7b")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Pivote/Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Pivote/Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.8, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yfrqp"]
 _data = {
 &"RESET": SubResource("Animation_tvyll"),
 &"idle": SubResource("Animation_o32wc"),
+&"idle_focus": SubResource("Animation_uwlc1"),
 &"run_left": SubResource("Animation_q62lp"),
-&"run_right": SubResource("Animation_kke84")
+&"run_left_focus": SubResource("Animation_1wn1k"),
+&"run_right": SubResource("Animation_kke84"),
+&"run_right_focus": SubResource("Animation_0e3kq")
 }
 
 [node name="CharacterP" type="CharacterBody2D" unique_id=872404977]

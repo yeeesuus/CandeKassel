@@ -74,17 +74,24 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 	if Input.is_action_pressed("shift"):
-		speed=250
+		speed = 250
+		if Input.is_action_pressed("move_left") or velocity.x < 0:
+			playback.travel("run_left_focus")
+		elif Input.is_action_pressed("move_right") or velocity.x > 0:
+			playback.travel("run_right_focus")
+		else:
+			playback.travel("idle_focus")
+	else:
+		speed = 500
+		if Input.is_action_pressed("move_left") or velocity.x < 0:
+			playback.travel("run_left")
+		elif Input.is_action_pressed("move_right") or velocity.x > 0:
+			playback.travel("run_right")
+		else:
+			playback.travel("idle")
 		
 	if Input.is_action_just_released("shift"):
 		speed=500
-		
-	if Input.is_action_pressed("move_left") or velocity.x < 0:
-		playback.travel("run_left")
-	elif Input.is_action_pressed("move_right") or velocity.x > 0:
-		playback.travel("run_right")
-	else:
-		playback.travel("idle")
 	
 	if Input.is_action_just_pressed("fire"):
 		fire()
