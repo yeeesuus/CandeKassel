@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://lola2fl1u5je"]
 
 [ext_resource type="Script" uid="uid://ce06lrvdg8jii" path="res://ui/credits_scene.gd" id="1_kk1wf"]
+[ext_resource type="Theme" uid="uid://6yyptqhmoca8" path="res://resources/theme/base_theme.tres" id="2_tkxa4"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_kk1wf"]
 font_size = 150
@@ -23,16 +24,45 @@ offset_right = 1279.0
 offset_bottom = 723.0
 
 [node name="Label" type="Label" parent="PanelContainer" unique_id=740490042]
+visible = false
 layout_mode = 2
+theme_override_font_sizes/font_size = 16
 text = "gracias por jugar
 hecho por 
 candekassel"
 label_settings = SubResource("LabelSettings_kk1wf")
 
 [node name="Label2" type="Label" parent="PanelContainer" unique_id=1454967803]
+visible = false
 layout_mode = 2
 text = "
 
 
 salir con esc"
 label_settings = SubResource("LabelSettings_tkxa4")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer" unique_id=1373531506]
+layout_mode = 2
+theme = ExtResource("2_tkxa4")
+theme_override_font_sizes/normal_font_size = 80
+bbcode_enabled = true
+text = "
+gracias por jugar
+hecho por 
+candekassel"
+horizontal_alignment = 1
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="PanelContainer" unique_id=1913872554]
+layout_mode = 2
+theme = ExtResource("2_tkxa4")
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "
+
+
+
+
+
+
+salir con esc"
+horizontal_alignment = 1

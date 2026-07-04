@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b8i5im8miyj2s"]
 
 [ext_resource type="Script" uid="uid://k6qhuer05m6c" path="res://ui/main_menu_scene.gd" id="1_dogbb"]
+[ext_resource type="Theme" uid="uid://6yyptqhmoca8" path="res://resources/theme/base_theme.tres" id="1_wdslm"]
 [ext_resource type="Texture2D" uid="uid://1wk3gi3uptx2" path="res://heh!.jpg" id="2_8b6vu"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_dogbb"]
@@ -13,6 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_wdslm")
 script = ExtResource("1_dogbb")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1333670955]
@@ -44,7 +46,7 @@ text = "Iniciar"
 [node name="creditos" type="Button" parent="VBoxContainer" unique_id=787503500]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Créditos"
+text = "Creditos"
 
 [node name="tutorial" type="Button" parent="VBoxContainer" unique_id=1346359838]
 unique_name_in_owner = true
@@ -57,19 +59,23 @@ layout_mode = 2
 text = "Salir"
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1176649168]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
 offset_left = 60.0
-offset_top = -267.0
+offset_top = -250.5
 offset_right = -57.0
-offset_bottom = -151.0
+offset_bottom = -47.5
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Label" type="Label" parent="PanelContainer" unique_id=809534980]
 layout_mode = 2
-text = "Chanchiwawi Adventures"
+theme = ExtResource("1_wdslm")
+text = "Chanchiwawi
+Adventures"
 label_settings = SubResource("LabelSettings_dogbb")
+horizontal_alignment = 1

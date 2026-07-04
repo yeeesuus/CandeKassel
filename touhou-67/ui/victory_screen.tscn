@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://wd03kwj8ktow"]
 
 [ext_resource type="Script" uid="uid://ds75ugnl8vxk2" path="res://ui/victory_screen.gd" id="1_oh8u7"]
+[ext_resource type="Theme" uid="uid://6yyptqhmoca8" path="res://resources/theme/base_theme.tres" id="2_05ipg"]
 
 [node name="VictoryScreen" type="Control" unique_id=298006554]
 layout_mode = 3
@@ -15,11 +16,18 @@ script = ExtResource("1_oh8u7")
 layout_mode = 0
 offset_right = 1280.0
 offset_bottom = 720.0
+theme = ExtResource("2_05ipg")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer" unique_id=270142827]
 layout_mode = 2
 bbcode_enabled = true
-text = "[wave][rainbow][font_size=150]ganaste!!!!!!!!!![/font_size][/rainbow]
+text = "
+
+
+
+
+
+[wave][rainbow][font_size=150]ganaste!!!![/font_size][/rainbow]
 "
 horizontal_alignment = 1
 
@@ -34,9 +42,9 @@ layout_mode = 2
 [node name="menu" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1690449002]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Volver al menú"
+text = "Volver al menu"
 
 [node name="salida" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=61941107]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Sácame del juego"
+text = "Sacame del juego"

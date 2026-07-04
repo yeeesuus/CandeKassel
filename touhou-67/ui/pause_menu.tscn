@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://3khvvq7wamj2"]
 
 [ext_resource type="Script" uid="uid://1ygw581hrvvt" path="res://ui/pause_menu.gd" id="1_50142"]
+[ext_resource type="Theme" uid="uid://6yyptqhmoca8" path="res://resources/theme/base_theme.tres" id="2_ejwgg"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_50142"]
 font_size = 67
@@ -26,10 +27,12 @@ size_flags_vertical = 4
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer" unique_id=214569917]
 layout_mode = 2
+theme = ExtResource("2_ejwgg")
 
 [node name="Label" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=299288833]
 layout_mode = 2
-text = "Pausa"
+text = "Pausa
+"
 label_settings = SubResource("LabelSettings_50142")
 
 [node name="resumir" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1700106228]
@@ -45,9 +48,9 @@ text = "Reintentar"
 [node name="menu" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=1667156783]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Volver al menú"
+text = "Volver al menu"
 
 [node name="salida" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer" unique_id=395993873]
 unique_name_in_owner = true
 layout_mode = 2
-text = "Sácame del juego"
+text = "Sacame del juego"

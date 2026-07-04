@@ -1,0 +1,6 @@
+[gd_resource type="Theme" format=3 uid="uid://6yyptqhmoca8"]
+
+[ext_resource type="FontFile" uid="uid://dssxrxb3so3an" path="res://resources/theme/11 Game Boy Font Pack/11 Variable Width TTFs/16-bit Dreams Variable.ttf" id="1_vfv43"]
+
+[resource]
+default_font = ExtResource("1_vfv43")

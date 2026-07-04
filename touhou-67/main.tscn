@@ -3,10 +3,13 @@
 [ext_resource type="Script" uid="uid://xhavgfn6iugt" path="res://main.gd" id="1_h2yge"]
 [ext_resource type="PackedScene" uid="uid://c2bv36gadmlcy" path="res://player/character_p.tscn" id="2_0xm2m"]
 [ext_resource type="Texture2D" uid="uid://op30d5nxf8gc" path="res://texture/pexels-d-ng-nhan-324384-29914660.jpg" id="2_7mycd"]
+[ext_resource type="Theme" uid="uid://6yyptqhmoca8" path="res://resources/theme/base_theme.tres" id="5_vivmo"]
+[ext_resource type="Texture2D" uid="uid://l4f8icuqs5ng" path="res://texture/keys.png" id="6_2cqfq"]
 [ext_resource type="PackedScene" uid="uid://3khvvq7wamj2" path="res://ui/pause_menu.tscn" id="6_4c57u"]
 [ext_resource type="Script" uid="uid://bbir8wbohwes6" path="res://camera_2d.gd" id="6_7mycd"]
 [ext_resource type="PackedScene" uid="uid://c3nps3ddtg4m3" path="res://enemies/enemy_boss.tscn" id="7_5vw27"]
 [ext_resource type="TileSet" uid="uid://cj7fp7vhpjw00" path="res://resources/tile_set.tres" id="7_272bh"]
+[ext_resource type="Texture2D" uid="uid://upx6wonsw5c5" path="res://texture/esc.png" id="7_yaehf"]
 [ext_resource type="PackedScene" uid="uid://dqf5ncmlct83j" path="res://power-ups/power_up_double_gun.tscn" id="8_5vw27"]
 [ext_resource type="Script" uid="uid://can6jg5cyksis" path="res://enemies/enemy_tutorial.gd" id="8_kek77"]
 [ext_resource type="PackedScene" uid="uid://dds6pmehd00lf" path="res://power-ups/power_up_salto.tscn" id="10_efxa6"]
@@ -38,39 +41,69 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+theme = ExtResource("5_vivmo")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Control" unique_id=18725596]
 layout_mode = 0
-offset_left = 20.0
-offset_top = 327.0
-offset_right = 294.0
-offset_bottom = 450.0
+offset_left = 16.0
+offset_top = 311.0
+offset_right = 290.0
+offset_bottom = 434.0
 bbcode_enabled = true
-text = "[wave][center][font_size=20]
-El personaje se mueve
-con LeftArrow y RightArrow"
+text = "[wave][center][font_size=20]El personaje se mueve
+con        
+
+"
+
+[node name="Keys2" type="Sprite2D" parent="Control/RichTextLabel" unique_id=1197339739]
+position = Vector2(111, 82)
+scale = Vector2(3, 3)
+texture = ExtResource("6_2cqfq")
+region_enabled = true
+region_rect = Rect2(182, 52, 12, 12)
+
+[node name="Keys3" type="Sprite2D" parent="Control/RichTextLabel" unique_id=1711356731]
+position = Vector2(156, 83)
+scale = Vector2(3, 3)
+texture = ExtResource("6_2cqfq")
+region_enabled = true
+region_rect = Rect2(207, 52, 12, 12)
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="Control" unique_id=1350014047]
 layout_mode = 0
 offset_left = 656.0
 offset_top = 326.0
 offset_right = 845.0
-offset_bottom = 449.0
+offset_bottom = 481.0
 bbcode_enabled = true
-text = "[wave][center][font_size=20]
-El personaje salta 
-conUpArrow"
+text = "[wave][center][font_size=20]El personaje salta 
+con "
+
+[node name="Keys3" type="Sprite2D" parent="Control/RichTextLabel2" unique_id=1400341861]
+position = Vector2(85, 124)
+scale = Vector2(3, 3)
+texture = ExtResource("6_2cqfq")
+region_enabled = true
+region_rect = Rect2(195, 39, 12, 12)
 
 [node name="RichTextLabel3" type="RichTextLabel" parent="Control" unique_id=1382535396]
 layout_mode = 0
-offset_left = 1138.0
-offset_top = 182.0
-offset_right = 1346.0
-offset_bottom = 305.0
+offset_left = 1086.0
+offset_top = 183.0
+offset_right = 1308.0
+offset_bottom = 359.0
 bbcode_enabled = true
 text = "[wave][center][font_size=20]
 El personaje dispara
-con la tecla Z"
+  con la   "
+horizontal_alignment = 1
+
+[node name="Keys3" type="Sprite2D" parent="Control/RichTextLabel3" unique_id=578362295]
+position = Vector2(107, 123)
+scale = Vector2(3, 3)
+texture = ExtResource("6_2cqfq")
+region_enabled = true
+region_rect = Rect2(67, 52, 12, 12)
 
 [node name="RichTextLabel4" type="RichTextLabel" parent="Control" unique_id=1592650429]
 layout_mode = 0
@@ -99,32 +132,60 @@ layout_mode = 0
 offset_left = 15.0
 offset_top = 398.0
 offset_right = 289.0
-offset_bottom = 521.0
+offset_bottom = 538.0
 bbcode_enabled = true
 text = "[wave][center][font_size=17]
 Camina más lento si se
-mantiene apretada la tecla Shift"
+mantiene apretada la tecla    
+"
+
+[node name="Keys3" type="Sprite2D" parent="Control/RichTextLabel6" unique_id=976835882]
+position = Vector2(197, 115)
+scale = Vector2(3, 3)
+texture = ExtResource("6_2cqfq")
+region_enabled = true
+region_rect = Rect2(44, 39, 20, 12)
 
 [node name="RichTextLabel7" type="RichTextLabel" parent="Control" unique_id=1877306691]
 layout_mode = 0
-offset_left = 2052.0
-offset_top = 456.0
-offset_right = 2234.0
-offset_bottom = 579.0
+offset_left = 2054.0
+offset_top = 355.0
+offset_right = 2236.0
+offset_bottom = 549.0
 bbcode_enabled = true
-text = "[wave][center][font_size=15]
-Si te caes aquí, puedes
-usar la tecla R para reiniciar el nivel"
+text = "[wave][center][font_size=15]Si te caes aquí, puedes
+usar la 
+
+
+
+para reiniciar el nivel"
+
+[node name="Keys3" type="Sprite2D" parent="Control/RichTextLabel7" unique_id=957692821]
+position = Vector2(89, 94)
+scale = Vector2(3, 3)
+texture = ExtResource("6_2cqfq")
+region_enabled = true
+region_rect = Rect2(99, 26, 12, 12)
 
 [node name="RichTextLabel8" type="RichTextLabel" parent="Control" unique_id=888973885]
 layout_mode = 0
 offset_left = 2259.0
-offset_top = 172.0
-offset_right = 2516.0
-offset_bottom = 295.0
+offset_top = 99.0
+offset_right = 2538.0
+offset_bottom = 244.0
 bbcode_enabled = true
 text = "[wave][center][font_size=15]
-Si apretas la tecla Esc, puedes acceder al menú de pausa"
+Si apretas la tecla
+
+
+
+ puedes acceder al menu de pausa"
+
+[node name="Keys3" type="Sprite2D" parent="Control/RichTextLabel8" unique_id=813680674]
+position = Vector2(143, 74)
+scale = Vector2(3, 3)
+texture = ExtResource("7_yaehf")
+region_rect = Rect2(207, 52, 12, 12)
 
 [node name="RichTextLabel9" type="RichTextLabel" parent="Control" unique_id=1790061599]
 layout_mode = 0
