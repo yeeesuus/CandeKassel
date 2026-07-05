@@ -2,12 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ce06lrvdg8jii" path="res://ui/credits_scene.gd" id="1_kk1wf"]
 [ext_resource type="Theme" uid="uid://6yyptqhmoca8" path="res://resources/theme/base_theme.tres" id="2_tkxa4"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_kk1wf"]
-font_size = 150
-
-[sub_resource type="LabelSettings" id="LabelSettings_tkxa4"]
-font_size = 50
+[ext_resource type="Texture2D" uid="uid://upx6wonsw5c5" path="res://texture/esc.png" id="3_e5w1g"]
 
 [node name="CreditsScene" type="Control" unique_id=1708881747]
 layout_mode = 3
@@ -18,51 +13,53 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_kk1wf")
 
-[node name="PanelContainer" type="PanelContainer" parent="." unique_id=374608465]
+[node name="CreditsTittle" type="RichTextLabel" parent="." unique_id=1373531506]
 layout_mode = 0
 offset_right = 1279.0
 offset_bottom = 723.0
-
-[node name="Label" type="Label" parent="PanelContainer" unique_id=740490042]
-visible = false
-layout_mode = 2
-theme_override_font_sizes/font_size = 16
-text = "gracias por jugar
-hecho por 
-candekassel"
-label_settings = SubResource("LabelSettings_kk1wf")
-
-[node name="Label2" type="Label" parent="PanelContainer" unique_id=1454967803]
-visible = false
-layout_mode = 2
-text = "
-
-
-salir con esc"
-label_settings = SubResource("LabelSettings_tkxa4")
-
-[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer" unique_id=1373531506]
-layout_mode = 2
 theme = ExtResource("2_tkxa4")
 theme_override_font_sizes/normal_font_size = 80
 bbcode_enabled = true
-text = "
-gracias por jugar
-hecho por 
-candekassel"
+text = "[font_size=35][center][wave amp=50.0 freq=5.0 connected=1][rainbow freq=0.5 sat=1 val=0.8 speed=1.0]Credits[/rainbow][/wave][/center][/font_size]
+[font_size=25]SALIR CON  [/font_size] "
 horizontal_alignment = 1
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="PanelContainer" unique_id=1913872554]
-layout_mode = 2
+[node name="Keys3" type="Sprite2D" parent="CreditsTittle" unique_id=952226160]
+position = Vector2(732, 168)
+scale = Vector2(3, 3)
+texture = ExtResource("3_e5w1g")
+region_rect = Rect2(207, 52, 12, 12)
+
+[node name="CreditsText" type="RichTextLabel" parent="." unique_id=1913872554]
+layout_mode = 0
+offset_top = 206.0
+offset_right = 1279.0
+offset_bottom = 673.0
 theme = ExtResource("2_tkxa4")
 theme_override_font_sizes/normal_font_size = 50
 bbcode_enabled = true
-text = "
+text = "[color=A57DAB][font_size=25]Font[/font_size][/color]
+
+[font_size=20]44 Game Boy Font Pack - 2bitcrook
+https://2bitcrook.itch.io/44-game-boy-fonts[/font_size]
+
+[font_size=20]Pixel Buttons Set - egordorichev
+https://egordorichev.itch.io/key-set[/font_size]
+
+[color=A57DAB][font_size=25]Background[/font_size][/color]
+
+[font_size=20]link[/font_size]
+
+[color=A57DAB][font_size=25]Characters Sprites[/font_size][/color]
+
+[font_size=20]link[/font_size]
+
+[color=A57DAB][font_size=25]Background Music[/font_size][/color]
+
+[font_size=20]link[/font_size]
+
+[font_size=35][center][wave amp=50.0 freq=5.0 connected=1][rainbow freq=0.5 sat=1 val=0.8 speed=1.0]Hecho por CandeKassel[/rainbow]
 
 
-
-
-
-
-salir con esc"
+"
 horizontal_alignment = 1
