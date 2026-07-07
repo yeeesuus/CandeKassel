@@ -110,6 +110,11 @@ func take_damage(value: int) -> void:
 		#Debug.log("CHANCHIWAWI MURIÓ")
 		queue_free()
 
+func damage_por_fondo() -> void:
+	vida = 0
+	is_dead = true
+	queue_free()
+
 # Función de disparo
 func fire() -> void:
 	if not bullet_scene:

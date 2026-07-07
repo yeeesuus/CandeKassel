@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://b4ib5qavb6xte" path="res://levels/level3/level_3_map.gd" id="1_m2oim"]
 [ext_resource type="PackedScene" uid="uid://bqb1gd2jj5bbd" path="res://enemies/enemy_template.tscn" id="2_gu01v"]
 [ext_resource type="Texture2D" uid="uid://tbo3yeo238sh" path="res://Fondo lvl 2.jpg" id="3_4stsd"]
-[ext_resource type="PackedScene" uid="uid://biu035l87pajt" path="res://levels/utils/plataforma_muerte.tscn" id="4_cuf5y"]
-[ext_resource type="Script" uid="uid://bt5y8fic78lmj" path="res://levels/level3/plataforma_muerte_level2.gd" id="5_8bb80"]
+[ext_resource type="PackedScene" uid="uid://b6e0sa7846t8j" path="res://levels/utils/plataforma_muerte_v2.tscn" id="4_cuf5y"]
+[ext_resource type="Script" uid="uid://myynq22ehifw" path="res://levels/level2/plataforma_muerte_level2.gd" id="5_8bb80"]
 [ext_resource type="Script" uid="uid://cok2oluf2x7br" path="res://levels/level3/camera_2d_level3.gd" id="6_m2oim"]
 [ext_resource type="TileSet" uid="uid://cj7fp7vhpjw00" path="res://resources/tile_set.tres" id="7_4j2gf"]
 [ext_resource type="PackedScene" uid="uid://c2bv36gadmlcy" path="res://player/character_p.tscn" id="8_b1gvn"]
@@ -25,9 +25,9 @@ position = Vector2(610.5001, -884.4999)
 scale = Vector2(0.39019695, 0.512129)
 texture = ExtResource("3_4stsd")
 
-[node name="Plataforma_Muerte" parent="." unique_id=1365187063 instance=ExtResource("4_cuf5y")]
-position = Vector2(-236.00002, -194)
-scale = Vector2(1.5, 1.5)
+[node name="Plataforma_Muerte2" parent="." unique_id=1175622323 instance=ExtResource("4_cuf5y")]
+position = Vector2(-114, 808.00006)
+scale = Vector2(1.3, 1.3)
 script = ExtResource("5_8bb80")
 mov = 90
 

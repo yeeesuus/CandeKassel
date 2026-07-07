@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Shield" format=3 uid="uid://bjjgauw41hs4c"]
+
+[ext_resource type="Script" uid="uid://bwbg0kcaotajw" path="res://resources/powerup_shield.gd" id="1_cptcu"]
+[ext_resource type="Texture2D" uid="uid://brpl0lvt60gh8" path="res://power-ups/textura/heart.png" id="2_pupx5"]
+
+[resource]
+script = ExtResource("1_cptcu")
+textura = ExtResource("2_pupx5")
+metadata/_custom_type_script = "uid://bwbg0kcaotajw"
