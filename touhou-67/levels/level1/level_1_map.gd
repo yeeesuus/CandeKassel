@@ -9,6 +9,9 @@ var cam_velocity: float = 100
 @onready var pause_screen: Control = $CanvasLayer3/PauseMenu
 @export var enemy_scene: PackedScene
 
+@onready var label_time: Label = $Label
+@onready var timer_level: Timer = $timer_level
+
 
 # Función para reiniciar nivel (Tecla "R")
 func _input(event: InputEvent) -> void:
@@ -16,12 +19,16 @@ func _input(event: InputEvent) -> void:
 		for bala in get_tree().get_nodes_in_group("balas"):
 			bala.queue_free()
 		get_tree().reload_current_scene()
-
+		
 func limpiar_balas() -> void:
 	for bala in get_tree().get_nodes_in_group("balas"):
 		bala.queue_free()
 
 func _ready() -> void:
+	timer_level.wait_time = 63.0
+	timer_level.one_shot = true
+	timer_level.start()
+	
 	#para spawn de enemigos
 	var timer: Timer = Timer.new()
 	add_child(timer)
@@ -50,6 +57,8 @@ func _on_murio_jefe() -> void:
 	
 func _physics_process(delta: float) -> void:
 	pass
-	
+
 func _process(delta: float) -> void:
-	pass
+	label_time.set_text("Time Left: " + str(int(timer_level.get_time_left())))
+	if timer_level.get_time_left() <= 0:
+		character_p.murio.emit()

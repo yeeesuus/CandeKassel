@@ -8,6 +8,8 @@ var cam_velocity: float = 100
 @onready var victory_screen: Control = $CanvasLayer3/VictoryScreen
 @onready var pause_screen: Control = $CanvasLayer3/PauseMenu
 @export var enemy_scene: PackedScene
+@onready var label_time: Label = $Label
+@onready var timer_level: Timer = $timer_level
 
 
 # Función para reiniciar nivel (Tecla "R")
@@ -22,6 +24,10 @@ func limpiar_balas() -> void:
 		bala.queue_free()
 
 func _ready() -> void:
+	timer_level.wait_time = 50.0
+	timer_level.one_shot = true
+	timer_level.start()
+	
 	#para spawn de enemigos
 	var timer: Timer = Timer.new()
 	add_child(timer)
@@ -39,7 +45,7 @@ func _on_timer_off() -> void:
 		nuevo_enemigo.name = "NPC"
 		# nuevo_jefe.murio_jefe.connect(_on_murio_jefe)
 		nuevo_enemigo.global_position = Vector2(0, 0)
-		add_child(nuevo_enemigo)
+		#add_child(nuevo_enemigo)
 		#Debug.log("spawneó jefe")
 		
 #func _on_murio_jefe() -> void:
@@ -51,4 +57,6 @@ func _physics_process(delta: float) -> void:
 	pass
 	
 func _process(delta: float) -> void:
-	pass
+	label_time.set_text("Time Left: " + str(int(timer_level.get_time_left())))
+	if timer_level.get_time_left() <= 0:
+		character_p.murio.emit()

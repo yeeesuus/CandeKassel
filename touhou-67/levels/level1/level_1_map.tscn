@@ -7,10 +7,12 @@
 [ext_resource type="Script" uid="uid://bk8dk8uxdqp8e" path="res://levels/level1/camera_2d.gd" id="2_ovio3"]
 [ext_resource type="PackedScene" uid="uid://biu035l87pajt" path="res://levels/utils/plataforma_muerte.tscn" id="2_qj1qe"]
 [ext_resource type="Texture2D" uid="uid://xdionqklsbmw" path="res://pexels-yusuf-kaya-288172498-17379530.jpg" id="3_h1736"]
+[ext_resource type="Script" uid="uid://enl8npesfyh" path="res://levels/level1/label_timer_level1.gd" id="4_sybs0"]
 [ext_resource type="PackedScene" uid="uid://3khvvq7wamj2" path="res://ui/pause_menu.tscn" id="8_nbhkk"]
 [ext_resource type="PackedScene" uid="uid://b6ajv5xb6qxgr" path="res://ui/retry_screen.tscn" id="9_rdcnd"]
 [ext_resource type="PackedScene" uid="uid://wd03kwj8ktow" path="res://ui/victory_screen.tscn" id="11_bokiu"]
 [ext_resource type="PackedScene" uid="uid://bnawb5uvmjg1b" path="res://power-ups/random_power_up.tscn" id="12_h1736"]
+[ext_resource type="Theme" uid="uid://6yyptqhmoca8" path="res://resources/theme/base_theme.tres" id="12_sybs0"]
 
 [node name="Level1Map" type="Node2D" unique_id=1219961326]
 script = ExtResource("1_25u25")
@@ -69,3 +71,13 @@ scale = Vector2(0.5, 0.5)
 
 [node name="PowerUp" parent="." unique_id=581944556 instance=ExtResource("12_h1736")]
 position = Vector2(809, 377)
+
+[node name="timer_level" type="Timer" parent="." unique_id=2108635466]
+
+[node name="Label" type="Label" parent="." unique_id=1734254110]
+offset_left = 1071.0
+offset_top = 17.0
+offset_right = 1261.0
+offset_bottom = 40.0
+theme = ExtResource("12_sybs0")
+script = ExtResource("4_sybs0")

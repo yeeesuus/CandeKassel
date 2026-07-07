@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://3khvvq7wamj2" path="res://ui/pause_menu.tscn" id="7_qpjra"]
 [ext_resource type="PackedScene" uid="uid://b6ajv5xb6qxgr" path="res://ui/retry_screen.tscn" id="8_vh8qh"]
 [ext_resource type="PackedScene" uid="uid://wd03kwj8ktow" path="res://ui/victory_screen.tscn" id="9_dw3kp"]
+[ext_resource type="Theme" uid="uid://6yyptqhmoca8" path="res://resources/theme/base_theme.tres" id="12_rm411"]
+[ext_resource type="Script" uid="uid://bif6ud734kaoh" path="res://levels/level2/label_timer_level2.gd" id="13_rm411"]
 
 [node name="Level2Map" type="Node2D" unique_id=1219961326]
 script = ExtResource("1_hroym")
@@ -64,3 +66,13 @@ offset_left = 1.0
 offset_top = 1.0
 offset_right = 1.0
 offset_bottom = 1.0
+
+[node name="timer_level" type="Timer" parent="." unique_id=364211445]
+
+[node name="Label" type="Label" parent="." unique_id=1351910667]
+offset_left = 1066.0
+offset_top = 39.0
+offset_right = 1256.0
+offset_bottom = 62.0
+theme = ExtResource("12_rm411")
+script = ExtResource("13_rm411")
