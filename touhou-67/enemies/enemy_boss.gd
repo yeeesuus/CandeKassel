@@ -2,7 +2,7 @@ extends CharacterBody2D
 # Variables
 @export var bullet_scene: PackedScene
 @export var vel := Vector2(200, -45) #velocidad
-@export var vida := 1 # Vida del enemigo
+@export var vida := 100 # Vida del enemigo
 @onready var bullet_spawn_marker1: Marker2D = $BulletMarker
 @onready var bullet_spawn_marker2: Marker2D = $BulletMarker2
 @onready var bullet_spawn_marker3: Marker2D = $BulletMarker3

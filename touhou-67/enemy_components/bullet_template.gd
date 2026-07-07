@@ -1,7 +1,7 @@
 extends HitboxComponent
 
 @onready var timer: Timer = $Timer
-@export var speed = 600
+@export var speed = 400
 var delta_acc = 0
 
 func _ready() -> void:

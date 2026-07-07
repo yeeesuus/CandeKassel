@@ -45,7 +45,7 @@ func _on_timer_off() -> void:
 		nuevo_enemigo.name = "NPC"
 		# nuevo_jefe.murio_jefe.connect(_on_murio_jefe)
 		nuevo_enemigo.global_position = Vector2(0, 0)
-		#add_child(nuevo_enemigo)
+		add_child(nuevo_enemigo)
 		#Debug.log("spawneó jefe")
 		
 #func _on_murio_jefe() -> void:

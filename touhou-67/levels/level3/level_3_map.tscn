@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://wd03kwj8ktow" path="res://ui/victory_screen.tscn" id="11_k67kd"]
 [ext_resource type="Theme" uid="uid://6yyptqhmoca8" path="res://resources/theme/base_theme.tres" id="12_4stsd"]
 [ext_resource type="Script" uid="uid://do5dt148pk6y1" path="res://levels/level3/label_timer_level3.gd" id="13_4stsd"]
+[ext_resource type="PackedScene" uid="uid://dwtlr8lvnsfyr" path="res://enemies/enemy_level_2/enemy_level_2.tscn" id="14_cuf5y"]
 
 [node name="Level3Map" type="Node2D" unique_id=1219961326]
 script = ExtResource("1_m2oim")
@@ -76,3 +77,6 @@ theme = ExtResource("12_4stsd")
 script = ExtResource("13_4stsd")
 
 [node name="timer_level" type="Timer" parent="." unique_id=743334643]
+
+[node name="Enemy" parent="." unique_id=1958573147 instance=ExtResource("14_cuf5y")]
+position = Vector2(655, 106)
