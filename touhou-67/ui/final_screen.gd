@@ -6,6 +6,7 @@ extends Control
 var aparecer = false
 @onready var menu: Button = %menuf
 @onready var salida: Button = %salidaf
+@onready var creditos: Button = %creditos
 
 func _ready() -> void:	
 	process_mode = Node.PROCESS_MODE_ALWAYS
@@ -13,6 +14,7 @@ func _ready() -> void:
 	CoinLabelManager.player_won.connect(_on_player_won)
 	salida.pressed.connect(_on_salida_pressed)
 	menu.pressed.connect(_on_menu_pressed)
+	creditos.pressed.connect(_on_credits_pressed)
 	#start_again.pressed.connect(_on_start_again_pressed)
 	#credits.pressed.connect(_on_credits_pressed)
 	#main_menu.pressed.connect(_on_main_menu_pressed)
@@ -40,6 +42,9 @@ func _on_player_won() -> void:
 #	if event.is_action_pressed("menu"):
 #		get_tree().paused = false
 #		LevelManager.main_menu()
+	
+func _on_credits_pressed() -> void:
+	LevelManager.credits()
 	
 func _on_salida_pressed() -> void:
 	get_tree().paused = false

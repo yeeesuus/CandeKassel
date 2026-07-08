@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://lola2fl1u5je"]
 
 [ext_resource type="Script" uid="uid://ce06lrvdg8jii" path="res://ui/credits_scene.gd" id="1_kk1wf"]
+[ext_resource type="Texture2D" uid="uid://2eqfl1ppi46u" path="res://resources/image.png" id="2_lu13o"]
 [ext_resource type="Theme" uid="uid://6yyptqhmoca8" path="res://resources/theme/base_theme.tres" id="2_tkxa4"]
 [ext_resource type="Texture2D" uid="uid://upx6wonsw5c5" path="res://texture/esc.png" id="3_e5w1g"]
 
@@ -12,6 +13,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_kk1wf")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1987985070]
+position = Vector2(670, 357.00003)
+scale = Vector2(0.75405455, 0.7409465)
+texture = ExtResource("2_lu13o")
 
 [node name="CreditsTittle" type="RichTextLabel" parent="." unique_id=1373531506]
 layout_mode = 0
@@ -38,8 +44,25 @@ offset_bottom = 673.0
 theme = ExtResource("2_tkxa4")
 theme_override_font_sizes/normal_font_size = 50
 bbcode_enabled = true
-text = "[color=A57DAB][font_size=25]Font[/font_size][/color]
+text = "[color=A57DAB][font_size=25]Made by[/font_size][/color]
+[font_size=20]@souvlakii on itch.io[/font_size]
+[font_size=20]@artfecxt on itch.io[/font_size]
+[font_size=20]@yeeesuus on itch.io[/font_size]
 
+[color=A57DAB][font_size=25]Character Sprites[/font_size][/color]
+[font_size=20]@artfecxt on itch.io[/font_size]
+
+[color=A57DAB][font_size=25]Enemies Sprites[/font_size][/color]
+[font_size=20]@artfecxt on itch.io[/font_size]
+
+[font_size=20]Kosuzu Motoori Sprite Pack - poohcom1
+https://poohcom1.itch.io/kosuzu-sprite-pack[/font_size]
+
+[color=A57DAB][font_size=25]Power Up Sprites[/font_size][/color]
+[font_size=20]@artfecxt on itch.io[/font_size]
+[font_size=20]@yeeesuus on itch.io[/font_size]
+
+[color=A57DAB][font_size=25]Font[/font_size][/color]
 [font_size=20]44 Game Boy Font Pack - 2bitcrook
 https://2bitcrook.itch.io/44-game-boy-fonts[/font_size]
 
@@ -47,15 +70,19 @@ https://2bitcrook.itch.io/44-game-boy-fonts[/font_size]
 https://egordorichev.itch.io/key-set[/font_size]
 
 [color=A57DAB][font_size=25]Background[/font_size][/color]
+[font_size=20] Dương Nhân
+https://www.pexels.com/es-es/foto/29914660/[/font_size]
 
-[font_size=20]link[/font_size]
+[font_size=20]Mesut Yalçın
+https://www.pexels.com/es-es/foto/33081236/[/font_size]
 
-[color=A57DAB][font_size=25]Characters Sprites[/font_size][/color]
+[font_size=20]Yusuf Kaya
+https://www.pexels.com/es-es/foto/paisaje-de-montana-con-un-claro-entre-los-arboles-17379530/[/font_size]
 
+[color=A57DAB][font_size=25]SFX[/font_size][/color]
 [font_size=20]link[/font_size]
 
 [color=A57DAB][font_size=25]Background Music[/font_size][/color]
-
 [font_size=20]link[/font_size]
 
 [font_size=35][center][wave amp=50.0 freq=5.0 connected=1][rainbow freq=0.5 sat=1 val=0.8 speed=1.0]Hecho por CandeKassel[/rainbow]
