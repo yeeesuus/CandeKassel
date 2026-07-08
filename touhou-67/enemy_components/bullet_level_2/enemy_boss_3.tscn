@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://b2sm3ohl20qsm"]
+
+[ext_resource type="Script" uid="uid://n22ftin8vano" path="res://enemies/enemy_level_3/enemy_boss_3.gd" id="1_0te4h"]
+[ext_resource type="Texture2D" uid="uid://we4i4ue68yi4" path="res://player/texturas/Kosuzu Sprite Pack/individual images/idle/idle1.png" id="2_1ptge"]
+[ext_resource type="Script" uid="uid://4mt4o1bvirc" path="res://components/hurtbox_component.gd" id="3_os8o6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4gyqm"]
+size = Vector2(128, 126)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qi2p4"]
+size = Vector2(128, 126)
+
+[sub_resource type="Theme" id="Theme_c6415"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xtliv"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c6415"]
+bg_color = Color(1, 0, 0, 1)
+
+[node name="Enemy" type="CharacterBody2D" unique_id=1958573147]
+script = ExtResource("1_0te4h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=57248009]
+shape = SubResource("RectangleShape2D_4gyqm")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=718450631]
+modulate = Color(0.9490196, 1, 1, 1)
+position = Vector2(3.4999952, -43.5)
+scale = Vector2(5.6562505, 3.296875)
+texture = ExtResource("2_1ptge")
+
+[node name="HurtboxComponent" type="Area2D" parent="." unique_id=86050587]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("3_os8o6")
+metadata/_custom_type_script = "uid://4mt4o1bvirc"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtboxComponent" unique_id=1501316927]
+shape = SubResource("RectangleShape2D_qi2p4")
+
+[node name="Timer" type="Timer" parent="." unique_id=2034064797]
+wait_time = 0.15
+
+[node name="Rotador" type="Node2D" parent="." unique_id=838080319]
+
+[node name="timerbala" type="Timer" parent="." unique_id=1196404004]
+wait_time = 0.05
+
+[node name="Vida" type="ProgressBar" parent="." unique_id=805963470]
+offset_left = -64.0
+offset_top = -89.0
+offset_right = 64.0
+offset_bottom = -71.0
+theme = SubResource("Theme_c6415")
+theme_override_styles/background = SubResource("StyleBoxFlat_xtliv")
+theme_override_styles/fill = SubResource("StyleBoxFlat_c6415")
+max_value = 15.0
+show_percentage = false
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

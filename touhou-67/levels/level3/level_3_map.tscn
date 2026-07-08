@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://cwwimi5frobwc"]
 
 [ext_resource type="Script" uid="uid://b4ib5qavb6xte" path="res://levels/level3/level_3_map.gd" id="1_m2oim"]
-[ext_resource type="PackedScene" uid="uid://bqb1gd2jj5bbd" path="res://enemies/enemy_template.tscn" id="2_gu01v"]
+[ext_resource type="PackedScene" uid="uid://b54lf8u2csnyt" path="res://enemies/enemy_level_3/enemy_boss_3.tscn" id="2_cuf5y"]
 [ext_resource type="Texture2D" uid="uid://tbo3yeo238sh" path="res://Fondo lvl 2.jpg" id="3_4stsd"]
 [ext_resource type="PackedScene" uid="uid://b6e0sa7846t8j" path="res://levels/utils/plataforma_muerte_v2.tscn" id="4_cuf5y"]
 [ext_resource type="Script" uid="uid://myynq22ehifw" path="res://levels/level2/plataforma_muerte_level2.gd" id="5_8bb80"]
@@ -13,11 +13,11 @@
 [ext_resource type="PackedScene" uid="uid://cfjkyygi132vj" path="res://ui/final_screen.tscn" id="11_cuf5y"]
 [ext_resource type="Theme" uid="uid://6yyptqhmoca8" path="res://resources/theme/base_theme.tres" id="12_4stsd"]
 [ext_resource type="Script" uid="uid://do5dt148pk6y1" path="res://levels/level3/label_timer_level3.gd" id="13_4stsd"]
-[ext_resource type="PackedScene" uid="uid://dwtlr8lvnsfyr" path="res://enemies/enemy_level_2/enemy_level_2.tscn" id="14_cuf5y"]
+[ext_resource type="PackedScene" uid="uid://dwtlr8lvnsfyr" path="res://enemies/enemy_level_3/enemy_level_2.tscn" id="14_cuf5y"]
 
 [node name="Level3Map" type="Node2D" unique_id=1219961326]
 script = ExtResource("1_m2oim")
-enemy_scene = ExtResource("2_gu01v")
+enemy_scene = ExtResource("2_cuf5y")
 
 [node name="PexelsYusufKaya28817249817379530" type="Sprite2D" parent="." unique_id=1779335548]
 modulate = Color(1, 1, 1, 0.41960785)
@@ -46,6 +46,7 @@ tile_set = ExtResource("7_4j2gf")
 position = Vector2(75, 439)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1567467655]
+visible = false
 
 [node name="PauseMenu" parent="CanvasLayer" unique_id=1171212640 instance=ExtResource("9_e80vy")]
 offset_left = -3.0
@@ -54,17 +55,22 @@ offset_right = -3.0
 offset_bottom = -4.0
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=1007213821]
+visible = false
 
 [node name="RetryScreen" parent="CanvasLayer2" unique_id=2075040055 instance=ExtResource("10_rvsbc")]
 
 [node name="CanvasLayer3" type="CanvasLayer" parent="." unique_id=1321634577]
+visible = false
 
 [node name="FinalScreen" parent="CanvasLayer3" unique_id=298006554 instance=ExtResource("11_cuf5y")]
 
 [node name="timer_level" type="Timer" parent="." unique_id=743334643]
 
 [node name="Enemy" parent="." unique_id=1958573147 instance=ExtResource("14_cuf5y")]
-position = Vector2(649, 166)
+position = Vector2(1048, 75)
+
+[node name="Enemy2" parent="." unique_id=1261548069 instance=ExtResource("14_cuf5y")]
+position = Vector2(259, 75)
 
 [node name="Label" type="Label" parent="." unique_id=1132066552]
 offset_left = 1075.0

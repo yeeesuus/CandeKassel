@@ -4,7 +4,7 @@ extends Node2D
 @onready var camera_2d: Camera2D = $Camera2D
 @onready var retry_screen: Control = $CanvasLayer2/RetryScreen
 @onready var enemy: CharacterBody2D = $Enemy
-var cam_velocity: float = 50
+var cam_velocity: float = 60
 @onready var final_screen: Control = $CanvasLayer3/FinalScreen
 @onready var pause_screen: Control = $CanvasLayer3/PauseMenu
 @export var enemy_scene: PackedScene
@@ -30,29 +30,29 @@ func _ready() -> void:
 	timer_level.start()
 	
 	#para spawn de enemigos
-	#var timer: Timer = Timer.new()
-	#add_child(timer)
-	#timer.wait_time = 2.0
-	#timer.one_shot = true
-	#timer.timeout.connect(_on_timer_off)
-	#timer.start()
+	var timer: Timer = Timer.new()
+	add_child(timer)
+	timer.wait_time = 10
+	timer.one_shot = true
+	timer.timeout.connect(_on_timer_off)
+	timer.start()
 	retry_screen.reseteo.connect(limpiar_balas)
 	final_screen.hide()
 	
 	
 func _on_timer_off() -> void:
 	if enemy_scene:
-		var nuevo_enemigo = enemy_scene.instantiate()
-		nuevo_enemigo.name = "NPC"
-		# nuevo_jefe.murio_jefe.connect(_on_murio_jefe)
-		nuevo_enemigo.global_position = Vector2(0, 0)
-		#add_child(nuevo_enemigo)
+		var nuevo_jefe = enemy_scene.instantiate()
+		nuevo_jefe.name = "Boss"
+		nuevo_jefe.murio_jefe.connect(_on_murio_jefe)
+		nuevo_jefe.global_position = Vector2(726.0, -300)
+		add_child(nuevo_jefe)
 		#Debug.log("spawneó jefe")
 		
-#func _on_murio_jefe() -> void:
+func _on_murio_jefe() -> void:
 #	#Debug.log("ganate")
-#	victory_screen.show()
-#	get_tree().paused = true
+	final_screen.show()
+	get_tree().paused = true
 	
 func _physics_process(delta: float) -> void:
 	pass
