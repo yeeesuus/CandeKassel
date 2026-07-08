@@ -76,3 +76,12 @@ offset_right = 1256.0
 offset_bottom = 62.0
 theme = ExtResource("12_rm411")
 script = ExtResource("13_rm411")
+
+[node name="Label_Vida" type="Label" parent="." unique_id=270787005]
+offset_left = 23.0
+offset_top = 31.0
+offset_right = 133.0
+offset_bottom = 56.0
+theme = ExtResource("12_rm411")
+text = "Vidas: 1"
+script = ExtResource("13_rm411")

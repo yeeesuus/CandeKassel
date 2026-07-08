@@ -68,6 +68,11 @@ offset_top = 1.0
 offset_right = 1.0
 offset_bottom = 1.0
 
+[node name="timer_level" type="Timer" parent="." unique_id=743334643]
+
+[node name="Enemy" parent="." unique_id=1958573147 instance=ExtResource("14_cuf5y")]
+position = Vector2(649, 166)
+
 [node name="Label" type="Label" parent="." unique_id=1132066552]
 offset_left = 1075.0
 offset_top = 34.0
@@ -76,7 +81,11 @@ offset_bottom = 57.0
 theme = ExtResource("12_4stsd")
 script = ExtResource("13_4stsd")
 
-[node name="timer_level" type="Timer" parent="." unique_id=743334643]
-
-[node name="Enemy" parent="." unique_id=1958573147 instance=ExtResource("14_cuf5y")]
-position = Vector2(655, 106)
+[node name="Label_Vida" type="Label" parent="." unique_id=578627547]
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 142.0
+offset_bottom = 55.0
+theme = ExtResource("12_4stsd")
+text = "Vidas: 1"
+script = ExtResource("13_4stsd")

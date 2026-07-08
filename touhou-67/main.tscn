@@ -15,7 +15,6 @@
 [ext_resource type="PackedScene" uid="uid://dds6pmehd00lf" path="res://power-ups/power_up_salto.tscn" id="10_efxa6"]
 [ext_resource type="Script" uid="uid://xc4xdldddvmx" path="res://mandar_menu.gd" id="11_ycdy4"]
 [ext_resource type="Texture2D" uid="uid://f7g4p8jk32jp" path="res://player/texturas/cosas/balachistosa.png" id="12_w48qg"]
-[ext_resource type="PackedScene" uid="uid://dwtlr8lvnsfyr" path="res://enemies/enemy_level_2/enemy_level_2.tscn" id="16_2cqfq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 size = Vector2(48, 50)
@@ -242,6 +241,3 @@ script = ExtResource("11_ycdy4")
 position = Vector2(0, 5.096197e-06)
 scale = Vector2(0.33333334, 0.33333334)
 shape = SubResource("RectangleShape2D_g4v7s")
-
-[node name="Enemy2" parent="." unique_id=1206334393 instance=ExtResource("16_2cqfq")]
-position = Vector2(632, 195)

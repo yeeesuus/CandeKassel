@@ -10,6 +10,7 @@ var cam_velocity: float = 50
 @export var enemy_scene: PackedScene
 @onready var label_time: Label = $Label
 @onready var timer_level: Timer = $timer_level
+@onready var label_vida: Label = $Label_Vida
 
 
 # Función para reiniciar nivel (Tecla "R")
@@ -57,6 +58,7 @@ func _physics_process(delta: float) -> void:
 	pass
 	
 func _process(delta: float) -> void:
+	label_vida.set_text("Vida: " + str(character_p.vida))
 	label_time.set_text("Time Left: " + str(int(timer_level.get_time_left())))
 	if timer_level.get_time_left() <= 0:
 		character_p.murio.emit()
