@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://c2bv36gadmlcy" path="res://player/character_p.tscn" id="8_b1gvn"]
 [ext_resource type="PackedScene" uid="uid://3khvvq7wamj2" path="res://ui/pause_menu.tscn" id="9_e80vy"]
 [ext_resource type="PackedScene" uid="uid://b6ajv5xb6qxgr" path="res://ui/retry_screen.tscn" id="10_rvsbc"]
-[ext_resource type="PackedScene" uid="uid://wd03kwj8ktow" path="res://ui/victory_screen.tscn" id="11_k67kd"]
+[ext_resource type="PackedScene" uid="uid://cfjkyygi132vj" path="res://ui/final_screen.tscn" id="11_cuf5y"]
 [ext_resource type="Theme" uid="uid://6yyptqhmoca8" path="res://resources/theme/base_theme.tres" id="12_4stsd"]
 [ext_resource type="Script" uid="uid://do5dt148pk6y1" path="res://levels/level3/label_timer_level3.gd" id="13_4stsd"]
 [ext_resource type="PackedScene" uid="uid://dwtlr8lvnsfyr" path="res://enemies/enemy_level_2/enemy_level_2.tscn" id="14_cuf5y"]
@@ -59,11 +59,7 @@ offset_bottom = -4.0
 
 [node name="CanvasLayer3" type="CanvasLayer" parent="." unique_id=1321634577]
 
-[node name="VictoryScreen" parent="CanvasLayer3" unique_id=298006554 instance=ExtResource("11_k67kd")]
-offset_left = 1.0
-offset_top = 1.0
-offset_right = 1.0
-offset_bottom = 1.0
+[node name="FinalScreen" parent="CanvasLayer3" unique_id=298006554 instance=ExtResource("11_cuf5y")]
 
 [node name="timer_level" type="Timer" parent="." unique_id=743334643]
 

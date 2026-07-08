@@ -5,7 +5,7 @@ extends Node2D
 @onready var retry_screen: Control = $CanvasLayer2/RetryScreen
 @onready var enemy: CharacterBody2D = $Enemy
 var cam_velocity: float = 50
-@onready var victory_screen: Control = $CanvasLayer3/VictoryScreen
+@onready var final_screen: Control = $CanvasLayer3/FinalScreen
 @onready var pause_screen: Control = $CanvasLayer3/PauseMenu
 @export var enemy_scene: PackedScene
 @onready var label_time: Label = $Label
@@ -37,7 +37,7 @@ func _ready() -> void:
 	#timer.timeout.connect(_on_timer_off)
 	#timer.start()
 	retry_screen.reseteo.connect(limpiar_balas)
-	victory_screen.hide()
+	final_screen.hide()
 	
 	
 func _on_timer_off() -> void:

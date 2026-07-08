@@ -18,7 +18,10 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("menu"):
 		var game_over = get_tree().current_scene.find_child("RetryScreen")
+		var final = get_tree().current_scene.find_child("FinalScreen")
 		if game_over and game_over.visible:
+			return
+		elif final and final.visible:
 			return
 		else:
 			pausado = not get_tree().paused
