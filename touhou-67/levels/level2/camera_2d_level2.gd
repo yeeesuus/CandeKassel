@@ -1,7 +1,7 @@
 extends Camera2D
 
 # cantidad de movimiento de la cámara hacia arriba (más significa más rápido)
-@export var mov: int = 90
+@export var mov: int = 100
 
 func _ready() -> void:
 	pass

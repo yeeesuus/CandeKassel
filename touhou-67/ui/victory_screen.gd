@@ -27,16 +27,16 @@ func _input(event: InputEvent) -> void:
 		LevelManager.main_menu()
 	if event.is_action_pressed("retry"):
 		get_tree().paused = false
-		LevelManager.next_level()
+		get_tree().reload_current_scene()
 
 func _on_player_won() -> void:
 	await get_tree().create_timer(0.25).timeout
 	show()
 	get_tree().paused = true
 	
-func _on_timer_countdown_finished() -> void:
-	get_tree().paused = false
-	LevelManager.next_level()
+#func _on_timer_countdown_finished() -> void:
+#	get_tree().paused = false
+#	LevelManager.next_level()
 
 #func _input(event: InputEvent) -> void:
 #	if event.is_action_pressed("menu"):

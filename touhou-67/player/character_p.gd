@@ -46,6 +46,10 @@ func _process(delta: float) -> void:
 		spawner.add_child(spawn_point1)
 		spawner.add_child(spawn_point2)
 		doble_listo = true
+	if vida > 1 and is_dead:
+		for bala in get_tree().get_nodes_in_group("balas"):
+			bala.queue_free()
+		get_tree().reload_current_scene()
 	
 func _physics_process(delta: float) -> void:
 	if is_taking_power_up:

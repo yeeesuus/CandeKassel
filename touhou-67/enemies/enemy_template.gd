@@ -2,7 +2,7 @@ extends CharacterBody2D
 # Variables
 @export var bullet_scene: PackedScene
 @export var vel := Vector2(200, -90) #velocidad
-@export var vida := 5 # Vida del enemigo
+@export var vida := 20 # Vida del enemigo
 @onready var bullet_spawn_marker1: Marker2D = $BulletMarker
 @onready var bullet_spawn_marker2: Marker2D = $BulletMarker2
 @onready var bullet_spawn_marker3: Marker2D = $BulletMarker3
@@ -30,18 +30,6 @@ func _process(delta: float) -> void:
 	#var nueva_rot = rotador.rotation_degrees + rapidez_giro*delta
 	rotador.rotate(rapidez_giro*delta)
 	#movimiento del enemigo
-	position += vel * delta
-	
-	#tamaño de la pantalla
-	var screen_size = get_viewport_rect().size
-	
-	#rebote horizontal
-	if position.x <= 0:
-		position.x = 0
-		vel.x *= -1
-	elif position.x >= screen_size.x:
-		position.x = screen_size.x
-		vel.x *= -1
 	
 func _on_timer_timeout() -> void:
 	for s in rotador.get_children():
@@ -56,6 +44,8 @@ func take_damage(value: int) -> void:
 	vida -= value
 	#Debug.log("%s vida enemigo:" % [vida])
 	if vida <= 0:
+		var contador2 = get_tree().current_scene
+		contador2.muertos+=1
 		muerto = true
 		#Debug.log("%s murisio" % name)
 		queue_free()

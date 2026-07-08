@@ -1,6 +1,6 @@
 extends Label
 
-@export var mov: int = 90
+@export var mov: int = 100
 
 func _ready() -> void:
 	pass

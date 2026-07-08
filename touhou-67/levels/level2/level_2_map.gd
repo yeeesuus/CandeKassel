@@ -11,7 +11,8 @@ var cam_velocity: float = 100
 @onready var label_time: Label = $Label
 @onready var timer_level: Timer = $timer_level
 @onready var label_vida: Label = $Label_Vida
-
+@onready var rotador: Node2D = $ScrollingCamera/rotador
+var muertos = 0
 
 
 # Función para reiniciar nivel (Tecla "R")
@@ -30,6 +31,14 @@ func _ready() -> void:
 	timer_level.one_shot = true
 	timer_level.start()
 	
+	var paso = 2*PI/6
+	for i in range(6):
+		var spawn_point = Node2D.new()
+		var pos = Vector2(100, 0).rotated(paso*i)
+		spawn_point.position = pos
+		spawn_point.rotation = pos.angle()
+		rotador.add_child(spawn_point)
+	
 	#para spawn de enemigos
 	var timer: Timer = Timer.new()
 	add_child(timer)
@@ -40,14 +49,14 @@ func _ready() -> void:
 	retry_screen.reseteo.connect(limpiar_balas)
 	victory_screen.hide()
 	
-	
 func _on_timer_off() -> void:
 	if enemy_scene:
-		var nuevo_enemigo = enemy_scene.instantiate()
-		nuevo_enemigo.name = "NPC"
-		# nuevo_jefe.murio_jefe.connect(_on_murio_jefe)
-		nuevo_enemigo.global_position = Vector2(0, 0)
-		add_child(nuevo_enemigo)
+		for s in rotador.get_children():
+			var nuevo_enemigo = enemy_scene.instantiate()
+			#nuevo_enemigo.name = "NPC"
+			# nuevo_jefe.murio_jefe.connect(_on_murio_jefe)
+			#nuevo_enemigo.global_position = Vector2(0, 0)
+			s.add_child(nuevo_enemigo)
 		#Debug.log("spawneó jefe")
 		
 #func _on_murio_jefe() -> void:
@@ -59,7 +68,12 @@ func _physics_process(delta: float) -> void:
 	pass
 	
 func _process(delta: float) -> void:
+	rotador.rotate(delta)
 	label_vida.set_text("Vida: " + str(character_p.vida))
 	label_time.set_text("Time Left: " + str(int(timer_level.get_time_left())))
 	if timer_level.get_time_left() <= 0:
 		character_p.murio.emit()
+		
+	if muertos == 6:
+		victory_screen.show()
+		get_tree().paused = true

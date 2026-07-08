@@ -11,5 +11,5 @@ func _physics_process(delta: float) -> void:
 	#es acá donde se cambia el patrón
 	delta_acc += delta*5
 	var direction = +global_transform.y
-	global_position += direction * speed * delta
+	global_position += (direction * speed * delta)*0.8
 	global_position+=direction
