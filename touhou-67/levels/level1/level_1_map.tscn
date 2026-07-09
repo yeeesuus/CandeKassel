@@ -27,7 +27,17 @@ texture = ExtResource("3_h1736")
 
 [node name="Plataforma_Muerte2" parent="." unique_id=1175622323 instance=ExtResource("4_4bgcm")]
 position = Vector2(-199, 744)
-scale = Vector2(1.5, 1.5)
+scale = Vector2(1.4902675, 1.4957695)
+
+[node name="Plataforma_Muerte3" parent="." unique_id=796219579 instance=ExtResource("4_4bgcm")]
+position = Vector2(-25.000002, -1978.9999)
+rotation = 1.5707964
+scale = Vector2(2.317, 2.21)
+
+[node name="Plataforma_Muerte4" parent="." unique_id=2058958408 instance=ExtResource("4_4bgcm")]
+position = Vector2(1411, -1961)
+rotation = 1.5707964
+scale = Vector2(2.317, 2.21)
 
 [node name="ScrollingCamera" type="Camera2D" parent="." unique_id=1771711775]
 position = Vector2(71, 28)
@@ -46,7 +56,6 @@ position = Vector2(449, 516)
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1567467655]
 
 [node name="PauseMenu" parent="CanvasLayer" unique_id=1171212640 instance=ExtResource("8_nbhkk")]
-visible = false
 offset_left = -3.0
 offset_top = -4.0
 offset_right = -3.0
@@ -55,12 +64,10 @@ offset_bottom = -4.0
 [node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=1007213821]
 
 [node name="RetryScreen" parent="CanvasLayer2" unique_id=2075040055 instance=ExtResource("9_rdcnd")]
-visible = false
 
 [node name="CanvasLayer3" type="CanvasLayer" parent="." unique_id=1321634577]
 
 [node name="VictoryScreen" parent="CanvasLayer3" unique_id=298006554 instance=ExtResource("11_bokiu")]
-visible = false
 offset_left = 1.0
 offset_top = 1.0
 offset_right = 1.0

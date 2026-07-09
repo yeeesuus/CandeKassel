@@ -27,7 +27,21 @@ scale = Vector2(0.39019695, 0.512129)
 texture = ExtResource("2_lkpb4")
 
 [node name="Plataforma_Muerte2" parent="." unique_id=1175622323 instance=ExtResource("4_vyvkt")]
-position = Vector2(-303, 793)
+position = Vector2(-303, 765)
+scale = Vector2(1.5, 1.5)
+script = ExtResource("4_lkpb4")
+mov = 100
+
+[node name="Plataforma_Muerte3" parent="." unique_id=236082452 instance=ExtResource("4_vyvkt")]
+position = Vector2(-44.000004, -374)
+rotation = 1.5707964
+scale = Vector2(1.5, 1.5)
+script = ExtResource("4_lkpb4")
+mov = 100
+
+[node name="Plataforma_Muerte4" parent="." unique_id=1826323932 instance=ExtResource("4_vyvkt")]
+position = Vector2(1393, -350)
+rotation = 1.5707964
 scale = Vector2(1.5, 1.5)
 script = ExtResource("4_lkpb4")
 mov = 100
