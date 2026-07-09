@@ -32,6 +32,7 @@ func limpiar_balas() -> void:
 		bala.queue_free()
 
 func _ready() -> void:
+	AudioManager.reproducir_musica(AudioManager.EstadoMusica.JUEGO)
 	timer_level.wait_time = 63.0
 	timer_level.one_shot = true
 	timer_level.start()

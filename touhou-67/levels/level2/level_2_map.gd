@@ -33,7 +33,11 @@ func limpiar_balas() -> void:
 		bala.queue_free()
 
 func _ready() -> void:
+<<<<<<< Updated upstream
 	character_p.vida = 2
+=======
+	AudioManager.reproducir_musica(AudioManager.EstadoMusica.JUEGO)
+>>>>>>> Stashed changes
 	timer_level.wait_time = 50.0
 	timer_level.one_shot = true
 	timer_level.start()

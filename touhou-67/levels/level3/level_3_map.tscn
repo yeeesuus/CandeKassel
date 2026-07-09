@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://b54lf8u2csnyt" path="res://enemies/enemy_level_3/enemy_boss_3.tscn" id="2_cuf5y"]
 [ext_resource type="Texture2D" uid="uid://c4kimkpivsxjt" path="res://lvl 3.jpg" id="3_cuf5y"]
 [ext_resource type="PackedScene" uid="uid://b6e0sa7846t8j" path="res://levels/utils/plataforma_muerte_v2.tscn" id="4_cuf5y"]
-[ext_resource type="Script" uid="uid://myynq22ehifw" path="res://levels/level2/plataforma_muerte_level2.gd" id="5_8bb80"]
+[ext_resource type="Script" uid="uid://bt5y8fic78lmj" path="res://levels/level3/plataforma_muerte_level3.gd" id="5_cuf5y"]
 [ext_resource type="Script" uid="uid://cok2oluf2x7br" path="res://levels/level3/camera_2d_level3.gd" id="6_m2oim"]
 [ext_resource type="TileSet" uid="uid://cj7fp7vhpjw00" path="res://resources/tile_set.tres" id="7_4j2gf"]
 [ext_resource type="PackedScene" uid="uid://c2bv36gadmlcy" path="res://player/character_p.tscn" id="8_b1gvn"]
@@ -29,21 +29,21 @@ texture = ExtResource("3_cuf5y")
 [node name="Plataforma_Muerte2" parent="." unique_id=1175622323 instance=ExtResource("4_cuf5y")]
 position = Vector2(-116.00001, 760.00006)
 scale = Vector2(1.3, 1.3)
-script = ExtResource("5_8bb80")
+script = ExtResource("5_cuf5y")
 mov = 50
 
 [node name="Plataforma_Muerte4" parent="." unique_id=571407739 instance=ExtResource("4_cuf5y")]
 position = Vector2(1378.0001, -381.00003)
 rotation = 1.5707964
 scale = Vector2(1.3, 1.3)
-script = ExtResource("5_8bb80")
+script = ExtResource("5_cuf5y")
 mov = 50
 
 [node name="Plataforma_Muerte3" parent="." unique_id=206518881 instance=ExtResource("4_cuf5y")]
 position = Vector2(-38.00006, -374)
 rotation = 1.5707964
 scale = Vector2(1.3, 1.3)
-script = ExtResource("5_8bb80")
+script = ExtResource("5_cuf5y")
 mov = 50
 
 [node name="ScrollingCamera" type="Camera2D" parent="." unique_id=1771711775]

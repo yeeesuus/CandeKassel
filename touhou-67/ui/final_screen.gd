@@ -9,6 +9,7 @@ var aparecer = false
 @onready var creditos: Button = %creditos
 
 func _ready() -> void:	
+	AudioManager.reproducir_musica(AudioManager.EstadoMusica.JUEGO)
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	hide()
 	CoinLabelManager.player_won.connect(_on_player_won)

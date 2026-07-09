@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cjp7m4xx1d1lu"]
+
+[ext_resource type="Script" uid="uid://cu86tnat4pkfb" path="res://autoloads/audio_manager.gd" id="1_xdfsh"]
+[ext_resource type="AudioStream" uid="uid://hdc5gy0bdk6w" path="res://sonidos/background/Visager-Crashing Realizations(Loop).mp3" id="2_nb6j2"]
+[ext_resource type="AudioStream" uid="uid://607nemwog07" path="res://sonidos/background/Visager-Roots[Loop].mp3" id="3_k2mv4"]
+
+[node name="AudioManager" type="Node" unique_id=2102173435]
+process_mode = 3
+script = ExtResource("1_xdfsh")
+
+[node name="SoundLevel" type="AudioStreamPlayer" parent="." unique_id=399476951]
+stream = ExtResource("2_nb6j2")
+
+[node name="SoundMain_Credits" type="AudioStreamPlayer" parent="." unique_id=1478744870]
+stream = ExtResource("3_k2mv4")

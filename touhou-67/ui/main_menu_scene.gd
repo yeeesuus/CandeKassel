@@ -6,6 +6,7 @@ extends Control
 
 #Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	AudioManager.reproducir_musica(AudioManager.EstadoMusica.MENU)
 	inicio.pressed.connect(_on_start_pressed)
 	salir.pressed.connect(_on_quit_pressed)
 	creditos.pressed.connect(_on_credits_pressed)

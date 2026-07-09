@@ -20,6 +20,7 @@ config/icon="uid://dkrbk4evik46h"
 Debug="*uid://c6li31j2hk17f"
 LevelManager="*uid://cso4a0fdme3ci"
 CoinLabelManager="*uid://d1w7rit274ivv"
+AudioManager="*uid://cjp7m4xx1d1lu"
 
 [display]
 
