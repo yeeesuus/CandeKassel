@@ -32,7 +32,7 @@ func _ready() -> void:
 	timer_level.start()
 	
 	var paso = 2*PI/6
-	for i in range(5):
+	for i in range(6):
 		var spawn_point = Node2D.new()
 		var pos = Vector2(100, 0).rotated(paso*i)
 		spawn_point.position = pos
@@ -52,13 +52,9 @@ func _ready() -> void:
 func _on_timer_off() -> void:
 	if enemy_scene:
 		for s in rotador.get_children():
-			var nuevo_enemigo = enemy_scene.instantiate()
-			#nuevo_enemigo.name = "NPC"
-			# nuevo_jefe.murio_jefe.connect(_on_murio_jefe)
-			#nuevo_enemigo.global_position = Vector2(0, 0)
-			s.add_child(nuevo_enemigo)
-			print("Cantidad de hijos:", rotador.get_child_count())
-		#Debug.log("spawneó jefe")
+			if s.name.begins_with("@Node2D"):
+				var nuevo_enemigo = enemy_scene.instantiate()
+				s.add_child(nuevo_enemigo)
 		
 #func _on_murio_jefe() -> void:
 #	#Debug.log("ganate")
