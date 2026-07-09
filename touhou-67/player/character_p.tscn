@@ -11,7 +11,9 @@
 [ext_resource type="Texture2D" uid="uid://cq6ek5p16obvs" path="res://player/texturas/Chanchiwawi/FocusMode/CHANCHIWAWI_RUN_pt2_mira_izq_Sheet_focus_mode.png" id="8_d4suc"]
 [ext_resource type="Texture2D" uid="uid://dfjxm5ea8x522" path="res://player/texturas/Chanchiwawi/FocusMode/CHANCHIWAWI_RUN_pt2_focus_mode_Sheet.png" id="10_y6j7b"]
 [ext_resource type="AudioStream" uid="uid://bevxx8e6d2cii" path="res://sonidos/chanchiwawi.wav" id="11_y6j7b"]
-[ext_resource type="AudioStream" uid="uid://c3e3w5fx3nq4b" path="res://sonidos/muertexanxi.wav" id="12_uwlc1"]
+[ext_resource type="AudioStream" uid="uid://du6b5t2fifsuo" path="res://sonidos/muerte.wav" id="12_uwlc1"]
+[ext_resource type="AudioStream" uid="uid://vubq6jd3c1j4" path="res://sonidos/powerups.wav" id="13_uwlc1"]
+[ext_resource type="AudioStream" uid="uid://bwrhxkawboshr" path="res://sonidos/vida.wav" id="14_1wn1k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vcogd"]
 size = Vector2(18, 52)
@@ -484,3 +486,9 @@ stream = ExtResource("11_y6j7b")
 
 [node name="Muertexanxi" type="AudioStreamPlayer" parent="." unique_id=1045907289]
 stream = ExtResource("12_uwlc1")
+
+[node name="PowerUpSound" type="AudioStreamPlayer" parent="." unique_id=615571438]
+stream = ExtResource("13_uwlc1")
+
+[node name="VidaSound" type="AudioStreamPlayer" parent="." unique_id=768957949]
+stream = ExtResource("14_1wn1k")

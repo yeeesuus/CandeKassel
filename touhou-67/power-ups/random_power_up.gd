@@ -1,6 +1,7 @@
 extends Area2D
 
 @onready var icon: Sprite2D = $Icon
+@onready var power_up_sound: AudioStreamPlayer = $PowerUpSound
 
 var power_up: BasePowerUp
 
@@ -14,4 +15,5 @@ func _update() -> void:
 func take_power_up(player: CharacterBody2D) -> void:
 	Debug.log("TAKE_POWER_UP")
 	power_up.aplicar_efecto(player)
+	player.sonido_power_up()
 	queue_free()

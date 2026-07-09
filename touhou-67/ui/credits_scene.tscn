@@ -44,23 +44,23 @@ offset_bottom = 673.0
 theme = ExtResource("2_tkxa4")
 theme_override_font_sizes/normal_font_size = 50
 bbcode_enabled = true
-text = "[color=A57DAB][font_size=25]Made by[/font_size][/color]
-[font_size=20]@souvlakii on itch.io[/font_size]
-[font_size=20]@artfecxt on itch.io[/font_size]
-[font_size=20]@yeeesuus on itch.io[/font_size]
+text = "[color=A57DAB][font_size=25]Hecho por[/font_size][/color]
+[font_size=20]@souvlakii en itch.io[/font_size]
+[font_size=20]@artfecxt en itch.io[/font_size]
+[font_size=20]@yeeesuus en itch.io[/font_size]
 
-[color=A57DAB][font_size=25]Character Sprites[/font_size][/color]
-[font_size=20]@artfecxt on itch.io[/font_size]
+[color=A57DAB][font_size=25]Sprites Personaje Principal[/font_size][/color]
+[font_size=20]@artfecxt en itch.io[/font_size]
 
-[color=A57DAB][font_size=25]Enemies Sprites[/font_size][/color]
-[font_size=20]@artfecxt on itch.io[/font_size]
+[color=A57DAB][font_size=25]Sprites Enemigos[/font_size][/color]
+[font_size=20]@artfecxt en itch.io[/font_size]
 
 [font_size=20]Kosuzu Motoori Sprite Pack - poohcom1
 https://poohcom1.itch.io/kosuzu-sprite-pack[/font_size]
 
-[color=A57DAB][font_size=25]Power Up Sprites[/font_size][/color]
-[font_size=20]@artfecxt on itch.io[/font_size]
-[font_size=20]@yeeesuus on itch.io[/font_size]
+[color=A57DAB][font_size=25]Sprites Power Up[/font_size][/color]
+[font_size=20]@artfecxt en itch.io[/font_size]
+[font_size=20]@yeeesuus en itch.io[/font_size]
 
 [color=A57DAB][font_size=25]Font[/font_size][/color]
 [font_size=20]44 Game Boy Font Pack - 2bitcrook
@@ -69,7 +69,7 @@ https://2bitcrook.itch.io/44-game-boy-fonts[/font_size]
 [font_size=20]Pixel Buttons Set - egordorichev
 https://egordorichev.itch.io/key-set[/font_size]
 
-[color=A57DAB][font_size=25]Background[/font_size][/color]
+[color=A57DAB][font_size=25]Fondos[/font_size][/color]
 [font_size=20] Dương Nhân
 https://www.pexels.com/es-es/foto/29914660/[/font_size]
 
@@ -79,10 +79,13 @@ https://www.pexels.com/es-es/foto/33081236/[/font_size]
 [font_size=20]Yusuf Kaya
 https://www.pexels.com/es-es/foto/paisaje-de-montana-con-un-claro-entre-los-arboles-17379530/[/font_size]
 
-[color=A57DAB][font_size=25]SFX[/font_size][/color]
-[font_size=20]link[/font_size]
+[font_size=20]White Noiise
+https://www.pexels.com/photo/rocks-on-slope-17553904/[/font_size]
 
-[color=A57DAB][font_size=25]Background Music[/font_size][/color]
+[color=A57DAB][font_size=25]Efectos de sonido[/font_size][/color]
+[font_size=20]Hecho con bfxr.com por @souvlakii en itch.io[/font_size]
+
+[color=A57DAB][font_size=25]Musica de fondo[/font_size][/color]
 [font_size=20]link[/font_size]
 
 [font_size=35][center][wave amp=50.0 freq=5.0 connected=1][rainbow freq=0.5 sat=1 val=0.8 speed=1.0]Hecho por CandeKassel[/rainbow]

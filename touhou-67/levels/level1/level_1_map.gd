@@ -8,6 +8,7 @@ var cam_velocity: float = 100
 @onready var victory_screen: Control = $CanvasLayer3/VictoryScreen
 @onready var pause_screen: Control = $CanvasLayer3/PauseMenu
 @export var enemy_scene: PackedScene
+@onready var muerte_enemigo: AudioStreamPlayer = $MuerteEnemigo
 
 @onready var label_time: Label = $Label
 @onready var timer_level: Timer = $timer_level
@@ -52,6 +53,9 @@ func _on_timer_off() -> void:
 func _on_murio_jefe() -> void:
 	#Debug.log("ganate")
 	#LevelManager.next_level(), para cuando esté listo
+	await get_tree().create_timer(0.05).timeout
+	muerte_enemigo.play()
+	await get_tree().create_timer(0.60).timeout
 	victory_screen.show()
 	get_tree().paused = true
 	

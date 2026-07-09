@@ -41,14 +41,14 @@ func _ready() -> void:
 	
 	
 func _on_timer_off() -> void:
-	#if enemy_scene:
-	#	var nuevo_jefe = enemy_scene.instantiate()
-	#	nuevo_jefe.name = "Boss"
-	#	nuevo_jefe.murio_jefe.connect(_on_murio_jefe)
-	#	var screen_size = get_viewport_rect().size
-	#	nuevo_jefe.global_position.x = screen_size.x/2
-	#	nuevo_jefe.global_position.y = -350
-	#	add_child(nuevo_jefe)
+	if enemy_scene:
+		var nuevo_jefe = enemy_scene.instantiate()
+		nuevo_jefe.name = "Boss"
+		nuevo_jefe.murio_jefe.connect(_on_murio_jefe)
+		var screen_size = get_viewport_rect().size
+		nuevo_jefe.global_position.x = screen_size.x/2
+		nuevo_jefe.global_position.y = -700
+		add_child(nuevo_jefe)
 		#Debug.log("spawneó jefe")
 	pass
 		

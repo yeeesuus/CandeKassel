@@ -51,7 +51,9 @@ func take_damage(value: int) -> void:
 	if vida <= 0:
 		var contador2 = get_tree().current_scene
 		contador2.muertos+=1
+		await get_tree().create_timer(0.05).timeout
 		muerte_enemigo.play()
+		await get_tree().create_timer(0.60).timeout
 		muerto = true
 		#Debug.log("%s murisio" % name)
 		queue_free()

@@ -64,11 +64,9 @@ offset_bottom = -4.0
 [node name="timer_level" type="Timer" parent="." unique_id=743334643]
 
 [node name="Enemy" parent="." unique_id=1958573147 instance=ExtResource("14_cuf5y")]
-visible = false
 position = Vector2(1048, 75)
 
 [node name="Enemy2" parent="." unique_id=1261548069 instance=ExtResource("14_cuf5y")]
-visible = false
 position = Vector2(259, 75)
 
 [node name="Label" type="Label" parent="." unique_id=1132066552]

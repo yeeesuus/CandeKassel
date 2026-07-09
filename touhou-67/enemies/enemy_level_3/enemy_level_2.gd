@@ -14,6 +14,8 @@ extends CharacterBody2D
 @onready var timerbala: Timer = $timerbala
 @onready var barravida: ProgressBar = $Vida
 @onready var sprite: Sprite2D = $Sprite2D
+@onready var sonido_disparo: AudioStreamPlayer = $Tohou
+@onready var muerte_enemigo: AudioStreamPlayer = $MuerteEnemigo
 
 var fase_actual: int = 1
 
@@ -58,13 +60,14 @@ func _process(delta: float) -> void:
 	#	vel.x *= -1
 	
 func _on_timer_timeout() -> void:
-	#for s in rotador.get_children():
-	#	var bullet_inst = bullet_scene.instantiate()
-	#	bullet_inst.add_to_group("balas")
-	#	get_tree().current_scene.add_child(bullet_inst)
-	#	bullet_inst.position = s.global_position
-	#	bullet_inst.rotation = s.global_rotation
-	#	#timerbala.start()
+	for s in rotador.get_children():
+		sonido_disparo.play()
+		var bullet_inst = bullet_scene.instantiate()
+		bullet_inst.add_to_group("balas")
+		get_tree().current_scene.add_child(bullet_inst)
+		bullet_inst.position = s.global_position
+		bullet_inst.rotation = s.global_rotation
+		#timerbala.start()
 		#await timerbala.timeout
 	timerbala.start()
 	await timerbala.timeout
@@ -77,6 +80,9 @@ func take_damage(value: int) -> void:
 	if vida <= 0:
 		muerto = true
 		#Debug.log("%s murisio" % name)
+		await get_tree().create_timer(0.05).timeout
+		muerte_enemigo.play()
+		await get_tree().create_timer(0.60).timeout
 		murio_jefe.emit()
 		queue_free()
 	#elif vida <= 5 and fase_actual < 3:

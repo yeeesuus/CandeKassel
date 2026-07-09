@@ -76,7 +76,6 @@ func take_damage(value: int) -> void:
 	#Debug.log("%s vida enemigo:" % [vida])
 	if vida <= 0:
 		muerto = true
-		muerte_enemigo.play()
 		#Debug.log("%s murisio" % name)
 		murio_jefe.emit()
 		queue_free()

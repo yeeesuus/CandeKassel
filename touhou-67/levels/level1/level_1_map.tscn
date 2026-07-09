@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://wd03kwj8ktow" path="res://ui/victory_screen.tscn" id="11_bokiu"]
 [ext_resource type="PackedScene" uid="uid://bnawb5uvmjg1b" path="res://power-ups/random_power_up.tscn" id="12_h1736"]
 [ext_resource type="Theme" uid="uid://6yyptqhmoca8" path="res://resources/theme/base_theme.tres" id="12_sybs0"]
+[ext_resource type="AudioStream" uid="uid://c6au41vcrpx4j" path="res://sonidos/muerte enemigo.wav" id="14_4bgcm"]
 
 [node name="Level1Map" type="Node2D" unique_id=1219961326]
 script = ExtResource("1_25u25")
@@ -67,7 +68,6 @@ offset_bottom = 1.0
 
 [node name="PowerUp_Random" parent="." unique_id=1232128518 instance=ExtResource("12_h1736")]
 position = Vector2(328, -365)
-scale = Vector2(0.5, 0.5)
 
 [node name="PowerUp" parent="." unique_id=581944556 instance=ExtResource("12_h1736")]
 position = Vector2(809, 377)
@@ -90,3 +90,6 @@ offset_bottom = 39.0
 theme = ExtResource("12_sybs0")
 text = "Vidas: 1"
 script = ExtResource("4_sybs0")
+
+[node name="MuerteEnemigo" type="AudioStreamPlayer" parent="." unique_id=1670607540]
+stream = ExtResource("14_4bgcm")
