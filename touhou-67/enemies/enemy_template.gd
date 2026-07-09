@@ -19,6 +19,8 @@ var rapidez_giro: int = 0
 var spawn_points: int = 1
 var radio: int = 0
 
+signal murio
+
 func _ready() -> void:
 	var paso = 2*PI/spawn_points
 	for i in range(spawn_points):
@@ -27,6 +29,7 @@ func _ready() -> void:
 		spawn_point.position = pos
 		spawn_point.rotation = pos.angle()
 		rotador.add_child(spawn_point)
+		
 	timer.start()
 
 func _process(delta: float) -> void:
@@ -49,11 +52,10 @@ func take_damage(value: int) -> void:
 	vida -= value
 	#Debug.log("%s vida enemigo:" % [vida])
 	if vida <= 0:
-		var contador2 = get_tree().current_scene
-		contador2.muertos+=1
 		await get_tree().create_timer(0.05).timeout
 		muerte_enemigo.play()
 		await get_tree().create_timer(0.60).timeout
 		muerto = true
+		murio.emit()
 		#Debug.log("%s murisio" % name)
 		queue_free()

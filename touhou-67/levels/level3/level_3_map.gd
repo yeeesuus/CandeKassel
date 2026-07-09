@@ -47,7 +47,7 @@ func _on_timer_off() -> void:
 		nuevo_jefe.murio_jefe.connect(_on_murio_jefe)
 		var screen_size = get_viewport_rect().size
 		nuevo_jefe.global_position.x = screen_size.x/2
-		nuevo_jefe.global_position.y = -700
+		nuevo_jefe.global_position.y = -850
 		add_child(nuevo_jefe)
 		#Debug.log("spawneó jefe")
 	pass

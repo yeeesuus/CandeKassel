@@ -1,7 +1,7 @@
 extends CharacterBody2D
 # Variables
 @export var bullet_scene: PackedScene
-@export var vel := Vector2(0, -60) #velocidad
+@export var vel := Vector2(0, -50) #velocidad
 @export var vida := 100 # Vida del enemigo
 @onready var bullet_spawn_marker1: Marker2D = $BulletMarker
 @onready var bullet_spawn_marker2: Marker2D = $BulletMarker2
@@ -68,8 +68,8 @@ func _on_timer_timeout() -> void:
 		get_tree().current_scene.add_child(bullet_inst)
 		bullet_inst.position = s.global_position + offset_arriba
 		bullet_inst.rotation = s.global_rotation
-		timerbala.start()
-		await timerbala.timeout
+		#timerbala.start()
+		#await timerbala.timeout
 	timerbala.start()
 	await timerbala.timeout
 	

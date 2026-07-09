@@ -5,7 +5,7 @@ extends HitboxComponent
 var delta_acc = 0
 var fase = 0
 var velocidad_actual = speed
-var des_acc = 1250
+var des_acc = 900
 
 func _ready() -> void:
 	timer.timeout.connect(func():queue_free())

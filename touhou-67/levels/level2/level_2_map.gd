@@ -54,8 +54,15 @@ func _on_timer_off() -> void:
 		for s in rotador.get_children():
 			if s.name.begins_with("@Node2D"):
 				var nuevo_enemigo = enemy_scene.instantiate()
+				nuevo_enemigo.murio.connect(_on_murio_enemigo)
 				s.add_child(nuevo_enemigo)
 		
+func _on_murio_enemigo() -> void:
+	muertos+=1
+	if muertos == 6:
+		victory_screen.show()
+		get_tree().paused = true
+
 #func _on_murio_jefe() -> void:
 #	#Debug.log("ganate")
 #	victory_screen.show()
@@ -71,6 +78,3 @@ func _process(delta: float) -> void:
 	if timer_level.get_time_left() <= 0:
 		character_p.murio.emit()
 		
-	if muertos == 6:
-		victory_screen.show()
-		get_tree().paused = true

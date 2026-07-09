@@ -104,6 +104,9 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("fire"):
 		sonido_disparo.play()
 		fire()
+		
+	if Input.is_action_just_pressed("dios"):
+		vida = 999
 	
 	if is_dead:
 		murio.emit()

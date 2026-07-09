@@ -18,6 +18,15 @@ func next_level() -> void:
 		get_tree().change_scene_to_packed(levels[current_level])
 	else:
 		get_tree().change_scene_to_packed(main_menu_scene)
+		
+func last_level() -> void:
+	if current_level == 0:
+		for bala in get_tree().get_nodes_in_group("balas"):
+			bala.queue_free()
+		get_tree().reload_current_scene()
+	else:
+		current_level -= 1
+		get_tree().change_scene_to_packed(levels[current_level])
 
 func main_menu() -> void:
 	get_tree().change_scene_to_packed(main_menu_scene)
