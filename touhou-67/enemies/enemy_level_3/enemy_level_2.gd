@@ -2,7 +2,7 @@ extends CharacterBody2D
 # Variables
 @export var bullet_scene: PackedScene
 @export var vel := Vector2(0, -50) #velocidad
-@export var vida := 15 # Vida del enemigo
+@export var vida := 5 # Vida del enemigo
 @onready var bullet_spawn_marker1: Marker2D = $BulletMarker
 @onready var bullet_spawn_marker2: Marker2D = $BulletMarker2
 @onready var bullet_spawn_marker3: Marker2D = $BulletMarker3
@@ -79,10 +79,10 @@ func take_damage(value: int) -> void:
 		#Debug.log("%s murisio" % name)
 		murio_jefe.emit()
 		queue_free()
-	elif vida <= 5 and fase_actual < 3:
-		cambiar_fase(3)
-	elif vida <= 10 and fase_actual < 2:
-		cambiar_fase(2)
+	#elif vida <= 5 and fase_actual < 3:
+	#	cambiar_fase(3)
+	#elif vida <= 10 and fase_actual < 2:
+	#	cambiar_fase(2)
 
 func cambiar_fase(nueva_fase: int) -> void:
 	fase_actual = nueva_fase

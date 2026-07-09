@@ -45,7 +45,7 @@ func _on_timer_off() -> void:
 		var nuevo_jefe = enemy_scene.instantiate()
 		nuevo_jefe.name = "Boss"
 		nuevo_jefe.murio_jefe.connect(_on_murio_jefe)
-		nuevo_jefe.global_position = Vector2(726.0, -300)
+		nuevo_jefe.global_position = Vector2(700.0, -300)
 		add_child(nuevo_jefe)
 		#Debug.log("spawneó jefe")
 		
