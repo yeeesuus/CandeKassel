@@ -12,27 +12,30 @@ var cam_velocity: float = 60
 @onready var timer_level: Timer = $timer_level
 @onready var label_vida: Label = $Label_Vida
 
-
 # Función para reiniciar nivel (Tecla "R")
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("retry"):
 		for bala in get_tree().get_nodes_in_group("balas"):
 			bala.queue_free()
 		get_tree().reload_current_scene()
+		
+	if event.is_action_pressed("nivel_ant"):
+		LevelManager.last_level()
 
 func limpiar_balas() -> void:
 	for bala in get_tree().get_nodes_in_group("balas"):
 		bala.queue_free()
 
 func _ready() -> void:
-	timer_level.wait_time = 50.0
+	character_p.vida = 4
+	timer_level.wait_time = 60.0
 	timer_level.one_shot = true
 	timer_level.start()
 	
 	#para spawn de enemigos
 	var timer: Timer = Timer.new()
 	add_child(timer)
-	timer.wait_time = 20
+	timer.wait_time = 12
 	timer.one_shot = true
 	timer.timeout.connect(_on_timer_off)
 	timer.start()
@@ -47,7 +50,7 @@ func _on_timer_off() -> void:
 		nuevo_jefe.murio_jefe.connect(_on_murio_jefe)
 		var screen_size = get_viewport_rect().size
 		nuevo_jefe.global_position.x = screen_size.x/2
-		nuevo_jefe.global_position.y = -850
+		nuevo_jefe.global_position.y = -500
 		add_child(nuevo_jefe)
 		#Debug.log("spawneó jefe")
 	pass

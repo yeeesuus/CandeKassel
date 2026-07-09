@@ -13,7 +13,7 @@ func _update() -> void:
 	icon.texture = power_up.textura
 
 func take_power_up(player: CharacterBody2D) -> void:
-	Debug.log("TAKE_POWER_UP")
+	#Debug.log("TAKE_POWER_UP")
 	power_up.aplicar_efecto(player)
 	player.sonido_power_up()
 	queue_free()

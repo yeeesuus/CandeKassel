@@ -21,12 +21,19 @@ func _input(event: InputEvent) -> void:
 		for bala in get_tree().get_nodes_in_group("balas"):
 			bala.queue_free()
 		get_tree().reload_current_scene()
+		
+	if event.is_action_pressed("sgte_nivel"):
+		LevelManager.next_level()
+		
+	if event.is_action_pressed("nivel_ant"):
+		LevelManager.last_level()
 
 func limpiar_balas() -> void:
 	for bala in get_tree().get_nodes_in_group("balas"):
 		bala.queue_free()
 
 func _ready() -> void:
+	character_p.vida = 2
 	timer_level.wait_time = 50.0
 	timer_level.one_shot = true
 	timer_level.start()

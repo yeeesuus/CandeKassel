@@ -59,6 +59,7 @@ offset_bottom = -71.0
 theme = SubResource("Theme_c6415")
 theme_override_styles/background = SubResource("StyleBoxFlat_xtliv")
 theme_override_styles/fill = SubResource("StyleBoxFlat_c6415")
+max_value = 70.0
 show_percentage = false
 
 [node name="Tohou" type="AudioStreamPlayer" parent="." unique_id=674906546]

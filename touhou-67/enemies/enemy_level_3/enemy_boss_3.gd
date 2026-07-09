@@ -2,7 +2,7 @@ extends CharacterBody2D
 # Variables
 @export var bullet_scene: PackedScene
 @export var vel := Vector2(0, -50) #velocidad
-@export var vida := 100 # Vida del enemigo
+@export var vida := 70 # Vida del enemigo
 @onready var bullet_spawn_marker1: Marker2D = $BulletMarker
 @onready var bullet_spawn_marker2: Marker2D = $BulletMarker2
 @onready var bullet_spawn_marker3: Marker2D = $BulletMarker3
@@ -20,7 +20,7 @@ extends CharacterBody2D
 var fase_actual: int = 1
 
 var rapidez_giro: int = 500
-var spawn_points: int = 20
+var spawn_points: int = 10
 var radio: int = 100
 var muerto: bool = false
 
@@ -75,7 +75,7 @@ func _on_timer_timeout() -> void:
 	
 	
 func take_damage(value: int) -> void:
-	Debug.log("%s received %d damage" % [name, value])
+	#Debug.log("%s received %d damage" % [name, value])
 	vida -= value
 	#Debug.log("%s vida enemigo:" % [vida])
 	if vida <= 0:
@@ -86,9 +86,9 @@ func take_damage(value: int) -> void:
 		await get_tree().create_timer(0.60).timeout
 		murio_jefe.emit()
 		queue_free()
-	elif vida <= 5 and fase_actual < 3:
+	elif vida <= 10 and fase_actual < 3:
 		cambiar_fase(3)
-	elif vida <= 10 and fase_actual < 2:
+	elif vida <= 20 and fase_actual < 2:
 		cambiar_fase(2)
 
 func cambiar_fase(nueva_fase: int) -> void:
@@ -96,12 +96,12 @@ func cambiar_fase(nueva_fase: int) -> void:
 	#Debug.log("fase actual: %d!" % fase_actual)
 	
 	if fase_actual == 1:
+		spawn_points = 10
+		timer.wait_time = 2.4
+	elif fase_actual == 2:
 		spawn_points = 20
 		timer.wait_time = 1.8
-	elif fase_actual == 2:
-		spawn_points = 30
-		timer.wait_time = 1.2
 		vel.x *= 1.5
 	elif fase_actual == 3:
-		spawn_points = 40
-		timer.wait_time = 0.6
+		spawn_points = 30
+		timer.wait_time = 1.2
