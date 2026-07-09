@@ -14,6 +14,8 @@ extends CharacterBody2D
 @onready var timerbala: Timer = $timerbala
 @onready var barravida: ProgressBar = $Vida
 @onready var sprite: Sprite2D = $Sprite2D
+@onready var muerte_enemigo: AudioStreamPlayer = $MuerteEnemigo
+@onready var disparo_enemigo: AudioStreamPlayer = $Tohou
 
 var fase_actual: int = 1
 
@@ -64,6 +66,7 @@ func _on_timer_timeout() -> void:
 		get_tree().current_scene.add_child(bullet_inst)
 		bullet_inst.position = s.global_position
 		bullet_inst.rotation = s.global_rotation
+		disparo_enemigo.play()
 		timerbala.start()
 		await timerbala.timeout
 	
@@ -73,6 +76,7 @@ func take_damage(value: int) -> void:
 	#Debug.log("%s vida enemigo:" % [vida])
 	if vida <= 0:
 		muerto = true
+		muerte_enemigo.play()
 		#Debug.log("%s murisio" % name)
 		murio_jefe.emit()
 		queue_free()

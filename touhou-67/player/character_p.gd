@@ -14,6 +14,8 @@ extends CharacterBody2D
 @onready var playback: AnimationNodeStateMachinePlayback = animation_tree["parameters/playback"]
 @onready var retry_screen: Control = $"../CanvasLayer2/RetryScreen"
 @onready var spawner: Node2D = $spawner
+@onready var sonido_disparo: AudioStreamPlayer = $Chanchiwawi
+@onready var sonido_muerte: AudioStreamPlayer = $Muertexanxi
 
 var is_taking_power_up: bool = false
 var _was_on_floor: bool = false
@@ -98,9 +100,15 @@ func _physics_process(delta: float) -> void:
 		speed=500
 	
 	if Input.is_action_just_pressed("fire"):
+		sonido_disparo.play()
 		fire()
 	
 	if is_dead:
+		var timer2: Timer = Timer.new()
+		add_child(timer2)
+		timer2.wait_time = 0.5
+		timer2.one_shot = true
+		timer2.start()
 		murio.emit()
 		
 	#if move_input:
@@ -111,6 +119,12 @@ func take_damage(value: int) -> void:
 	#Debug.log("%s received %d damage" % [name, value])
 	if vida <= 0:
 		is_dead = true
+		sonido_muerte.play()
+		var timer: Timer = Timer.new()
+		add_child(timer)
+		timer.wait_time = 0.5
+		timer.one_shot = true
+		timer.start()
 		#Debug.log("CHANCHIWAWI MURIÓ")
 		queue_free()
 

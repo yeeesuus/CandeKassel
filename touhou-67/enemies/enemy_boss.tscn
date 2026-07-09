@@ -4,6 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://b1a4bcu71hxh2" path="res://enemy_components/bullet_boss.tscn" id="2_c6415"]
 [ext_resource type="Texture2D" uid="uid://we4i4ue68yi4" path="res://player/texturas/Kosuzu Sprite Pack/individual images/idle/idle1.png" id="3_c6415"]
 [ext_resource type="Script" uid="uid://4mt4o1bvirc" path="res://components/hurtbox_component.gd" id="4_2l0jq"]
+[ext_resource type="AudioStream" uid="uid://c6au41vcrpx4j" path="res://sonidos/muerte enemigo.wav" id="5_7bdce"]
+[ext_resource type="AudioStream" uid="uid://bsm6hnfkixdw4" path="res://sonidos/tohou.wav" id="6_2l0jq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4gyqm"]
 size = Vector2(128, 126)
@@ -58,5 +60,11 @@ theme = SubResource("Theme_c6415")
 theme_override_styles/background = SubResource("StyleBoxFlat_xtliv")
 theme_override_styles/fill = SubResource("StyleBoxFlat_c6415")
 show_percentage = false
+
+[node name="MuerteEnemigo" type="AudioStreamPlayer" parent="." unique_id=781288822]
+stream = ExtResource("5_7bdce")
+
+[node name="Tohou" type="AudioStreamPlayer" parent="." unique_id=889247015]
+stream = ExtResource("6_2l0jq")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

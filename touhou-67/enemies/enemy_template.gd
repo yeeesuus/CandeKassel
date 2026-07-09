@@ -10,6 +10,7 @@ extends CharacterBody2D
 @onready var bullet_spawn_marker5: Marker2D = $BulletMarker5
 @onready var timer: Timer = $Timer
 @onready var rotador: Node2D = $Rotador
+@onready var barravida: ProgressBar = $Vida
 
 var muerto: bool =  false
 var rapidez_giro: int = 0
@@ -27,6 +28,7 @@ func _ready() -> void:
 	timer.start()
 
 func _process(delta: float) -> void:
+	barravida.value = vida
 	#var nueva_rot = rotador.rotation_degrees + rapidez_giro*delta
 	rotador.rotate(rapidez_giro*delta)
 	#movimiento del enemigo

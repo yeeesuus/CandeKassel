@@ -10,10 +10,10 @@ config_version=5
 
 [application]
 
-config/name="Touhou 67"
+config/name="Chanchiwawi"
 run/main_scene="uid://b8i5im8miyj2s"
 config/features=PackedStringArray("4.7", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="uid://dkrbk4evik46h"
 
 [autoload]
 

@@ -18,7 +18,7 @@ extends CharacterBody2D
 var fase_actual: int = 1
 
 var rapidez_giro: int = 1
-var spawn_points: int = 20
+var spawn_points: int = 16
 var radio: int = 1
 var muerto: bool = false
 

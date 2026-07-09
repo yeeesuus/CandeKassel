@@ -11,6 +11,14 @@ size = Vector2(128, 126)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qi2p4"]
 size = Vector2(128, 126)
 
+[sub_resource type="Theme" id="Theme_s7351"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d3trf"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rvojh"]
+bg_color = Color(1, 0, 0, 1)
+
 [node name="Enemy" type="CharacterBody2D" unique_id=1958573147]
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_rsexs")
@@ -38,5 +46,16 @@ shape = SubResource("RectangleShape2D_qi2p4")
 wait_time = 0.3
 
 [node name="Rotador" type="Node2D" parent="." unique_id=838080319]
+
+[node name="Vida" type="ProgressBar" parent="." unique_id=1616102127]
+offset_left = -64.0
+offset_top = -89.0
+offset_right = 64.0
+offset_bottom = -71.0
+theme = SubResource("Theme_s7351")
+theme_override_styles/background = SubResource("StyleBoxFlat_d3trf")
+theme_override_styles/fill = SubResource("StyleBoxFlat_rvojh")
+max_value = 20.0
+show_percentage = false
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
