@@ -58,13 +58,13 @@ func _process(delta: float) -> void:
 	#	vel.x *= -1
 	
 func _on_timer_timeout() -> void:
-	for s in rotador.get_children():
-		var bullet_inst = bullet_scene.instantiate()
-		bullet_inst.add_to_group("balas")
-		get_tree().current_scene.add_child(bullet_inst)
-		bullet_inst.position = s.global_position
-		bullet_inst.rotation = s.global_rotation
-		#timerbala.start()
+	#for s in rotador.get_children():
+	#	var bullet_inst = bullet_scene.instantiate()
+	#	bullet_inst.add_to_group("balas")
+	#	get_tree().current_scene.add_child(bullet_inst)
+	#	bullet_inst.position = s.global_position
+	#	bullet_inst.rotation = s.global_rotation
+	#	#timerbala.start()
 		#await timerbala.timeout
 	timerbala.start()
 	await timerbala.timeout

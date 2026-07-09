@@ -11,7 +11,7 @@ var cam_velocity: float = 100
 @onready var label_time: Label = $Label
 @onready var timer_level: Timer = $timer_level
 @onready var label_vida: Label = $Label_Vida
-@onready var rotador: Node2D = $ScrollingCamera/rotador
+@onready var rotador: Node2D = $rotador
 var muertos = 0
 
 
@@ -32,7 +32,7 @@ func _ready() -> void:
 	timer_level.start()
 	
 	var paso = 2*PI/6
-	for i in range(6):
+	for i in range(5):
 		var spawn_point = Node2D.new()
 		var pos = Vector2(100, 0).rotated(paso*i)
 		spawn_point.position = pos
@@ -57,6 +57,7 @@ func _on_timer_off() -> void:
 			# nuevo_jefe.murio_jefe.connect(_on_murio_jefe)
 			#nuevo_enemigo.global_position = Vector2(0, 0)
 			s.add_child(nuevo_enemigo)
+			print("Cantidad de hijos:", rotador.get_child_count())
 		#Debug.log("spawneó jefe")
 		
 #func _on_murio_jefe() -> void:

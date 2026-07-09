@@ -32,7 +32,7 @@ func _ready() -> void:
 	#para spawn de enemigos
 	var timer: Timer = Timer.new()
 	add_child(timer)
-	timer.wait_time = 10
+	timer.wait_time = 20
 	timer.one_shot = true
 	timer.timeout.connect(_on_timer_off)
 	timer.start()
@@ -41,13 +41,16 @@ func _ready() -> void:
 	
 	
 func _on_timer_off() -> void:
-	if enemy_scene:
-		var nuevo_jefe = enemy_scene.instantiate()
-		nuevo_jefe.name = "Boss"
-		nuevo_jefe.murio_jefe.connect(_on_murio_jefe)
-		nuevo_jefe.global_position = Vector2(700.0, -300)
-		add_child(nuevo_jefe)
+	#if enemy_scene:
+	#	var nuevo_jefe = enemy_scene.instantiate()
+	#	nuevo_jefe.name = "Boss"
+	#	nuevo_jefe.murio_jefe.connect(_on_murio_jefe)
+	#	var screen_size = get_viewport_rect().size
+	#	nuevo_jefe.global_position.x = screen_size.x/2
+	#	nuevo_jefe.global_position.y = -350
+	#	add_child(nuevo_jefe)
 		#Debug.log("spawneó jefe")
+	pass
 		
 func _on_murio_jefe() -> void:
 #	#Debug.log("ganate")

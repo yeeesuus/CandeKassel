@@ -38,8 +38,8 @@ offset = Vector2(569, 331)
 position_smoothing_enabled = true
 script = ExtResource("4_hroym")
 
-[node name="rotador" type="Node2D" parent="ScrollingCamera" unique_id=869660577]
-position = Vector2(571, 144)
+[node name="rotador" type="Node2D" parent="." unique_id=869660577]
+position = Vector2(642, 172)
 script = ExtResource("7_uwhs1")
 
 [node name="Plataformas" type="TileMapLayer" parent="." unique_id=616626602]

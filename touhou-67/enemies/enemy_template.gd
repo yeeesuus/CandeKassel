@@ -11,6 +11,8 @@ extends CharacterBody2D
 @onready var timer: Timer = $Timer
 @onready var rotador: Node2D = $Rotador
 @onready var barravida: ProgressBar = $Vida
+@onready var sonido_disparo: AudioStreamPlayer = $Tohou
+@onready var muerte_enemigo: AudioStreamPlayer = $MuerteEnemigo
 
 var muerto: bool =  false
 var rapidez_giro: int = 0
@@ -35,6 +37,7 @@ func _process(delta: float) -> void:
 	
 func _on_timer_timeout() -> void:
 	for s in rotador.get_children():
+		sonido_disparo.play()
 		var bullet_inst = bullet_scene.instantiate()
 		bullet_inst.add_to_group("balas")
 		get_tree().current_scene.add_child(bullet_inst)
@@ -48,6 +51,7 @@ func take_damage(value: int) -> void:
 	if vida <= 0:
 		var contador2 = get_tree().current_scene
 		contador2.muertos+=1
+		muerte_enemigo.play()
 		muerto = true
 		#Debug.log("%s murisio" % name)
 		queue_free()

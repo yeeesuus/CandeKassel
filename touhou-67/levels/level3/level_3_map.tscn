@@ -46,7 +46,6 @@ tile_set = ExtResource("7_4j2gf")
 position = Vector2(75, 439)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1567467655]
-visible = false
 
 [node name="PauseMenu" parent="CanvasLayer" unique_id=1171212640 instance=ExtResource("9_e80vy")]
 offset_left = -3.0
@@ -55,21 +54,21 @@ offset_right = -3.0
 offset_bottom = -4.0
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="." unique_id=1007213821]
-visible = false
 
 [node name="RetryScreen" parent="CanvasLayer2" unique_id=2075040055 instance=ExtResource("10_rvsbc")]
 
 [node name="CanvasLayer3" type="CanvasLayer" parent="." unique_id=1321634577]
-visible = false
 
 [node name="FinalScreen" parent="CanvasLayer3" unique_id=298006554 instance=ExtResource("11_cuf5y")]
 
 [node name="timer_level" type="Timer" parent="." unique_id=743334643]
 
 [node name="Enemy" parent="." unique_id=1958573147 instance=ExtResource("14_cuf5y")]
+visible = false
 position = Vector2(1048, 75)
 
 [node name="Enemy2" parent="." unique_id=1261548069 instance=ExtResource("14_cuf5y")]
+visible = false
 position = Vector2(259, 75)
 
 [node name="Label" type="Label" parent="." unique_id=1132066552]

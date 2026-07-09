@@ -4,6 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://7gp4do38ig8t" path="res://enemy_components/bullet_template.tscn" id="2_s7351"]
 [ext_resource type="Texture2D" uid="uid://bxv5d8c2wxdyu" path="res://enemies/texture/enemy_purple.png" id="3_s7351"]
 [ext_resource type="Script" uid="uid://4mt4o1bvirc" path="res://components/hurtbox_component.gd" id="4_8oteu"]
+[ext_resource type="AudioStream" uid="uid://bsm6hnfkixdw4" path="res://sonidos/tohou.wav" id="5_rvojh"]
+[ext_resource type="AudioStream" uid="uid://c6au41vcrpx4j" path="res://sonidos/muerte enemigo.wav" id="6_8oteu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4gyqm"]
 size = Vector2(128, 126)
@@ -57,5 +59,12 @@ theme_override_styles/background = SubResource("StyleBoxFlat_d3trf")
 theme_override_styles/fill = SubResource("StyleBoxFlat_rvojh")
 max_value = 20.0
 show_percentage = false
+
+[node name="Tohou" type="AudioStreamPlayer" parent="." unique_id=1215630724]
+stream = ExtResource("5_rvojh")
+volume_db = -20.0
+
+[node name="MuerteEnemigo" type="AudioStreamPlayer" parent="." unique_id=1440569549]
+stream = ExtResource("6_8oteu")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
