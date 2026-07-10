@@ -45,6 +45,7 @@ func _on_player_won() -> void:
 #		LevelManager.main_menu()
 	
 func _on_credits_pressed() -> void:
+	get_tree().paused = false
 	LevelManager.credits()
 	
 func _on_salida_pressed() -> void:
