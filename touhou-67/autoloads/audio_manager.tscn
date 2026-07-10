@@ -10,6 +10,10 @@ script = ExtResource("1_xdfsh")
 
 [node name="SoundLevel" type="AudioStreamPlayer" parent="." unique_id=399476951]
 stream = ExtResource("2_nb6j2")
+volume_db = -10.0
+parameters/looping = true
 
 [node name="SoundMain_Credits" type="AudioStreamPlayer" parent="." unique_id=1478744870]
 stream = ExtResource("3_k2mv4")
+volume_db = -10.0
+parameters/looping = true

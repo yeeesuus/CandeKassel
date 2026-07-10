@@ -1,4 +1,4 @@
-extends AnimatableBody2D
+extends Area2D
 
 # cantidad de movimiento de la plataforma hacia arriba
 # DEBE ser igual al movimiento de la cámara

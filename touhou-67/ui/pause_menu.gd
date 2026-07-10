@@ -17,7 +17,6 @@ func _ready() -> void:
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("menu"):
-		#AudioManager.reproducir_musica(AudioManager.EstadoMusica.NINGUNO)
 		var game_over = get_tree().current_scene.find_child("RetryScreen")
 		var final = get_tree().current_scene.find_child("FinalScreen")
 		if game_over and game_over.visible:
@@ -39,7 +38,6 @@ func _on_reintentar_pressed() -> void:
 
 func _on_menu_pressed() -> void:
 	get_tree().paused = false
-	
 	LevelManager.main_menu()
 
 func _on_resumir_pressed() -> void:

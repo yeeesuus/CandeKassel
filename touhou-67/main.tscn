@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://upx6wonsw5c5" path="res://texture/esc.png" id="7_yaehf"]
 [ext_resource type="PackedScene" uid="uid://dqf5ncmlct83j" path="res://power-ups/power_up_double_gun.tscn" id="8_5vw27"]
 [ext_resource type="Script" uid="uid://can6jg5cyksis" path="res://enemies/enemy_tutorial.gd" id="8_kek77"]
+[ext_resource type="Texture2D" uid="uid://bxh46sthvyulk" path="res://texture/infinito.png" id="9_yaehf"]
 [ext_resource type="PackedScene" uid="uid://dds6pmehd00lf" path="res://power-ups/power_up_salto.tscn" id="10_efxa6"]
 [ext_resource type="Script" uid="uid://xc4xdldddvmx" path="res://mandar_menu.gd" id="11_ycdy4"]
 [ext_resource type="Texture2D" uid="uid://f7g4p8jk32jp" path="res://player/texturas/cosas/balachistosa.png" id="12_w48qg"]
@@ -139,6 +140,16 @@ text = "[wave][center][font_size=15]
 Este PowerUp permite
 recibir dano una vez"
 
+[node name="RichTextLabel12" type="RichTextLabel" parent="Control" unique_id=496709869]
+layout_mode = 0
+offset_left = 1785.0
+offset_top = 412.0
+offset_right = 1805.0
+offset_bottom = 487.0
+bbcode_enabled = true
+text = "[wave][center][font_size=15]
+_"
+
 [node name="RichTextLabel6" type="RichTextLabel" parent="Control" unique_id=913829274]
 layout_mode = 0
 offset_left = 15.0
@@ -181,10 +192,10 @@ region_rect = Rect2(99, 26, 12, 12)
 
 [node name="RichTextLabel8" type="RichTextLabel" parent="Control" unique_id=888973885]
 layout_mode = 0
-offset_left = 2259.0
-offset_top = 99.0
-offset_right = 2538.0
-offset_bottom = 244.0
+offset_left = 2271.0
+offset_top = 114.0
+offset_right = 2550.0
+offset_bottom = 259.0
 bbcode_enabled = true
 text = "[wave][center][font_size=15]
 Si apretas la tecla
@@ -209,10 +220,41 @@ bbcode_enabled = true
 text = "[wave][center][font_size=15]
 Fin del tutorial"
 
+[node name="RichTextLabel11" type="RichTextLabel" parent="Control" unique_id=492757050]
+layout_mode = 0
+offset_left = 2638.0
+offset_top = 111.0
+offset_right = 2895.0
+offset_bottom = 264.0
+bbcode_enabled = true
+text = "[wave][center][font_size=15]
+Hay un timer arriba en la esquina derecha, si no se completa el nivel en el tiempo, se acabo"
+
+[node name="Enemy" parent="." unique_id=1958573147 instance=ExtResource("7_5vw27")]
+position = Vector2(1462, 185)
+scale = Vector2(0.7, 0.7)
+script = ExtResource("8_kek77")
+bullet_scene = null
+vida = 50
+
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1388285363]
 position = Vector2(534, 398)
 zoom = Vector2(1.2, 1.2)
 script = ExtResource("6_7mycd")
+
+[node name="Infinito" type="Sprite2D" parent="Camera2D" unique_id=1234735175]
+position = Vector2(456.00006, -267)
+scale = Vector2(1.475, 1.5)
+texture = ExtResource("9_yaehf")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Camera2D" unique_id=1695035723]
+offset_left = 294.0
+offset_top = -276.0
+offset_right = 483.0
+offset_bottom = -207.0
+theme = ExtResource("5_vivmo")
+bbcode_enabled = true
+text = "[center][font_size=20]Timer:"
 
 [node name="PauseMenu" parent="Camera2D" unique_id=1171212640 instance=ExtResource("6_4c57u")]
 visible = false
@@ -221,13 +263,6 @@ offset_top = -301.00003
 offset_right = -537.0
 offset_bottom = -301.00003
 scale = Vector2(0.835, 0.835)
-
-[node name="Enemy" parent="." unique_id=1958573147 instance=ExtResource("7_5vw27")]
-position = Vector2(1462, 185)
-scale = Vector2(0.7, 0.7)
-script = ExtResource("8_kek77")
-bullet_scene = null
-vida = 50
 
 [node name="PowerUp" parent="." unique_id=581944556 instance=ExtResource("8_5vw27")]
 position = Vector2(1190, 542)

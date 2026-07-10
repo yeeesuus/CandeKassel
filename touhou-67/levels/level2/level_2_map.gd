@@ -14,7 +14,6 @@ var cam_velocity: float = 100
 @onready var rotador: Node2D = $rotador
 var muertos = 0
 
-
 # Función para reiniciar nivel (Tecla "R")
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("retry"):
@@ -33,11 +32,8 @@ func limpiar_balas() -> void:
 		bala.queue_free()
 
 func _ready() -> void:
-<<<<<<< Updated upstream
 	character_p.vida = 2
-=======
 	AudioManager.reproducir_musica(AudioManager.EstadoMusica.JUEGO)
->>>>>>> Stashed changes
 	timer_level.wait_time = 50.0
 	timer_level.one_shot = true
 	timer_level.start()
