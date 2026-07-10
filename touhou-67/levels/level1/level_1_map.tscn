@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://c3nps3ddtg4m3" path="res://enemies/enemy_boss.tscn" id="2_h1736"]
 [ext_resource type="Script" uid="uid://bk8dk8uxdqp8e" path="res://levels/level1/camera_2d.gd" id="2_ovio3"]
 [ext_resource type="Texture2D" uid="uid://xdionqklsbmw" path="res://pexels-yusuf-kaya-288172498-17379530.jpg" id="3_h1736"]
-[ext_resource type="PackedScene" uid="uid://b6e0sa7846t8j" path="res://levels/utils/plataforma_muerte_v2.tscn" id="4_4bgcm"]
 [ext_resource type="Script" uid="uid://enl8npesfyh" path="res://levels/level1/label_timer_level1.gd" id="4_sybs0"]
 [ext_resource type="PackedScene" uid="uid://3khvvq7wamj2" path="res://ui/pause_menu.tscn" id="8_nbhkk"]
 [ext_resource type="PackedScene" uid="uid://b6ajv5xb6qxgr" path="res://ui/retry_screen.tscn" id="9_rdcnd"]
@@ -14,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://bnawb5uvmjg1b" path="res://power-ups/random_power_up.tscn" id="12_h1736"]
 [ext_resource type="Theme" uid="uid://6yyptqhmoca8" path="res://resources/theme/base_theme.tres" id="12_sybs0"]
 [ext_resource type="AudioStream" uid="uid://c6au41vcrpx4j" path="res://sonidos/muerte enemigo.wav" id="14_4bgcm"]
+[ext_resource type="PackedScene" uid="uid://c7ej0es7av11x" path="res://levels/utils/plataforma_muerte_v1.tscn" id="14_sf58x"]
 
 [node name="Level1Map" type="Node2D" unique_id=1219961326]
 script = ExtResource("1_25u25")
@@ -24,20 +24,6 @@ modulate = Color(1, 1, 1, 0.41960785)
 position = Vector2(776, -1000)
 scale = Vector2(0.8421561, 0.80380416)
 texture = ExtResource("3_h1736")
-
-[node name="Plataforma_Muerte2" parent="." unique_id=1175622323 instance=ExtResource("4_4bgcm")]
-position = Vector2(-199, 744)
-scale = Vector2(1.4902675, 1.4957695)
-
-[node name="Plataforma_Muerte3" parent="." unique_id=796219579 instance=ExtResource("4_4bgcm")]
-position = Vector2(-25.000002, -1978.9999)
-rotation = 1.5707964
-scale = Vector2(2.317, 2.21)
-
-[node name="Plataforma_Muerte4" parent="." unique_id=2058958408 instance=ExtResource("4_4bgcm")]
-position = Vector2(1411, -1961)
-rotation = 1.5707964
-scale = Vector2(2.317, 2.21)
 
 [node name="ScrollingCamera" type="Camera2D" parent="." unique_id=1771711775]
 position = Vector2(71, 28)
@@ -82,6 +68,7 @@ position = Vector2(809, 377)
 [node name="timer_level" type="Timer" parent="." unique_id=2108635466]
 
 [node name="Label" type="Label" parent="." unique_id=1734254110]
+z_index = 2
 offset_left = 1071.0
 offset_top = 17.0
 offset_right = 1261.0
@@ -90,6 +77,7 @@ theme = ExtResource("12_sybs0")
 script = ExtResource("4_sybs0")
 
 [node name="Label_Vida" type="Label" parent="." unique_id=2023070991]
+z_index = 2
 offset_left = 20.0
 offset_top = 16.0
 offset_right = 130.0
@@ -100,3 +88,17 @@ script = ExtResource("4_sybs0")
 
 [node name="MuerteEnemigo" type="AudioStreamPlayer" parent="." unique_id=1670607540]
 stream = ExtResource("14_4bgcm")
+
+[node name="Plataforma_Muerte" parent="." unique_id=1175622323 instance=ExtResource("14_sf58x")]
+position = Vector2(-485, 749)
+scale = Vector2(2, 2)
+
+[node name="Plataforma_Muerte2" parent="." unique_id=919029897 instance=ExtResource("14_sf58x")]
+position = Vector2(1397, -1556)
+rotation = 1.5707964
+scale = Vector2(2, 2)
+
+[node name="Plataforma_Muerte3" parent="." unique_id=389150470 instance=ExtResource("14_sf58x")]
+position = Vector2(-29, -1545)
+rotation = 1.5707964
+scale = Vector2(2, 2)

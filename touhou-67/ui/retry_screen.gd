@@ -21,7 +21,7 @@ func _on_player_lost() -> void:
 	get_tree().paused = true
 
 func _on_try_again_pressed() -> void:
-	AudioManager.reproducir_musica(AudioManager.EstadoMusica.NINGUNO)
+	#AudioManager.reproducir_musica(AudioManager.EstadoMusica.NINGUNO)
 	get_tree().paused = false
 	CoinLabelManager.coins = 0
 	for bala in get_tree().get_nodes_in_group("balas"):

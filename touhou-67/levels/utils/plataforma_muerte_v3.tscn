@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://7u8wtm82ynmx"]
+
+[ext_resource type="Script" uid="uid://dnnwd54qt74j6" path="res://levels/utils/plataforma_muerte_v_2.gd" id="1_kdko6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_12j5o"]
+size = Vector2(1343, 44)
+
+[node name="Plataforma_Muerte" type="Area2D" unique_id=1175622323]
+script = ExtResource("1_kdko6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=112822062]
+position = Vector2(623, 23)
+shape = SubResource("RectangleShape2D_12j5o")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

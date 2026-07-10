@@ -25,9 +25,18 @@ size = Vector2(48, 50)
 script = ExtResource("1_h2yge")
 
 [node name="Fondo" type="Sprite2D" parent="." unique_id=887656651]
-visible = false
-position = Vector2(1627.9999, 354.49997)
-scale = Vector2(0.6834416, 0.22713415)
+position = Vector2(605.5, 354.49997)
+scale = Vector2(0.2684659, 0.22713415)
+texture = ExtResource("2_7mycd")
+
+[node name="Fondo3" type="Sprite2D" parent="." unique_id=1420864092]
+position = Vector2(3249.25, 354.53)
+scale = Vector2(0.2684659, 0.22713415)
+texture = ExtResource("2_7mycd")
+
+[node name="Fondo2" type="Sprite2D" parent="." unique_id=357382800]
+position = Vector2(1927.4, 354.3)
+scale = Vector2(-0.268, 0.227)
 texture = ExtResource("2_7mycd")
 
 [node name="CharacterP" parent="." unique_id=872404977 instance=ExtResource("2_0xm2m")]
